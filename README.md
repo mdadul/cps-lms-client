@@ -1,6 +1,6 @@
 # CHOLO PROGRAMMING SHIKHI
 
-Live Link : Comming Soon
+Live Link : https://cps23.netlify.app
 ## How to Run
 
 - Clone this repository to your local machine.
