@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function SignUp() {
   return (
     <div class="flex w-screen flex-wrap text-slate-800">
@@ -6,10 +8,10 @@ export default function SignUp() {
       </div>
       <div class="flex w-full flex-col md:w-1/2">
         <div class="flex justify-center pt-12 md:justify-start md:pl-12">
-          <a href="/" class="text-2xl font-bold text-blue-600">
+          <Link to="/" class="text-2xl font-bold text-blue-600">
             {" "}
             Cholo Programming Shikhi .{" "}
-          </a>
+          </Link>
         </div>
         <div class="my-auto mx-auto flex flex-col justify-center px-6 pt-8 md:justify-start lg:w-[28rem]">
           <p class="text-center text-3xl font-bold md:text-left md:leading-tight">
@@ -17,9 +19,9 @@ export default function SignUp() {
           </p>
           <p class="mt-6 text-center font-medium md:text-left">
             Already using CPS? 
-            <a href="/signin" class="whitespace-nowrap font-semibold text-blue-700">
+            <Link to="/signin" class="whitespace-nowrap font-semibold text-blue-700">
               Login here
-            </a>
+            </Link>
           </p>
           <button class="-2 mt-8 flex items-center justify-center rounded-md border px-4 py-1 outline-none ring-gray-400 ring-offset-2 transition hover:border-transparent hover:bg-black hover:text-white focus:ring-2">
             <img
@@ -75,9 +77,9 @@ export default function SignUp() {
               <label class="inline-block" for="remember-me">
                 {" "}
                 I agree to the{" "}
-                <a class="underline" href="/">
+                <Link class="underline" to="/">
                   Terms and Conditions
-                </a>
+                </Link>
               </label>
             </div>
             <button

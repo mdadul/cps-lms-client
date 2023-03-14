@@ -1,12 +1,14 @@
+import { Link } from "react-router-dom";
+
 export default function SignIn() {
   return (
     <div class="flex w-screen flex-wrap text-slate-800">
       <div class="flex w-full flex-col md:w-1/2">
         <div class="flex justify-center pt-12 md:justify-start md:pl-12">
-          <a href="/" class="text-2xl font-bold text-blue-600">
+          <Link to="/" class="text-2xl font-bold text-blue-600">
             {" "}
             Cholo Programming Shikhi .{" "}
-          </a>
+          </Link>
         </div>
         <div class="my-auto mx-auto flex flex-col justify-center px-6 pt-8 md:justify-start lg:w-[28rem]">
           <p class="text-center text-3xl font-bold md:leading-tight md:text-left md:text-5xl">
@@ -38,12 +40,12 @@ export default function SignIn() {
                 />
               </div>
             </div>
-            <a
-              href="/"
+            <Link
+              to="/"
               class="mb-6 text-center text-sm font-medium text-gray-600 md:text-left"
             >
               Forgot password?
-            </a>
+            </Link>
             <button
               type="submit"
               class="rounded-lg bg-blue-600 px-4 py-2 text-center text-base font-semibold text-white shadow-md outline-none ring-blue-500 ring-offset-2 transition hover:bg-blue-700 focus:ring-2 md:w-32"
@@ -54,12 +56,12 @@ export default function SignIn() {
           <div class="py-12 text-center">
             <p class="text-gray-600">
               Don't have an account?
-              <a
-                href="/signup"
+              <Link
+                to="/signup"
                 class="whitespace-nowrap font-semibold text-gray-900 underline underline-offset-4"
               >
                 Sign up for free.
-              </a>
+              </Link>
             </p>
           </div>
         </div>

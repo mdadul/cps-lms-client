@@ -1,6 +1,6 @@
 import { useState } from "react";
 import logo from "../../img/logo.png";
-
+import { Link } from "react-router-dom";
 export const Nav = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -8,51 +8,51 @@ export const Nav = () => {
   return (
     <div class="px-4 py-5 z-30 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
       <div class="relative flex items-center justify-between">
-        <a href="/" class="inline-flex items-center">
+        <Link to="/" class="inline-flex items-center">
           <img src={logo} alt="logo" className="w-16" />
-        </a>
+        </Link>
         <ul class={newLocal}>
           <li>
-            <a
-              href="/"
+            <Link
+              to="/"
               class="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
             >
               Home
-            </a>
+            </Link>
           </li>
           <li>
-            <a
-              href="/courses"
+            <Link
+              to="/courses"
               class="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
             >
               Courses
-            </a>
+            </Link>
           </li>
           <li>
-            <a
-              href="/about"
+            <Link
+              to="/about"
               class="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
             >
               About Us
-            </a>
+            </Link>
           </li>
         </ul>
         <ul class="items-center hidden space-x-8 lg:flex">
           <li>
-            <a
-              href="/signin"
+            <Link
+              to="/signin"
               class="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-blue-700 border border-cyan-700 transition duration-200 rounded shadow-md  hover:bg-blue-700 hover:text-white focus:shadow-outline focus:outline-none"
             >
               Sign in
-            </a>
+            </Link>
           </li>
           <li>
-            <a
-              href="/signup"
+            <Link
+              to="/signup"
               class="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide border rounded shadow-md bg-blue-700 text-white focus:shadow-outline focus:outline-none"
             >
               Sign up
-            </a>
+            </Link>
           </li>
         </ul>
         <div class="lg:hidden">
@@ -80,9 +80,9 @@ export const Nav = () => {
               <div class="p-5 bg-white border rounded shadow-sm">
                 <div class="flex items-center justify-between mb-4">
                   <div>
-                    <a href="/" class="inline-flex items-center">
+                    <Link to="/" class="inline-flex items-center">
                       <img src={logo} alt="logo" className="w-16" />
-                    </a>
+                    </Link>
                   </div>
                   <div>
                     <button
@@ -101,44 +101,44 @@ export const Nav = () => {
                 <nav>
                   <ul class="space-y-4">
                     <li>
-                      <a
-                        href="/"
+                      <Link
+                        to="/"
                         class="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
                       >
                         Home
-                      </a>
+                      </Link>
                     </li>
                     <li>
-                      <a
-                        href="/courses"
+                      <Link
+                        to="/courses"
                         class="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
                       >
                         Courses
-                      </a>
+                      </Link>
                     </li>
                     <li>
-                      <a
-                        href="/about"
+                      <Link
+                        to="/about"
                         class="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
                       >
                         About Us
-                      </a>
+                      </Link>
                     </li>
                     <li>
-                      <a
-                        href="/signin"
+                      <Link
+                        to="/signin"
                         class="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-blue-700 border border-cyan-700 transition duration-200 rounded shadow-md  hover:bg-blue-700 hover:text-white focus:shadow-outline focus:outline-none"
                       >
                         Sign in
-                      </a>
+                      </Link>
                     </li>
                     <li>
-                      <a
-                        href="/signup"
+                      <Link
+                        to="/signup"
                         class="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-blue-700 border border-cyan-700 transition duration-200 rounded shadow-md  hover:bg-blue-700 hover:text-white focus:shadow-outline focus:outline-none"
                       >
                         Sign up
-                      </a>
+                      </Link>
                     </li>
                   </ul>
                 </nav>
