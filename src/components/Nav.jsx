@@ -6,7 +6,7 @@ export const Nav = () => {
 
   const newLocal = "flex items-center hidden space-x-8 lg:flex";
   return (
-    <div class="px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
+    <div class="px-4 py-5 z-30 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
       <div class="relative flex items-center justify-between">
         <a href="/" class="inline-flex items-center">
           <img src={logo} alt="logo" className="w-16" />
@@ -43,6 +43,14 @@ export const Nav = () => {
               href="/"
               class="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-blue-700 border border-cyan-700 transition duration-200 rounded shadow-md  hover:bg-blue-700 hover:text-white focus:shadow-outline focus:outline-none"
             >
+              Sign in
+            </a>
+          </li>
+          <li>
+            <a
+              href="/"
+              class="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide border rounded shadow-md bg-blue-700 text-white focus:shadow-outline focus:outline-none"
+            >
               Sign up
             </a>
           </li>
@@ -68,7 +76,7 @@ export const Nav = () => {
             </svg>
           </button>
           {isMenuOpen && (
-            <div class="absolute top-0 left-0 w-full">
+            <div class="absolute top-0 left-0 w-full z-20">
               <div class="p-5 bg-white border rounded shadow-sm">
                 <div class="flex items-center justify-between mb-4">
                   <div>
@@ -114,6 +122,14 @@ export const Nav = () => {
                         class="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
                       >
                         About Us
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="/"
+                        class="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-blue-700 border border-cyan-700 transition duration-200 rounded shadow-md  hover:bg-blue-700 hover:text-white focus:shadow-outline focus:outline-none"
+                      >
+                        Sign in
                       </a>
                     </li>
                     <li>
