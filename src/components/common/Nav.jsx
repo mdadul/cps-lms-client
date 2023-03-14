@@ -1,5 +1,5 @@
 import { useState } from "react";
-import logo from "../img/logo.png";
+import logo from "../../img/logo.png";
 
 export const Nav = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -22,7 +22,7 @@ export const Nav = () => {
           </li>
           <li>
             <a
-              href="/"
+              href="/courses"
               class="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
             >
               Courses
@@ -30,7 +30,7 @@ export const Nav = () => {
           </li>
           <li>
             <a
-              href="/"
+              href="/about"
               class="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
             >
               About Us
@@ -40,7 +40,7 @@ export const Nav = () => {
         <ul class="items-center hidden space-x-8 lg:flex">
           <li>
             <a
-              href="/"
+              href="/signin"
               class="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-blue-700 border border-cyan-700 transition duration-200 rounded shadow-md  hover:bg-blue-700 hover:text-white focus:shadow-outline focus:outline-none"
             >
               Sign in
@@ -48,7 +48,7 @@ export const Nav = () => {
           </li>
           <li>
             <a
-              href="/"
+              href="/signup"
               class="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide border rounded shadow-md bg-blue-700 text-white focus:shadow-outline focus:outline-none"
             >
               Sign up
@@ -110,7 +110,7 @@ export const Nav = () => {
                     </li>
                     <li>
                       <a
-                        href="/"
+                        href="/courses"
                         class="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
                       >
                         Courses
@@ -118,7 +118,7 @@ export const Nav = () => {
                     </li>
                     <li>
                       <a
-                        href="/"
+                        href="/about"
                         class="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
                       >
                         About Us
@@ -126,7 +126,7 @@ export const Nav = () => {
                     </li>
                     <li>
                       <a
-                        href="/"
+                        href="/signin"
                         class="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-blue-700 border border-cyan-700 transition duration-200 rounded shadow-md  hover:bg-blue-700 hover:text-white focus:shadow-outline focus:outline-none"
                       >
                         Sign in
@@ -134,7 +134,7 @@ export const Nav = () => {
                     </li>
                     <li>
                       <a
-                        href="/"
+                        href="/signup"
                         class="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-blue-700 border border-cyan-700 transition duration-200 rounded shadow-md  hover:bg-blue-700 hover:text-white focus:shadow-outline focus:outline-none"
                       >
                         Sign up

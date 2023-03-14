@@ -28,23 +28,23 @@ export default function Header () {
                     height="24"
                   />
                 </svg>
-                <span className="relative">The</span>
+                <span className="relative">Learn</span>
               </span>{' '}
-              quick, brown fox jumps over a lazy dog
+              to code and change the world with our CPS academy!
             </h2>
             <p className="text-base text-gray-700 md:text-lg">
             We are a leading online learning platform for the world's best programmers. We offer courses in various programming languages, web development and many more.
             </p>
           </div>
           <div className="flex items-center sm:justify-center">
-            <button
-              type="submit"
+            <a
+              href="/courses"
               className="inline-flex items-center justify-center h-12 px-6 mr-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-purple-800 hover:bg-purple-500 focus:shadow-outline focus:outline-none"
             >
               Get started
-            </button>
+            </a>
             <a
-              href="/"
+              href="/about"
               aria-label=""
               className="inline-flex items-center font-semibold text-gray-800 transition-colors duration-200 hover:text-deep-purple-accent-700"
             >
@@ -64,7 +64,7 @@ export default function Header () {
              Courses
             </p>
           </div>
-          <div className="inline-block p-8 text-center hover:bg-gray-100">
+          <div className="inline-block p-8 text-center hover:bg-gray-100 ">
             <div className="flex items-center justify-center w-12 h-12 mx-auto mb-4 rounded-full bg-indigo-50">
             <p className="text-purple-800 font-bold text-xl">150+</p>
             </div>

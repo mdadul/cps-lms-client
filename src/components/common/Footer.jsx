@@ -1,4 +1,4 @@
-import logo from '../img/logo.png';
+import logo from '../../img/cps-tb.png';
 export const Footer = () => {
     return (
     <div className='bg-gray-900 text-white'> 
