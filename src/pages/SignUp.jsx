@@ -1,12 +1,12 @@
 import { Link } from "react-router-dom";
-
+import signup from '../img/welcome.svg'
 export default function SignUp() {
   return (
     <div class="flex w-screen flex-wrap text-slate-800">
-      <div class="relative hidden h-screen select-none flex-col justify-center bg-blue-600 text-center md:flex md:w-1/2">
-       
+      <div class="relative hidden h-screen select-none flex-col justify-center md:flex md:w-1/2">
+       <img src={signup} alt="sign-up" class="absolute inset-0 w-4/5 object-cover mt-36 ml-20" />
       </div>
-      <div class="flex w-full flex-col md:w-1/2">
+      <div class="flex w-full flex-col md:w-1/2 bg-gray-50">
         <div class="flex justify-center pt-12 md:justify-start md:pl-12">
           <Link to="/" class="text-2xl font-bold text-blue-600">
             {" "}

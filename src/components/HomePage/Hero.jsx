@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 export default function Header () {
   return (
     <div className="mb-16">
@@ -37,19 +38,19 @@ export default function Header () {
             </p>
           </div>
           <div className="flex items-center sm:justify-center">
-            <a
-              href="/courses"
+            <Link
+              to="/courses"
               className="inline-flex items-center justify-center h-12 px-6 mr-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-purple-800 hover:bg-purple-500 focus:shadow-outline focus:outline-none"
             >
               Get started
-            </a>
-            <a
-              href="/about"
+            </Link>
+            <Link
+              to="/about"
               aria-label=""
               className="inline-flex items-center font-semibold text-gray-800 transition-colors duration-200 hover:text-deep-purple-accent-700"
             >
               Learn more
-            </a>
+            </Link>
           </div>
         </div>
       </div>

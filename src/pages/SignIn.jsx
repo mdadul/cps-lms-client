@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
-
+import singin from '../img/signin.gif'
 export default function SignIn() {
   return (
     <div class="flex w-screen flex-wrap text-slate-800">
-      <div class="flex w-full flex-col md:w-1/2">
+      <div class="flex w-full flex-col md:w-1/2 bg-gray-50">
         <div class="flex justify-center pt-12 md:justify-start md:pl-12">
           <Link to="/" class="text-2xl font-bold text-blue-600">
             {" "}
@@ -67,7 +67,7 @@ export default function SignIn() {
         </div>
       </div>
       <div class="relative hidden h-screen select-none md:block md:w-1/2">
-        
+        <img src={singin} alt="sign in" class="absolute inset-0 mt-32 w-4/5 object-cover" />
       </div>
     </div>
   );
