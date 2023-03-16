@@ -1,6 +1,7 @@
 import { useSwiper } from "swiper/react"
 
-export default function TestimonialCard() {
+export default function TestimonialCard(props) {
+  const { name, designation, img } = props;
     const swiper = useSwiper();
     return (
         <main class="relative z-20 w-full mt-8 md:flex md:items-center xl:mt-12">
@@ -9,16 +10,16 @@ export default function TestimonialCard() {
           <div class="w-full p-6 bg-blue-600 md:flex md:items-center rounded-2xl md:bg-transparent md:p-0 lg:px-12 md:justify-evenly">
             <img
               class="h-24 w-24 md:mx-6 rounded-full object-cover shadow-md md:h-[32rem] md:w-80 lg:h-[36rem] lg:w-[26rem] md:rounded-2xl"
-              src="https://media.licdn.com/dms/image/D5603AQHNmVyKIB25MA/profile-displayphoto-shrink_800_800/0/1676230025966?e=1684368000&v=beta&t=uNwol6YBU9IV-M5z-dur-liZqAX1ZRFWcHrBg0HvWUk"
+              src={img}
               alt="students"
             />
 
             <div class="mt-2 md:mx-6">
               <div>
                 <p class="text-xl font-medium tracking-tight text-white">
-                  Sorowar Mahabub
+                  {name}
                 </p>
-                <p class="text-blue-200 ">Founder & CEO, CPS</p>
+                <p class="text-blue-200 ">{designation}</p>
               </div>
 
               <p class="mt-4 text-lg leading-relaxed text-white md:text-xl">
