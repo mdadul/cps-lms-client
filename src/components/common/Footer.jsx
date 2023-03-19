@@ -51,7 +51,7 @@ export const Footer = () => {
                     href="/"
                     className="text-gray-300 transition-colors duration-300 hover:text-white"
                   >
-                    Games
+                    Quizes
                   </a>
                 </li>
                 <li>
@@ -66,7 +66,7 @@ export const Footer = () => {
             </div>
             <div>
               <p className="font-semibold tracking-wide text-gray-100">
-                Business
+                Tests
               </p>
               <ul className="mt-2 space-y-2">
                 <li>
@@ -82,7 +82,7 @@ export const Footer = () => {
                     href="/"
                     className="text-gray-300 transition-colors duration-300 hover:text-white"
                   >
-                    eCommerce
+                    Ambassador
                   </a>
                 </li>
                 <li>
