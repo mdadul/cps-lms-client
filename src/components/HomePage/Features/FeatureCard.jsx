@@ -1,16 +1,24 @@
-export default function FeatureCard() {
+export default function FeatureCard({img, title, description}) {
   return (
-    <section class="mx-auto max-w-screen-xl px-4 py-32 lg:flex lg:h-screen lg:items-center">
-      <div class="mx-auto flex w-full flex-col items-center justify-center sm:max-w-screen-sm md:max-w-screen-md lg:flex-row">
-        <div class="text-center">
-          <h2 class="bg-clip-text text-3xl font-extrabold text-gray-700 sm:text-5xl">
-           Why Choose Us?
-          </h2>
-          <p class="bg-gradient-to-r from-pink-500 to-indigo-500 bg-clip-text text-4xl font-extrabold text-transparent sm:text-6xl">
-            We have everything you need to learn Programming
+    <div className="relative group bg-white transition hover:z-[1] hover:shadow-2xl">
+      <div className="relative p-8 space-y-8">
+        <img
+          src={img}
+          className="w-10"
+          width="512"
+          height="512"
+          alt="burger illustration"
+        />
+
+        <div className="space-y-2">
+          <h5 className="text-xl text-gray-800 font-medium transition group-hover:text-yellow-600">
+           {title}
+          </h5>
+          <p className="text-sm text-gray-600">
+           {description}
           </p>
         </div>
       </div>
-    </section>
+    </div>
   );
 }
