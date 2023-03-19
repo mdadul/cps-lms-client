@@ -13,7 +13,7 @@ Live Link : https://choloprogrammingshikhi.vercel.app/
 
 - Checkout to `master` branch (`git checkout master`).
 - Pull from `master` (`git pull origin master`)
-- Create new brach named as Trello ticket number. (`git checkout -b feature/<YOUR TICKET NUMBER>`)
+- Create new brach named as Your name. (`git checkout -b Sorowar`)
 - After finished, do the `IMPORTANT` task below.
 - Commit and make a PR(Pull Request) with `master`.
 - If any `conflicts` happen, resolve `locally`.
