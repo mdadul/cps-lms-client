@@ -6,6 +6,7 @@ import SignUp from "./pages/SignUp";
 
 import { Route, Routes } from "react-router-dom";
 import Error from "./components/common/Error";
+import DashboardLayout from "./components/Dashboard/Layout/DashboardLayout";
 function App() {
   return (
     <Routes>
@@ -14,7 +15,7 @@ function App() {
       <Route path="/courses" element={<Courses />} />
       <Route path="/signin" element={<SignIn />} />
       <Route path="/signup" element={<SignUp />} />
-
+      <Route path="/dashboard/*" element={<DashboardLayout />} />
       <Route path="*" element={<Error />} />
     </Routes>
   );
