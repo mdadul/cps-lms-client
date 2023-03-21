@@ -8,8 +8,8 @@ export default function About() {
     <Layout>
       <div className="mx-auto my-10 max-w-lg px-4 text-gray-600 md:max-w-screen-lg">
         <div className="mb-10 flex flex-col border-t-4 border-blue-600 pt-4 md:flex-row">
-          <h2 className="mr-auto mb-4 text-4xl font-medium lg:text-3xl">Experience of <span className="whitespace-nowrap text-blue-600 md:text-gray-600">2 Decades</span></h2>
-          <a href="#" className="text-lg font-medium underline hover:text-blue-600">Read our Story</a>
+          <h2 className="mr-auto mb-4 text-4xl font-medium lg:text-3xl">Experience of <span className="whitespace-nowrap text-blue-600 md:text-gray-600">2 Years</span></h2>
+          <a href="#" className="text-lg font-medium underline hover:text-blue-600">Read Our Story</a>
         </div>
         <div className="flex flex-col md:flex-row">
           <div>
@@ -18,7 +18,7 @@ export default function About() {
           </div>
           <p className="hidden uppercase md:block md:text-7xl">
             Since <br />
-            <span className="whitespace-nowrap text-blue-600">20 Years</span>
+            <span className="whitespace-nowrap text-blue-600">2021</span>
           </p>
         </div>
       </div>
@@ -44,12 +44,12 @@ export default function About() {
         <div class="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
           <div class="flex flex-col items-center">
             <div class="text-center">
-              <h2 class="mt-4 text-3xl font-bold text-black sm:text-4xl xl:text-5xl">Have a look at what our clients say</h2>
+              <h2 class="mt-4 text-3xl font-bold text-black sm:text-4xl xl:text-5xl">Know More About Us</h2>
               <hr class="h-2 bg-indigo-600 w-52 mx-auto mt-8" />
             </div>
 
             <div class="mt-8 text-center md:order-3 md:mt-16">
-              <a href="#" title="" class="border-b-2 border-gray-900 pb-2 text-base font-bold leading-7 text-black transition-all duration-200 hover:border-indigo-600 hover:text-indigo-600 focus:outline-none focus:ring-1 focus:ring-gray-900 focus:ring-offset-2"> Check Recommending Organizations</a>
+              <a href="#" title="" class="border-b-2 border-gray-900 pb-2 text-base font-bold leading-7 text-black transition-all duration-200 hover:border-indigo-600 hover:text-indigo-600 focus:outline-none focus:ring-1 focus:ring-gray-900 focus:ring-offset-2">Read Our Story</a>
             </div>
 
             <div class="relative mt-10 md:order-2 md:mt-24">
@@ -63,8 +63,8 @@ export default function About() {
                   <div class="flex flex-1 flex-col justify-between p-6 lg:py-8 lg:px-7">
                     <div class="flex-1">
                       <blockquote class="mt-8 flex-1">
-                        <h2 class="text-4xl font-bold text-fuchsia-900">Oor History</h2>
-                        <p class="text-2xl font-[600] leading-snug text-black">When we started চলো, Programming শিখি, our goal was to give anyone in the world the ability to learn the skills they’d need to succeed in the 21st century. We set out to create a new, interactive way of learning — making it engaging, flexible, and accessible for as many people as possible. Since then, we have helped millions of people worldwide unlock modern technical skills and reach their full potential through code.</p>
+                        <h2 class="text-4xl font-bold text-fuchsia-900">Our History</h2>
+                        <p class="text-2xl font-[600] leading-snug text-black">When we started Cholo Programming Shikhi, our goal was to give anyone in the world the ability to learn the skills they’d need to succeed in the 21st century. We set out to create a new, interactive way of learning — making it engaging, flexible, and accessible for as many people as possible. Since then, we have helped millions of people worldwide unlock modern technical skills and reach their full potential through code.</p>
                       </blockquote>
                     </div>
 
@@ -79,7 +79,7 @@ export default function About() {
                   <div class="flex flex-1 flex-col justify-between p-6 lg:py-8 lg:px-7">
                     <div class="flex-1">
                       <blockquote class="mt-8 flex-1">
-                      <h2 class="text-4xl font-bold text-fuchsia-900">Oor Mission</h2>
+                      <h2 class="text-4xl font-bold text-fuchsia-900">Our Mission</h2>
                         <p class="text-2xl font-[600] leading-snug text-black">We want to create a world where anyone can build something meaningful with technology, and everyone has the learning tools, resources, and opportunities to do so. Code contains a world of possibilities — all that’s required is the curiosity and drive to learn. At Codecademy, we are committed to empowering all people, regardless of where they are in their coding journeys, to continue to learn, grow, and make an impact on the world around them.</p>
                       </blockquote>
                     </div>
@@ -114,14 +114,14 @@ export default function About() {
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <div className="relative max-w-xl">
             <span className="absolute -top-4 h-2 w-14 bg-white"></span>
-            <h2 className="text-xl font-medium leading-9 text-white sm:text-3xl sm:leading-tight">Impressive Results in 2 Years</h2>
-            <p className="text-white ">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae enim cupiditate necessitatibus tempore molestias?</p>
+            <h2 className="text-xl font-medium leading-9 text-white sm:text-3xl sm:leading-tight">CPS Excelent Team</h2>
+            <p className="text-white ">Come help us to build the Programming Basic fully clear the world deserves.</p>
           </div>
 
           <div className="mt-16 grid grid-cols-1 gap-6 sm:grid-cols-2 md:gap-8 lg:mt-24 lg:grid-cols-4">
-            <MemberCard img="https://avatars.githubusercontent.com/u/76944781?s=40&v=4"
+            <MemberCard img=""
               title="Sorowar Mahabub"
-              description="Our Bosskjdbnrstnbuiorn  bkjre nb routine" />
+              description="CEO, Founder & Head Instructor" />
             <MemberCard img="https://avatars.githubusercontent.com/u/76944781?s=40&v=4" title="Sorowar Mahabub" description="Our Bosskjdbnrstnbuiorn  bkjre nb routine" />
             <MemberCard img="https://avatars.githubusercontent.com/u/76944781?s=40&v=4" title="Sorowar Mahabub" description="Our Bosskjdbnrstnbuiorn  bkjre nb routine" />
             <MemberCard img="https://avatars.githubusercontent.com/u/76944781?s=40&v=4" title="Sorowar Mahabub" description="Our Bosskjdbnrstnbuiorn  bkjre nb routine" />
