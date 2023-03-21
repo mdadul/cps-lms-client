@@ -1,21 +1,41 @@
-import React from 'react'
-
+import React from "react";
+import { BsFacebook,BsLinkedin } from "react-icons/bs";
 export default function MemberCard({ img, title, description }) {
-    return (
-
-        <div className="relative rounded-xl border-t-4 border-blue-200 bg-white shadow mb-5">
-            <div className="flex flex-col items-center py-10">
-                <div className="-mt-20 flex h-20 w-20 items-center justify-center rounded-full bg-blue-500 text-white">
-
-                    <img
-                        src={img}
-                        className="rounded-full h-16 w-16 object-cover"
-                    />
-                </div>
-                <span className="mt-3 font-medium capitalize"> {title}</span>
-                <p className="mt-3 text-center">{description}</p>
-            </div>
+  return (
+    <>
+      <div class="mx-auto my-10 flex max-w-xs flex-col items-center rounded-xl border px-4 py-4 text-center">
+        <div class="mb-4">
+          <img
+            class="h-56 rounded-lg object-cover md:w-56"
+            src={img}
+            alt=""
+          />
         </div>
-
-    )
+        <div class="">
+          <p class="text-xl font-medium text-gray-50">{title}</p>
+          <p class="mb-4 text-sm font-medium text-gray-500">
+            {description}
+          </p>
+          <div class="mb-3"></div>
+         
+          <div class="flex justify-center gap-4 text-white">
+            <a
+              href="https://www.facebook.com/sorowar.mahabub"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <BsFacebook/>
+            </a>
+            <a
+              href="https://www.linkedin.com/in/sorowar-mahabub-0b4b3a1a3/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <BsLinkedin/>
+            </a>
+          </div>
+        </div>
+      </div>
+    </>
+  );
 }
