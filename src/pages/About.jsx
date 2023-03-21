@@ -1,6 +1,15 @@
 import React from "react";
 import MemberCard from "../components/AboutPage/MemberCard";
 import Layout from "../components/common/Layout";
+import Sorowar from "../img/member/Sorowar-t.png";
+import Goni from "../img/member/goni-t.png";
+import Jamil from "../img/member/jamil-t.png";
+import Jobaer from "../img/member/jobaer-t.png";
+import Moinul from "../img/member/moinul-t.png";
+import Ayman from "../img/member/ayman-t.png";
+import Avater from "../img/logo-white.png";
+import Emdadul from "../img/member/emdadul-t.png";
+
 
 export default function About() {
   return (
@@ -140,22 +149,37 @@ export default function About() {
 
           <div className="mt-16 grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-4 md:gap-8 lg:mt-24 lg:grid-cols-3">
             <MemberCard
-              img="https://media.licdn.com/dms/image/D5603AQHNmVyKIB25MA/profile-displayphoto-shrink_800_800/0/1676230025966?e=1684368000&v=beta&t=uNwol6YBU9IV-M5z-dur-liZqAX1ZRFWcHrBg0HvWUk"
+              img={Goni}
+              title="Sorowar Mahabub"
+              description="CEO & Founder, CPS"
+            /> 
+            <MemberCard
+              img={Jobaer}
+              title="Sorowar Mahabub"
+              description="CEO & Founder, CPS"
+            />
+             <MemberCard
+              img={Jamil}
+              title="Sorowar Mahabub"
+              description="CEO & Founder, CPS"
+            />
+             <MemberCard
+              img={Moinul}
+              title="Sorowar Mahabub"
+              description="CEO & Founder, CPS"
+            />
+             <MemberCard
+              img={Ayman}
+              title="Sorowar Mahabub"
+              description="CEO & Founder, CPS"
+            />
+             <MemberCard
+              img={Avater}
               title="Sorowar Mahabub"
               description="CEO & Founder, CPS"
             />
             <MemberCard
-              img="https://media.licdn.com/dms/image/D5603AQHNmVyKIB25MA/profile-displayphoto-shrink_800_800/0/1676230025966?e=1684368000&v=beta&t=uNwol6YBU9IV-M5z-dur-liZqAX1ZRFWcHrBg0HvWUk"
-              title="Sorowar Mahabub"
-              description="CEO & Founder, CPS"
-            />
-            <MemberCard
-              img="https://media.licdn.com/dms/image/D5603AQHNmVyKIB25MA/profile-displayphoto-shrink_800_800/0/1676230025966?e=1684368000&v=beta&t=uNwol6YBU9IV-M5z-dur-liZqAX1ZRFWcHrBg0HvWUk"
-              title="Sorowar Mahabub"
-              description="CEO & Founder, CPS"
-            />
-            <MemberCard
-              img="https://media.licdn.com/dms/image/D5603AQHNmVyKIB25MA/profile-displayphoto-shrink_800_800/0/1676230025966?e=1684368000&v=beta&t=uNwol6YBU9IV-M5z-dur-liZqAX1ZRFWcHrBg0HvWUk"
+              img={Avater}
               title="Sorowar Mahabub"
               description="CEO & Founder, CPS"
             />
