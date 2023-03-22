@@ -15,12 +15,10 @@ export const Footer = () => {
             </a>
             <div className="mt-4 lg:max-w-sm">
               <p className="text-sm text-gray-100">
-                Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                accusantium doloremque laudantium, totam rem aperiam.
+              Choose Cholo Programming Shikhi as your go-to resource for learning programming. We are dedicated to providing you with the highest quality education possible and empowering you to reach your full potential as a programmer. Whether you're a beginner or an experienced coder, our interactive, flexible approach to learning will help you achieve your goals.
               </p>
               <p className="mt-4 text-sm text-gray-100">
-                Eaque ipsa quae ab illo inventore veritatis et quasi architecto
-                beatae vitae dicta sunt explicabo.
+                Join us on our mission to create a world where anyone can build something meaningful with technology!
               </p>
             </div>
           </div>
@@ -35,7 +33,7 @@ export const Footer = () => {
                     href="/"
                     className="text-gray-300 transition-colors duration-300 hover:text-white"
                   >
-                    News
+                    Tech News
                   </a>
                 </li>
                 <li>
@@ -43,7 +41,7 @@ export const Footer = () => {
                     href="/"
                     className="text-gray-300 transition-colors duration-300 hover:text-white"
                   >
-                    World
+                    Tech World
                   </a>
                 </li>
                 <li>
@@ -51,7 +49,7 @@ export const Footer = () => {
                     href="/"
                     className="text-gray-300 transition-colors duration-300 hover:text-white"
                   >
-                    Quizes
+                    Programming Quizes
                   </a>
                 </li>
                 <li>
@@ -59,14 +57,14 @@ export const Footer = () => {
                     href="/"
                     className="text-gray-300 transition-colors duration-300 hover:text-white"
                   >
-                    References
+                    Programming languages
                   </a>
                 </li>
               </ul>
             </div>
             <div>
               <p className="font-semibold tracking-wide text-gray-100">
-                Tests
+                Activities
               </p>
               <ul className="mt-2 space-y-2">
                 <li>
@@ -74,7 +72,7 @@ export const Footer = () => {
                     href="/"
                     className="text-gray-300 transition-colors duration-300 hover:text-white"
                   >
-                    Web
+                    Web Seminar
                   </a>
                 </li>
                 <li>
@@ -112,7 +110,7 @@ export const Footer = () => {
               </ul>
             </div>
             <div>
-              <p className="font-semibold tracking-wide text-gray-100">Apples</p>
+              <p className="font-semibold tracking-wide text-gray-100">Know More About CPS</p>
               <ul className="mt-2 space-y-2">
                 <li>
                   <a
@@ -157,14 +155,14 @@ export const Footer = () => {
               </ul>
             </div>
             <div>
-              <p className="font-semibold tracking-wide text-gray-100">Cherry</p>
+              <p className="font-semibold tracking-wide text-gray-100">We are In</p>
               <ul className="mt-2 space-y-2">
                 <li>
                   <a
                     href="/"
                     className="text-gray-300 transition-colors duration-300 hover:text-white"
                   >
-                    Infopreneur
+                    Open source software
                   </a>
                 </li>
                 <li>
@@ -172,7 +170,7 @@ export const Footer = () => {
                     href="/"
                     className="text-gray-300 transition-colors duration-300 hover:text-white"
                   >
-                    Personal
+                    Artificial intelligence
                   </a>
                 </li>
                 <li>
@@ -180,7 +178,7 @@ export const Footer = () => {
                     href="/"
                     className="text-gray-300 transition-colors duration-300 hover:text-white"
                   >
-                    Wiki
+                    Programming communities
                   </a>
                 </li>
                 <li>
@@ -188,7 +186,7 @@ export const Footer = () => {
                     href="/"
                     className="text-gray-300 transition-colors duration-300 hover:text-white"
                   >
-                    Forum
+                    Programming Forums
                   </a>
                 </li>
               </ul>

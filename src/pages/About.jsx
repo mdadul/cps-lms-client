@@ -26,17 +26,10 @@ export default function About() {
         <div className="flex flex-col md:flex-row">
           <div>
             <p className="mb-4 md:pr-10 md:text-xl md:leading-relaxed lg:pr-28">
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quis
-              omnis sint debitis sequi animi quaerat repellendus id distinctio
-              dolores minus.
+            Are you interested in learning programming, but not sure where to start? Look no further than <b>Cholo Programming Shikhi</b>! Our different programs offer a comprehensive curriculum that teaches you the skills you need to become a basic to advanced lavel skilled programmer.
             </p>
             <p className="md:pr-10 md:text-xl md:leading-relaxed lg:pr-28">
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Delectus
-              eos quod hic perspiciatis, consectetur suscipit maxime mollitia
-              minima. Enim consequatur ab praesentium ipsum neque dolore
-              expedita, earum rerum reiciendis nihil, deleniti id atque
-              consequuntur necessitatibus distinctio aliquid explicabo quo
-              obcaecati?
+            If you're ready to take the next step in your career and become a basic to advanced lavel skilled programmer, enroll in <b>Cholo Programming Shikhi</b> courses today!
             </p>
           </div>
           <p className="hidden uppercase md:block md:text-7xl">
@@ -78,10 +71,10 @@ export default function About() {
                         </h2>
                         <p class="text-justify text-black">
                           When we started{" "}
-                          <strong>চলো, Programming শিখি,</strong> our goal was
+                          <strong>Cholo Programming Shikhi,</strong> our goal was
                           to give anyone in the world the ability to learn the
-                          skills they’d need to succeed in the 21st century. We
-                          set out to create a new, interactive way of learning —
+                          skills they’d need to succeed in the 21st century, Obiously that is Programming/ Coding. We
+                          set out to create a new, interactive way of learning Programming—
                           making it engaging, flexible, and accessible for as
                           many people as possible. Since then, we have helped
                           millions of people worldwide unlock modern technical
@@ -119,7 +112,7 @@ export default function About() {
                           the learning tools, resources, and opportunities to do
                           so. Code contains a world of possibilities — all
                           that’s required is the curiosity and drive to learn.
-                          At Codecademy, we are committed to empowering all
+                          At <b>Cholo Programming Shikhi</b>, we are committed to empowering all
                           people, regardless of where they are in their coding
                           journeys, to continue to learn, grow, and make an
                           impact on the world around them.
@@ -147,43 +140,48 @@ export default function About() {
             </p>
           </div>
 
-          <div className="mt-16 grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-4 md:gap-8 lg:mt-24 lg:grid-cols-3">
+          <div className="mt-16 grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-4 md:gap-8 lg:mt-24 lg:grid-cols-2">
             <MemberCard
               img={Goni}
               title="Sorowar Mahabub"
               description="CEO & Founder, CPS"
-            /> 
+            />
             <MemberCard
               img={Jobaer}
               title="Sorowar Mahabub"
               description="CEO & Founder, CPS"
             />
-             <MemberCard
+            <MemberCard
               img={Jamil}
               title="Sorowar Mahabub"
               description="CEO & Founder, CPS"
             />
-             <MemberCard
+            <MemberCard
               img={Moinul}
               title="Sorowar Mahabub"
               description="CEO & Founder, CPS"
             />
-             <MemberCard
-              img={Ayman}
-              title="Sorowar Mahabub"
-              description="CEO & Founder, CPS"
-            />
-             <MemberCard
+            
+          </div>
+          <div className="mt-16 grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3 md:gap-8 lg:mt-24 lg:grid-cols-3">
+            {/* <h2 className="text-xl font-medium leading-9 text-white sm:text-3xl sm:leading-tight">Our Teaching Assistants</h2> */}
+            {/* <hr /> */}
+            <MemberCard
               img={Avater}
-              title="Sorowar Mahabub"
-              description="CEO & Founder, CPS"
+              title="Nafisa Ayman Tanha"
+              description="TA, C Programming Batch-2, CPS"
             />
             <MemberCard
               img={Avater}
-              title="Sorowar Mahabub"
-              description="CEO & Founder, CPS"
+              title="Tasfia Sultana Bhuiyan"
+              description="TA, C Programming Batch-3, CPS"
             />
-            
+            <MemberCard
+              img={Avater}
+              title="Sayeda Binte Sarnaly"
+              description="TA, C Programming Batch-4, CPS"
+            />
+
           </div>
         </div>
       </section>
