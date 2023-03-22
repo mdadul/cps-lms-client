@@ -22,11 +22,10 @@ export default function TestimonialCard(props) {
                 <p className="text-blue-200 ">{designation}</p>
               </div>
 
-              <p className="mt-4 text-lg leading-relaxed text-white md:text-xl">
+              <p className="mt-4 text-lg text-justify leading-relaxed text-white md:text-sm">
                 {" "}
-                “Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Tempore quibusdam ducimus libero ad tempora doloribus expedita
-                laborum saepe voluptas perferendis delectus assumenda”.
+                “I recently completed the C Programming with Problem Solving course offered by Cholo Programming Shikhi, and I must say, it was an exceptional learning experience. The course content was comprehensive, well-structured, and the instructors were extremely knowledgeable and supportive. The hands-on approach and practical exercises helped me develop a strong foundation in C programming concepts, and the problem-solving challenges pushed me to think creatively and apply my skills to real-world scenarios. The course also provided opportunities for collaboration and networking with other students, which added to the overall learning experience. I would highly recommend this course to anyone looking to build a solid foundation in C programming and problem-solving skills."
+”.
               </p>
               <div className="flex items-center justify-between mt-6 md:justify-start">
                         <button onClick={()=>swiper.slidePrev()} title="left arrow" className="p-2 text-white transition-colors duration-300 border rounded-full rtl:-scale-x-100 hover:bg-blue-400">
