@@ -1,6 +1,6 @@
 import React from "react";
-import { BsFacebook,BsLinkedin } from "react-icons/bs";
-export default function MemberCard({ img, title, description }) {
+import { BsFacebook,BsGithub,BsLinkedin, BsPersonFillExclamation } from "react-icons/bs";
+export default function MemberCard({ img, title, designation, description, description1 }) {
   return (
     <>
       <div class="mx-auto my-10 flex max-w-xs flex-col items-center rounded-xl border px-4 py-4 text-center">
@@ -13,8 +13,14 @@ export default function MemberCard({ img, title, description }) {
         </div>
         <div class="">
           <p class="text-xl font-medium text-gray-50">{title}</p>
+          <p class="mb-4 text-sm font-medium text-gray-400">
+            {designation}
+          </p>
           <p class="mb-4 text-sm font-medium text-gray-500">
             {description}
+          </p>
+          <p class="mb-4 text-sm font-medium text-gray-500">
+            {description1}
           </p>
           <div class="mb-3"></div>
          
@@ -27,12 +33,21 @@ export default function MemberCard({ img, title, description }) {
               <BsFacebook/>
             </a>
             <a
+              href="https://www.github.com/sorowar-cse"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <BsGithub/>
+            </a>
+            <a
               href="https://www.linkedin.com/in/sorowar-mahabub-0b4b3a1a3/"
               target="_blank"
               rel="noopener noreferrer"
             >
               <BsLinkedin/>
             </a>
+
+            <a href="https:sorowar-cse.netlify.app" target="_blank" rel="noopener noreferrer"><BsPersonFillExclamation/></a>
           </div>
         </div>
       </div>
