@@ -3,7 +3,7 @@ import { BsFacebook,BsGithub,BsLinkedin, BsPersonFillExclamation } from "react-i
 export default function MemberCard({ img, title, designation, description, description1, ...rest}) {
   return (
     <>
-      <div class="mx-auto my-10 flex max-w-xs flex-col items-center rounded-xl border px-4 py-4 text-center">
+      <div class="mx-auto my-10 flex max-w-xs flex-col items-center rounded-xl border px-4 py-4 text-center shadow hover:shadow-gray-600 hover:shadow-2xl">
         <div class="mb-4">
           <img
             class="h-56 rounded-lg object-cover md:w-56"
