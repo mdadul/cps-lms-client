@@ -114,23 +114,21 @@ export default function Faq() {
             </svg>
             <div className="relative ml-4 cursor-pointer select-none items-center py-4 pr-12">
               <h3 className="text-sm text-gray-600 lg:text-base">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Distinctio.?
+              How much does it cost to enroll in Cholo Programming Shikhi's courses?
               </h3>
             </div>
             <div className="max-h-0 overflow-hidden transition-all duration-500 peer-checked:max-h-96">
               <div className="p-5">
                 <p className="text-sm">
-                  Lorem ipsum, <b>dolor sit amet</b> consectetur adipisicing
-                  elit. Adipisci eligendi, recusandae voluptatum distinctio
-                  facilis necessitatibus aperiam ut? Dolor mollitia modi
-                  aliquam, non sint at reprehenderit commodi dignissimos quo
-                  unde asperiores officiis quos laboriosam similique nihil.
+                 The cost of each course varies, but  <b>Cholo Programming Shikhi</b> offers both free and paid courses. You can check the course page for pricing details.
                 </p>
               </div>
             </div>
           </label>
         </li>
+
+
+        
 
         <li className="text-left">
           <label
@@ -154,22 +152,19 @@ export default function Faq() {
             </svg>
             <div className="relative ml-4 cursor-pointer select-none items-center py-4 pr-12">
               <h3 className="text-sm text-gray-600 lg:text-base">
-                Lorem ipsum dolor sit amet.?
+              Do I need any prior programming experience to enroll in Cholo Programming Shikhi's courses?
               </h3>
             </div>
             <div className="max-h-0 overflow-hidden transition-all duration-500 peer-checked:max-h-96">
               <div className="p-5">
                 <p className="text-sm">
-                  Lorem ipsum, <b>dolor sit amet</b> consectetur adipisicing
-                  elit. Adipisci eligendi, recusandae voluptatum distinctio
-                  facilis necessitatibus aperiam ut? Dolor mollitia modi
-                  aliquam, non sint at reprehenderit commodi dignissimos quo
-                  unde asperiores officiis quos laboriosam similique nihil.
+                No, <b>Cholo Programming Shikhi</b>'s courses are designed for both beginners and experienced programmers. The courses cover the basics of programming as well as more advanced topics.
                 </p>
               </div>
             </div>
           </label>
         </li>
+        
       </ul>
       <div className="mt-20 flex justify-center">
         <a
