@@ -1,6 +1,15 @@
 import React from "react";
 import MemberCard from "../components/AboutPage/MemberCard";
 import Layout from "../components/common/Layout";
+import Sorowar from "../img/member/Sorowar-t.png";
+import Goni from "../img/member/goni-t.png";
+import Jamil from "../img/member/jamil-t.png";
+import Jobaer from "../img/member/jobaer-t.png";
+import Moinul from "../img/member/moinul-t.png";
+import Ayman from "../img/member/ayman-t.png";
+import Avater from "../img/logo-white.png";
+import Emdadul from "../img/member/emdadul-t.png";
+
 
 export default function About() {
   return (
@@ -16,18 +25,11 @@ export default function About() {
         </div>
         <div className="flex flex-col md:flex-row">
           <div>
-            <p className="mb-4 md:pr-10 md:text-xl md:leading-relaxed lg:pr-28">
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quis
-              omnis sint debitis sequi animi quaerat repellendus id distinctio
-              dolores minus.
+            <p className="mb-4 md:pr-10 md:text-xl md:leading-relaxed lg:pr-28 text-justify">
+              Are you interested in learning programming, but not sure where to start? Look no further than <b>Cholo Programming Shikhi</b>! Our different programs offer a comprehensive curriculum that teaches you the skills you need to become a basic to advanced lavel skilled programmer.
             </p>
-            <p className="md:pr-10 md:text-xl md:leading-relaxed lg:pr-28">
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Delectus
-              eos quod hic perspiciatis, consectetur suscipit maxime mollitia
-              minima. Enim consequatur ab praesentium ipsum neque dolore
-              expedita, earum rerum reiciendis nihil, deleniti id atque
-              consequuntur necessitatibus distinctio aliquid explicabo quo
-              obcaecati?
+            <p className="md:pr-10 md:text-xl md:leading-relaxed lg:pr-28 text-justify">
+              If you're ready to take the next step in your career and become a basic to advanced lavel skilled programmer, enroll in <b>Cholo Programming Shikhi</b> courses today!
             </p>
           </div>
           <p className="hidden uppercase md:block md:text-7xl">
@@ -69,10 +71,10 @@ export default function About() {
                         </h2>
                         <p class="text-justify text-black">
                           When we started{" "}
-                          <strong>চলো, Programming শিখি,</strong> our goal was
+                          <strong>Cholo Programming Shikhi,</strong> our goal was
                           to give anyone in the world the ability to learn the
-                          skills they’d need to succeed in the 21st century. We
-                          set out to create a new, interactive way of learning —
+                          skills they’d need to succeed in the 21st century, Obiously that is Programming/ Coding. We
+                          set out to create a new, interactive way of learning Programming—
                           making it engaging, flexible, and accessible for as
                           many people as possible. Since then, we have helped
                           millions of people worldwide unlock modern technical
@@ -110,7 +112,7 @@ export default function About() {
                           the learning tools, resources, and opportunities to do
                           so. Code contains a world of possibilities — all
                           that’s required is the curiosity and drive to learn.
-                          At Codecademy, we are committed to empowering all
+                          At <b>Cholo Programming Shikhi</b>, we are committed to empowering all
                           people, regardless of where they are in their coding
                           journeys, to continue to learn, grow, and make an
                           impact on the world around them.
@@ -130,39 +132,95 @@ export default function About() {
           <div className="relative max-w-xl">
             <span className="absolute -top-4 h-2 w-14 bg-white"></span>
             <h2 className="text-xl font-medium leading-9 text-white sm:text-3xl sm:leading-tight">
-              Impressive Results in 2 Years
+              CPS Excellent Team
             </h2>
-            <p className="text-white ">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-              Repudiandae enim cupiditate necessitatibus tempore molestias?
+            <p className="text-white text-justify">
+            Cholo Programming Shikhi - where excellence is not just a goal, but a habit. Our team is a group of passionate individuals who strive for excellence in everything we do, from writing code to solving complex problems. We believe in collaboration, innovation, and pushing the boundaries of what is possible. Our commitment to excellence drives us forward, and we are proud to be part of such an outstanding team.
             </p>
           </div>
 
-          <div className="mt-16 grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-4 md:gap-8 lg:mt-24 lg:grid-cols-3">
+          <div className="mt-16 grid grid-cols-1 gap-6 md:grid-cols-1 xl:grid-cols-1 md:gap-8 lg:mt-24 lg:grid-cols-1 w-auto">
             <MemberCard
-              img="https://media.licdn.com/dms/image/D5603AQHNmVyKIB25MA/profile-displayphoto-shrink_800_800/0/1676230025966?e=1684368000&v=beta&t=uNwol6YBU9IV-M5z-dur-liZqAX1ZRFWcHrBg0HvWUk"
-              title="Sorowar Mahabub"
-              description="CEO & Founder, CPS"
+              img={Sorowar}
+              title="Md. Sorowar Mahabub Rabby"
+              designation="CEO, Founder and Head Instructor, CPS"
+              description="B.Sc in CSE (pursuing), IIUC & Teaching Assistant, Dept. of CSE, IIUC"
+              description1="Membership Executive, IIUC Data Science and Research Group & Ass. Press and Publication Secratery, IIUC Computer Club"
             />
-            <MemberCard
-              img="https://media.licdn.com/dms/image/D5603AQHNmVyKIB25MA/profile-displayphoto-shrink_800_800/0/1676230025966?e=1684368000&v=beta&t=uNwol6YBU9IV-M5z-dur-liZqAX1ZRFWcHrBg0HvWUk"
-              title="Sorowar Mahabub"
-              description="CEO & Founder, CPS"
-            />
-            <MemberCard
-              img="https://media.licdn.com/dms/image/D5603AQHNmVyKIB25MA/profile-displayphoto-shrink_800_800/0/1676230025966?e=1684368000&v=beta&t=uNwol6YBU9IV-M5z-dur-liZqAX1ZRFWcHrBg0HvWUk"
-              title="Sorowar Mahabub"
-              description="CEO & Founder, CPS"
-            />
-            <MemberCard
-              img="https://media.licdn.com/dms/image/D5603AQHNmVyKIB25MA/profile-displayphoto-shrink_800_800/0/1676230025966?e=1684368000&v=beta&t=uNwol6YBU9IV-M5z-dur-liZqAX1ZRFWcHrBg0HvWUk"
-              title="Sorowar Mahabub"
-              description="CEO & Founder, CPS"
-            />
-            
           </div>
+
+          <div className="mt-16 grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-4 md:gap-8 lg:mt-24 lg:grid-cols-2">
+            <MemberCard
+              img={Goni}
+              title="Sajjad Goni Shovon"
+              designation="Instructor, C Programming, CPS"
+              description="B.Sc in CSE (pursuing), IIUC & Ass. Event Secratery, IIUC Computer Club"
+            />
+            <MemberCard
+              img={Jobaer}
+              title="Jobaer Hosain"
+              designation="Instructor, CPP, CPS"
+              description="B.Sc in CSE (pursuing), IIUC & Teaching Assistant, IIUC"
+            />
+            <MemberCard
+              img={Jamil}
+              title="Jamil Ahmed"
+              designation="Instructor, CPP, CPS"
+              description="B.Sc in CSE (pursuing), IIUC"
+            />
+            <MemberCard
+              img={Moinul}
+              title="Moinul Hosain"
+              designation="Instructor, C Programming, CPS"
+              description="B.Sc in CSE (pursuing), IIUC"
+            />
+
+          </div>
+          <div className="mt-16 grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3 md:gap-8 lg:mt-24 lg:grid-cols-3">
+            {/* <h2 className="text-xl font-medium leading-9 text-white sm:text-3xl sm:leading-tight">Our Teaching Assistants</h2> */}
+            {/* <hr /> */}
+            <MemberCard
+              img={Avater}
+              title="Nafisa Ayman Tanha"
+              designation="TA, C Programming Batch-2, CPS"
+              description="B.Sc in CSE (pursuing), IIUC & Ass. Sports Secratery, IIUC Computer Club"
+            />
+            <MemberCard
+              img={Avater}
+              title="Tasfia Sultana Bhuiyan"
+              designation="TA, C Programming Batch-3, CPS"
+              description="B.Sc in CSE (pursuing), IIUC & Ass. Press and Publication Secratery, IIUC Computer Club"
+            />
+            <MemberCard
+              img={Avater}
+              title="Sayeda Binte Sarnaly"
+              designation="TA, C Programming Batch-4, CPS"
+              description="B.Sc in CSE (pursuing), IIUC"
+            />
+
+          </div>
+
+          <div className="mt-16 grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-2 md:gap-8 lg:mt-24 lg:grid-cols-2 w-auto">
+            <MemberCard
+              img={Emdadul}
+              title="Emdadul Islam"
+              designation="Web Developer, CPS"
+              description="B.Sc in CSE (pursuing), IIUC"
+              // description1= "Membership Executive, IIUC Data Science and Research Group & Ass. Press and Publication Secratery, IIUC Computer Club"
+              />
+               <MemberCard
+              img={Sorowar}
+              title="Sorowar Mahabub"
+              designation="CEO & Web Developer, CPS"
+              description="B.Sc in CSE (pursuing), IIUC"
+              // description1= "Membership Executive, IIUC Data Science and Research Group & Ass. Press and Publication Secratery, IIUC Computer Club"
+              />
+              </div>
         </div>
       </section>
+
+
+
     </Layout>
   );
 }

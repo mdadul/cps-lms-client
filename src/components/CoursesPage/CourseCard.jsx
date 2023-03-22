@@ -1,9 +1,10 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default function CourseCard() {
   return (
     <article className="rounded-xl bg-white p-3 shadow-lg hover:shadow-xl ">
-      <a href="/">
+      <Link to="/courses/details">
         <div className="relative flex items-end overflow-hidden rounded-xl ">
           <img
             src="https://th.bing.com/th/id/R.c0b3220707a5308a969f090b94148f5c?rik=Rh5iru%2bUaUd94w&pid=ImgRaw&r=0"
@@ -30,7 +31,7 @@ export default function CourseCard() {
             </p>
           </div>
         </div>
-      </a>
+      </Link>
     </article>
   );
 }
