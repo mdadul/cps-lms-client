@@ -139,7 +139,8 @@ export default function About() {
             </p>
           </div>
 
-          <div className="mt-16 grid grid-cols-1 gap-6 md:grid-cols-1 xl:grid-cols-1 md:gap-8 lg:mt-24 lg:grid-cols-1 w-auto">
+          <div>
+          <h2 className="mt-5 text-5xl text-white text-center">CEO</h2>
             <MemberCard
               img={Sorowar}
               title="Md. Sorowar Mahabub Rabby"
