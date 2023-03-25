@@ -6,9 +6,8 @@ import Goni from "../img/member/goni-t.png";
 import Jamil from "../img/member/jamil-t.png";
 import Jobaer from "../img/member/jobaer-t.png";
 import Moinul from "../img/member/moinul-t.png";
-import Ayman from "../img/member/ayman-t.png";
 import Avater from "../img/logo-white.png";
-import Emdadul from "../img/member/emdadul-t.png";
+import Emdadul from "../img/member/emdadul.png";
 
 
 export default function About() {
@@ -149,8 +148,8 @@ export default function About() {
               description1="Membership Executive, IIUC Data Science and Research Group & Ass. Press and Publication Secratery, IIUC Computer Club"
             />
           </div>
-
-          <div className="mt-16 grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-4 md:gap-8 lg:mt-24 lg:grid-cols-2">
+           <h1 className="text-center text-5xl text-white">Our Mentors</h1>
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-4 md:gap-8 lg:grid-cols-2">
             <MemberCard
               img={Goni}
               title="Sajjad Goni Shovon"
@@ -177,9 +176,8 @@ export default function About() {
             />
 
           </div>
-          <div className="mt-16 grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3 md:gap-8 lg:mt-24 lg:grid-cols-3">
-            {/* <h2 className="text-xl font-medium leading-9 text-white sm:text-3xl sm:leading-tight">Our Teaching Assistants</h2> */}
-            {/* <hr /> */}
+          <h2 className="text-5xl text-white text-center">Our Teaching Assistants</h2>
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3 md:gap-8 lg:grid-cols-3">
             <MemberCard
               img={Avater}
               title="Nafisa Ayman Tanha"
@@ -200,8 +198,8 @@ export default function About() {
             />
 
           </div>
-
-          <div className="mt-16 grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-2 md:gap-8 lg:mt-24 lg:grid-cols-2 w-auto">
+          <h2 className="text-5xl text-white text-center">Developers</h2>
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-2 md:gap-8 lg:grid-cols-2 w-auto">
             <MemberCard
               img={Emdadul}
               title="Emdadul Islam"
