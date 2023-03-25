@@ -139,7 +139,7 @@ export default function About() {
           </div>
 
           <div>
-          <h2 className="text-5xl text-white text-center">CEO</h2>
+          <h2 className="mt-5 text-5xl text-white text-center">CEO</h2>
             <MemberCard
               img={Sorowar}
               title="Md. Sorowar Mahabub Rabby"

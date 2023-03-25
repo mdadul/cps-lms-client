@@ -75,22 +75,20 @@ export default function Faq() {
             </svg>
             <div className="relative ml-4 cursor-pointer select-none items-center py-4 pr-12">
               <h3 className="text-sm text-gray-600 lg:text-base">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit?
+              What programming languages are covered in <b>Cholo Programming Shikhi</b> Platform?
               </h3>
             </div>
             <div className="max-h-0 overflow-hidden transition-all duration-500 peer-checked:max-h-96">
               <div className="p-5">
                 <p className="text-sm">
-                  Lorem ipsum, <b>dolor sit amet</b> consectetur adipisicing
-                  elit. Adipisci eligendi, recusandae voluptatum distinctio
-                  facilis necessitatibus aperiam ut? Dolor mollitia modi
-                  aliquam, non sint at reprehenderit commodi dignissimos quo
-                  unde asperiores officiis quos laboriosam similique nihil.
+                  <b>Cholo Programming Shikhi</b> offers courses in several programming languages, including <b>C, C++, Problem Solving</b>, Python, Java and JavaScript. We have <b>Web Design and Development Courses</b> as well to help you learn the basic to advance of web development.
                 </p>
               </div>
             </div>
           </label>
         </li>
+
+
 
         <li className="text-left">
           <label
@@ -164,6 +162,82 @@ export default function Faq() {
             </div>
           </label>
         </li>
+
+
+        <li className="text-left">
+          <label
+            for="accordion-5"
+            className="relative flex flex-col rounded-md border border-gray-100 shadow-md"
+          >
+            <input className="peer hidden" type="checkbox" id="accordion-5" />
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="absolute right-0 top-4 ml-auto mr-5 h-4 text-gray-500 transition peer-checked:rotate-180"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M19 9l-7 7-7-7"
+              />
+            </svg>
+            <div className="relative ml-4 cursor-pointer select-none items-center py-4 pr-12">
+              <h3 className="text-sm text-gray-600 lg:text-base">
+              Will I receive a certificate upon completing a course?
+              </h3>
+            </div>
+            <div className="max-h-0 overflow-hidden transition-all duration-500 peer-checked:max-h-96">
+              <div className="p-5">
+                <p className="text-sm">
+                Yes, Cholo Programming Shikhi provides a certificate of completion for each course. You can download and print your certificate once you have successfully completed the course.
+                </p>
+              </div>
+            </div>
+          </label>
+        </li>
+
+
+
+
+        <li className="text-left">
+          <label
+            for="accordion-6"
+            className="relative flex flex-col rounded-md border border-gray-100 shadow-md"
+          >
+            <input className="peer hidden" type="checkbox" id="accordion-6" />
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="absolute right-0 top-4 ml-auto mr-5 h-4 text-gray-500 transition peer-checked:rotate-180"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M19 9l-7 7-7-7"
+              />
+            </svg>
+            <div className="relative ml-4 cursor-pointer select-none items-center py-4 pr-12">
+              <h3 className="text-sm text-gray-600 lg:text-base">
+              <b>Are there any opportunities for interaction with instructors or other students?</b>
+              </h3>
+            </div>
+            <div className="max-h-0 overflow-hidden transition-all duration-500 peer-checked:max-h-96">
+              <div className="p-5">
+                <p className="text-sm">
+                Yes, Cholo Programming Shikhi provides opportunities for students to interact with instructors and other students through forums, live chat sessions, and other online resources.
+                </p>
+              </div>
+            </div>
+          </label>
+        </li>
+
+
         
       </ul>
       <div className="mt-20 flex justify-center">
