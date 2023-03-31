@@ -1,6 +1,11 @@
 import { Link } from "react-router-dom";
 import singin from '../img/signin.gif'
 export default function SignIn() {
+ 
+  const handleSignIn = (e) => {
+    e.preventDefault();
+    alert("Sign in");
+  };
   return (
     <div class="flex w-screen flex-wrap text-slate-800">
       <div class="flex w-full flex-col md:w-1/2 bg-gray-50">
@@ -48,6 +53,7 @@ export default function SignIn() {
             </Link>
             <button
               type="submit"
+              onClick={handleSignIn}
               class="rounded-lg bg-blue-600 px-4 py-2 text-center text-base font-semibold text-white shadow-md outline-none ring-blue-500 ring-offset-2 transition hover:bg-blue-700 focus:ring-2 md:w-32"
             >
               Sign in
