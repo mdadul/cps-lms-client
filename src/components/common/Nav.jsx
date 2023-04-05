@@ -33,7 +33,7 @@ export const Nav = () => {
               to="/blog"
               className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
             >
-              Blogs
+              News and Blogs
             </Link>
           </li>
           <li>
