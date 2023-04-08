@@ -37,6 +37,20 @@ export default function About() {
           </p>
         </div>
       </div>
+
+      {/* Add a new section here for adding frame for platform Introduction */}
+      <section class="py-2 sm:py-6 lg:py-2">
+        <div class="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-5">
+          <div class="flex flex-col items-center">
+            <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">Inro of Our Platform, CPS</h2>
+            <div class="relative mt-10 md:order-2 md:mt-24">
+            <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7049786038881304576" height="500" width="1000" frameborder="0" allowfullscreen="" title="Embedded post"></iframe>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
       <section class="py-12 sm:py-16 lg:py-20">
         <div class="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-5">
           <div class="flex flex-col items-center">
@@ -134,12 +148,12 @@ export default function About() {
               CPS Excellent Team
             </h2>
             <p className="text-white text-justify">
-            Cholo Programming Shikhi - where excellence is not just a goal, but a habit. Our team is a group of passionate individuals who strive for excellence in everything we do, from writing code to solving complex problems. We believe in collaboration, innovation, and pushing the boundaries of what is possible. Our commitment to excellence drives us forward, and we are proud to be part of such an outstanding team.
+              Cholo Programming Shikhi - where excellence is not just a goal, but a habit. Our team is a group of passionate individuals who strive for excellence in everything we do, from writing code to solving complex problems. We believe in collaboration, innovation, and pushing the boundaries of what is possible. Our commitment to excellence drives us forward, and we are proud to be part of such an outstanding team.
             </p>
           </div>
 
           <div>
-          <h2 className="mt-5 text-5xl text-white text-center">CEO</h2>
+            <h2 className="mt-5 text-5xl text-white text-center">CEO</h2>
             <MemberCard
               img={Sorowar}
               title="Md. Sorowar Mahabub Rabby"
@@ -148,7 +162,7 @@ export default function About() {
               description1="Membership Executive, IIUC Data Science and Research Group & Ass. Press and Publication Secratery, IIUC Computer Club"
             />
           </div>
-           <h1 className="text-center text-5xl text-white">Our Mentors</h1>
+          <h1 className="text-center text-5xl text-white">Our Mentors</h1>
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-4 md:gap-8 lg:grid-cols-2">
             <MemberCard
               img={Goni}
@@ -205,16 +219,16 @@ export default function About() {
               title="Emdadul Islam"
               designation="Web Developer, CPS"
               description="B.Sc in CSE (pursuing), IIUC"
-              // description1= "Membership Executive, IIUC Data Science and Research Group & Ass. Press and Publication Secratery, IIUC Computer Club"
-              />
-               <MemberCard
+            // description1= "Membership Executive, IIUC Data Science and Research Group & Ass. Press and Publication Secratery, IIUC Computer Club"
+            />
+            <MemberCard
               img={Sorowar}
               title="Sorowar Mahabub"
               designation="CEO & Web Developer, CPS"
               description="B.Sc in CSE (pursuing), IIUC"
-              // description1= "Membership Executive, IIUC Data Science and Research Group & Ass. Press and Publication Secratery, IIUC Computer Club"
-              />
-              </div>
+            // description1= "Membership Executive, IIUC Data Science and Research Group & Ass. Press and Publication Secratery, IIUC Computer Club"
+            />
+          </div>
         </div>
       </section>
 
