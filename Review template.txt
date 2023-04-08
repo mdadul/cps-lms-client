@@ -9,7 +9,6 @@ I enrolled in the C Programming with Problem Solving course offered by Cholo Pro
 3
 The C Programming with Problem Solving course offered by Cholo Programming Shikhi is an excellent course that I would highly recommend to anyone interested in learning C programming. The course covers all the essential concepts of C programming in a structured and easy-to-understand manner. The instructors are knowledgeable and passionate about the subject matter, and they are always willing to provide guidance and support to the students. The hands-on exercises and problem-solving challenges helped me to reinforce my learning and develop my problem-solving skills. Overall, I'm very happy with the course, and I'm confident that the skills I gained from this course will help me in my future career.
 
-
 4
 "I had a great experience learning C programming with Cholo Programming Shikhi's C Programming with Problem Solving course. The course content is comprehensive, and the instructors are highly experienced and engaging. The course's emphasis on problem-solving was particularly helpful, as it taught me how to apply my programming knowledge to real-world scenarios. The course also provided me with an opportunity to interact and collaborate with other students, which added to the overall learning experience. I highly recommend this course to anyone interested in learning C programming and developing problem-solving skills."
 
@@ -73,3 +72,28 @@ A: Yes, Cholo Programming Shikhi provides a certificate of completion for each c
 
 Q: Are there any opportunities for interaction with instructors or other students?
 A: Yes, Cholo Programming Shikhi provides opportunities for students to interact with instructors and other students through forums, live chat sessions, and other online resources.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ {/* <div class='flex items-center justify-center min-h-screen'>
+                <button type="button" class="bg-indigo-400 h-max w-max rounded-lg text-white font-bold hover:bg-indigo-300 hover:cursor-not-allowed duration-[500ms,800ms]" disabled>
+                    <div class="flex items-center justify-center m-[10px]">
+                        <div class="h-64 w-64 border-t-transparent border-solid animate-spin rounded-full border-white border-4"></div>
+                        <div class="ml-2"> Comming Soon... <div>
+                        </div>
+                        </div>
+                    </div>
+                </button>
+            </div> */}

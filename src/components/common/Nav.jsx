@@ -30,15 +30,32 @@ export const Nav = () => {
           </li>
           <li>
             <Link
+              to="/blog"
+              className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
+            >
+              News and Blogs
+            </Link>
+          </li>
+          <li>
+            <Link
               to="/about"
               className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
             >
               About Us
             </Link>
           </li>
+          <li>
+            <Link
+              to="/contact"
+              className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
+            >
+              Contact Us
+            </Link>
+          </li>
         </ul>
         <ul className="items-center hidden space-x-8 lg:flex">
           <li>
+            
             <Link
               to="/signin"
               className="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-blue-700 border border-cyan-700 transition duration-200 rounded shadow-md  hover:bg-blue-700 hover:text-white focus:shadow-outline focus:outline-none"
