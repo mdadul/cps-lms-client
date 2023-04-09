@@ -1,6 +1,8 @@
 import { useState } from "react";
 import logo from "../../img/logo.png";
 import { Link } from "react-router-dom";
+import NavLink from "../Element/NavLink";
+import NavLinkM from "../Element/NavLinkM";
 export const Nav = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -12,50 +14,14 @@ export const Nav = () => {
           <img src={logo} alt="logo" className="w-16" />
         </Link>
         <ul className={newLocal}>
-          <li>
-            <Link
-              to="/"
-              className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
-            >
-              Home
-            </Link>
-          </li>
-          <li>
-            <Link
-              to="/courses"
-              className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
-            >
-              Courses
-            </Link>
-          </li>
-          <li>
-            <Link
-              to="/blog"
-              className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
-            >
-              News and Blogs
-            </Link>
-          </li>
-          <li>
-            <Link
-              to="/about"
-              className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
-            >
-              About Us
-            </Link>
-          </li>
-          <li>
-            <Link
-              to="/contact"
-              className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
-            >
-              Contact Us
-            </Link>
-          </li>
+          <NavLink destination="/" text="Home" />
+          <NavLink destination="/courses" text="Courses" />
+          <NavLink destination="/blog" text="News and Blogs" />
+          <NavLink destination="/about" text="About Us" />
+          <NavLink destination="/contact" text="Contact Us" />
         </ul>
         <ul className="items-center hidden space-x-8 lg:flex">
           <li>
-            
             <Link
               to="/signin"
               className="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-blue-700 border border-cyan-700 transition duration-200 rounded shadow-md  hover:bg-blue-700 hover:text-white focus:shadow-outline focus:outline-none"
@@ -117,38 +83,11 @@ export const Nav = () => {
                 </div>
                 <nav>
                   <ul className="space-y-4">
-                    <li>
-                      <Link
-                        to="/"
-                        className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
-                      >
-                        Home
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        to="/courses"
-                        className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
-                      >
-                        Courses
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        to="/about"
-                        className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
-                      >
-                        About Us
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        to="/signin"
-                        className="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-blue-700 border border-cyan-700 transition duration-200 rounded shadow-md  hover:bg-blue-700 hover:text-white focus:shadow-outline focus:outline-none"
-                      >
-                        Sign in
-                      </Link>
-                    </li>
+                    <NavLinkM destination="/" text="Home" />
+                    <NavLinkM destination="/courses" text="Courses" />
+                    <NavLinkM destination="/blog" text="News and Blogs" />
+                    <NavLinkM destination="/about" text="About Us" />
+                    <NavLinkM destination="/contact" text="Contact Us" />
                     <li>
                       <Link
                         to="/signup"

@@ -1,5 +1,6 @@
-import { Link } from 'react-router-dom';
-export default function Header () {
+import { Link } from "react-router-dom";
+import HeroCard from "../Element/HeroCard";
+export default function Header() {
   return (
     <div className="mb-16">
       <div className="bg-gray-100">
@@ -30,11 +31,13 @@ export default function Header () {
                   />
                 </svg>
                 <span className="relative">Learn</span>
-              </span>{' '}
+              </span>{" "}
               to code and change the world with our CPS academy!
             </h2>
             <p className="text-base text-gray-700 md:text-lg">
-            We are a leading online learning platform for the world's best programmers. We offer courses in various programming languages, web development and many more.
+              We are a leading online learning platform for the world's best
+              programmers. We offer courses in various programming languages,
+              web development and many more.
             </p>
           </div>
           <div className="flex items-center sm:justify-center">
@@ -57,32 +60,11 @@ export default function Header () {
       <div className="relative px-4 sm:px-0">
         <div className="absolute inset-0 bg-gray-100 h-1/2" />
         <div className="relative grid mx-auto overflow-hidden bg-white divide-y rounded shadow sm:divide-y-0 sm:divide-x sm:max-w-screen-sm sm:grid-cols-3 lg:max-w-screen-md">
-          <div className="inline-block p-8 text-center hover:bg-gray-100">
-            <div className="flex items-center justify-center w-12 h-12 mx-auto mb-4 rounded-full bg-indigo-50">
-              <p className="text-purple-800 font-bold text-2xl">5+</p>
-            </div>
-            <p className="font-bold tracking-wide text-gray-800">
-             Courses
-            </p>
-          </div>
-          <div className="inline-block p-8 text-center hover:bg-gray-100 ">
-            <div className="flex items-center justify-center w-12 h-12 mx-auto mb-4 rounded-full bg-indigo-50">
-            <p className="text-purple-800 font-bold text-xl">150+</p>
-            </div>
-            <p className="font-bold tracking-wide text-gray-800">
-             Students
-            </p>
-          </div>
-          <div className="inline-block p-8 text-center hover:bg-gray-100">
-            <div className="flex items-center justify-center w-12 h-12 mx-auto mb-4 rounded-full bg-indigo-50">
-            <p className="text-purple-800 font-bold text-2xl">5+</p>
-            </div>
-            <p className="font-bold tracking-wide text-gray-800">
-              Mentors
-            </p>
-          </div>
+          <HeroCard number="5+" text="Courses" />
+          <HeroCard number="150+" text="Students" />
+          <HeroCard number="5+" text="Mentors" />
         </div>
       </div>
     </div>
   );
-};
+}
