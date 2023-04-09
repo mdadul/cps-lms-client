@@ -1,20 +1,14 @@
 import { Link } from "react-router-dom";
 import singin from '../img/signin.gif'
+import Layout from "../components/common/Layout";
+import Input from "../components/Element/Input";
+import Button from "../components/Element/Button";
 export default function SignIn() {
  
-  const handleSignIn = (e) => {
-    e.preventDefault();
-    alert("Sign in");
-  };
   return (
-    <div class="flex w-screen flex-wrap text-slate-800">
+  <Layout>
+      <div class="flex w-screen flex-wrap text-slate-800">
       <div class="flex w-full flex-col md:w-1/2 bg-gray-50">
-        <div class="flex justify-center pt-12 md:justify-start md:pl-12">
-          <Link to="/" class="text-2xl font-bold text-blue-600">
-            {" "}
-            Cholo Programming Shikhi .{" "}
-          </Link>
-        </div>
         <div class="my-auto mx-auto flex flex-col justify-center px-6 pt-8 md:justify-start lg:w-[28rem]">
           <p class="text-center text-3xl font-bold md:leading-tight md:text-left md:text-5xl">
             Welcome back <br />
@@ -27,22 +21,13 @@ export default function SignIn() {
           <form class="flex flex-col items-stretch pt-3 md:pt-8">
             <div class="flex flex-col pt-4">
               <div class="relative flex overflow-hidden rounded-md border-2 transition focus-within:border-blue-600">
-                <input
-                  type="email"
-                  id="login-email"
-                  class="w-full flex-shrink appearance-none border-gray-300 bg-white py-2 px-4 text-base text-gray-700 placeholder-gray-400 focus:outline-none"
-                  placeholder="Email"
-                />
+                <Input type="email" placeholder="Email" required/>
               </div>
             </div>
             <div class="mb-4 flex flex-col pt-4">
               <div class="relative flex overflow-hidden rounded-md border-2 transition focus-within:border-blue-600">
-                <input
-                  type="password"
-                  id="login-password"
-                  class="w-full flex-shrink appearance-none border-gray-300 bg-white py-2 px-4 text-base text-gray-700 placeholder-gray-400 focus:outline-none"
-                  placeholder="Password"
-                />
+                <Input type="password" placeholder="Password" required/>
+                
               </div>
             </div>
             <Link
@@ -51,13 +36,7 @@ export default function SignIn() {
             >
               Forgot password?
             </Link>
-            <button
-              type="submit"
-              onClick={handleSignIn}
-              class="rounded-lg bg-blue-600 px-4 py-2 text-center text-base font-semibold text-white shadow-md outline-none ring-blue-500 ring-offset-2 transition hover:bg-blue-700 focus:ring-2 md:w-32"
-            >
-              Sign in
-            </button>
+           <Button type="submit" label="Sign in"/>
           </form>
           <div class="py-12 text-center">
             <p class="text-gray-600">
@@ -76,5 +55,7 @@ export default function SignIn() {
         <img src={singin} alt="sign in" class="absolute inset-0 mt-32 w-4/5 object-cover" />
       </div>
     </div>
+  </Layout>
+   
   );
 }

@@ -1,4 +1,5 @@
 import React from 'react'
+import RingText from '../Element/RingText'
 
 export default function Syllabus() {
   return (
@@ -36,21 +37,11 @@ export default function Syllabus() {
                     Month 1
                   </h4>
                   <div className="flex flex-wrap justify-end">
-                    <p className="text-sm md:text-base leading-snug text-purple-900 font-medium ring-2 text-opacity-100 rounded-full py-1 my-2 w-max px-2 ">
-                      Introduction to Web Development
-                    </p>
-                    <p className="text-sm md:text-base leading-snug text-purple-900 font-medium ring-2 text-opacity-100 rounded-full py-1 my-2 w-max px-2 ">
-                      HTML Basics: tags, elements, attributes
-                    </p>
-                    <p className="text-sm md:text-base leading-snug text-purple-900 font-medium ring-2 text-opacity-100 rounded-full py-1 my-2 w-max px-2 ">
-                      HTML Document Structure and Semantics
-                    </p>
-                    <p className="text-sm md:text-base leading-snug text-purple-900 font-medium ring-2 text-opacity-100 rounded-full py-1 my-2 w-max px-2 ">
-                      HTML Forms and Tables
-                    </p>
-                    <p className="text-sm md:text-base leading-snug text-purple-900 font-medium ring-2 text-opacity-100 rounded-full py-1 my-2 w-max px-2 ">
-                      HTML Media: Images, Audio, and Video
-                    </p>
+                    <RingText text="Introduction to Web Development" />
+                    <RingText text="HTML Basics: tags, elements, attributes" />
+                    <RingText text="HTML Document Structure and Semantics" />
+                    <RingText text="HTML Forms and Tables" />
+                    <RingText text="HTML Media: Images, Audio, and Video" />
                   </div>
                 </div>
               </div>
@@ -61,21 +52,11 @@ export default function Syllabus() {
                     Month 2
                   </h4>
                   <div>
-                    <p className="text-sm md:text-base leading-snug text-purple-900 font-medium ring-2 text-opacity-100 rounded-full py-1 my-2 w-max px-2 ">
-                    CSS Basics: selectors, properties, values
-                    </p>
-                    <p className="text-sm md:text-base leading-snug text-purple-900 font-medium ring-2 text-opacity-100 rounded-full py-1 my-2 w-max px-2 ">
-                    CSS Layouts:Box Model.Floats,Flexbox,Grid
-                    </p>
-                    <p className="text-sm md:text-base leading-snug text-purple-900 font-medium ring-2 text-opacity-100 rounded-full py-1 my-2 w-max px-2 ">
-                    CSS Typography and Colors
-                    </p>
-                    <p className="text-sm md:text-base leading-snug text-purple-900 font-medium ring-2 text-opacity-100 rounded-full py-1 my-2 w-max px-2 ">
-                    CSS Media Queries and Responsive Design
-                    </p>
-                    <p className="text-sm md:text-base leading-snug text-purple-900 font-medium ring-2 text-opacity-100 rounded-full py-1 my-2 w-max px-2 ">
-                    Bootstrap Framework: Introduction and Usage
-                    </p>
+                    <RingText text="CSS Basics: selectors, properties, values" />
+                    <RingText text="CSS Layouts:Box Model.Floats,Flexbox,Grid" />
+                    <RingText text="CSS Typography and Colors" />
+                    <RingText text="CSS Media Queries and Responsive Design" />
+                    <RingText text="Bootstrap Framework: Introduction and Usage" />
                   </div>
                 </div>
               </div>
@@ -86,27 +67,13 @@ export default function Syllabus() {
                     Month 3
                   </h4>
                   <div className="flex flex-wrap justify-end">
-                    <p className="text-sm md:text-base leading-snug text-purple-900 font-medium ring-2 text-opacity-100 rounded-full py-1 my-2 w-max px-2 ">
-                    JS Basics:variables,data types,operators,functions
-                    </p>
-                    <p className="text-sm md:text-base leading-snug text-purple-900 font-medium ring-2 text-opacity-100 rounded-full py-1 my-2 w-max px-2 ">
-                    JavaScript DOM Manipulation and Events
-                    </p>
-                    <p className="text-sm md:text-base leading-snug text-purple-900 font-medium ring-2 text-opacity-100 rounded-full py-1 my-2 w-max px-2 ">
-                    PHP Basics: variables, data types, operators, control structures
-                    </p>
-                    <p className="text-sm md:text-base leading-snug text-purple-900 font-medium ring-2 text-opacity-100 rounded-full py-1 my-2 w-max px-2 ">
-                    SQL: Introduction to Basic SQL and different operation
-                    </p>
-                    <p className="text-sm md:text-base leading-snug text-purple-900 font-medium ring-2 text-opacity-100 rounded-full py-1 my-2 w-max px-2 ">
-                    CRUD Operation: Data Manipulation
-                    </p>
-                    <p className="text-sm md:text-base leading-snug text-purple-900 font-medium ring-2 text-opacity-100 rounded-full py-1 my-2 w-max px-2 ">
-                    Session with PHP: Authentication, Authorization
-                    </p>
-                    <p className="text-sm md:text-base leading-snug text-purple-900 font-medium ring-2 text-opacity-100 rounded-full py-1 my-2 w-max px-2 ">
-                    PHP Forms and Database Handling with SQL
-                    </p>
+                    <RingText text="JS Basics:variables,data types,operators,functions" />
+                    <RingText text="JavaScript DOM Manipulation and Events" />
+                    <RingText text="PHP Basics: variables, data types, operators, control structures" />
+                    <RingText text="SQL: Introduction to Basic SQL and different operation" />
+                    <RingText text="CRUD Operation: Data Manipulation" />
+                    <RingText text="Session with PHP: Authentication, Authorization" />
+                    <RingText text="PHP Forms and Database Handling with SQL" />
                   </div>
                 </div>
               </div>
