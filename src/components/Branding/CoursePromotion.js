@@ -3,9 +3,9 @@ import Syllabus from "./Syllabus";
 
 export default function CoursePromotion() {
   return (
-    <div class="relative ">
+    <div className="relative ">
       <svg
-        class="absolute -z-10 -top-10 opacity-20 "
+        className="absolute -z-10 -top-10 opacity-20 "
         width="100%"
         height="100%"
         xmlns="http://www.w3.org/2000/svg"
