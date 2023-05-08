@@ -8,7 +8,8 @@ export default function Course() {
     <Layout>
       <Search />
        <AllCourses/>
-      {/* <CoursePromotion/> */}
+      <CoursePromotion/>
+ 
     </Layout>
   );
 }
