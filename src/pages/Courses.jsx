@@ -9,6 +9,7 @@ export default function Course() {
       <Search />
        <AllCourses/>
       <CoursePromotion/>
+      
     </Layout>
   );
 }
