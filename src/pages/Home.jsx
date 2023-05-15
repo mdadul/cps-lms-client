@@ -5,6 +5,7 @@ import Faq from "../components/HomePage/Faq";
 import Features from "../components/HomePage/Features/Features";
 import Hero from "../components/HomePage/Hero";
 import Slider from "../components/HomePage/Testimonial/Slider";
+import Subscribe from "../components/Subscribe/Subscribe";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       <Features />
       <Slider />
       <Faq />
+      <Subscribe/>
     </Layout>
   );
 }
