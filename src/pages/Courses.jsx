@@ -7,9 +7,7 @@ export default function Course() {
   return (
     <Layout>
       <Search />
-       <AllCourses/>
-      <CoursePromotion/>
- 
+       <AllCourses/> 
     </Layout>
   );
 }
