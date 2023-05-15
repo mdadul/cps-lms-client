@@ -33,6 +33,7 @@ export default function Header() {
                 <span className="relative">Learn</span>
               </span>{" "}
               to code and change the world with our CPS Platform!
+
             </h2>
             <p className="text-base text-gray-700 md:text-lg">
               We are a leading online learning platform for the world's best
@@ -57,14 +58,6 @@ export default function Header() {
           </div>
         </div>
       </div>
-
-
-
-
-
-
-
-
 
       {/* Add Partners Image Here with Headline  */}
       <div className="flex flex-col items-center justify-center px-4 py-16 mx-auto sm:px-6 lg:px-8 lg:py-20">
@@ -94,17 +87,6 @@ export default function Header() {
         </div>
       </div>
       
-
-
-
-
-
-
-
-
-
-
-
       <div className="relative px-4 sm:px-0">
         <div className="absolute inset-0 bg-gray-100 h-1/2" />
         <div className="relative grid mx-auto overflow-hidden bg-white divide-y rounded shadow sm:divide-y-0 sm:divide-x sm:max-w-screen-sm sm:grid-cols-3 lg:max-w-screen-md">
