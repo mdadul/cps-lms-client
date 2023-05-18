@@ -32,7 +32,7 @@ export default function SignUp() {
           draggable: true,
           progress: undefined,
           theme: "light",
-        });
+        });window.location.href = "/signin";
       }
       else{
         toast.error(data.msg, {
