@@ -1,4 +1,4 @@
-import logo from '../../img/cps-tb.png';
+import logo from '../../img/ps-tb.png';
 export const Footer = () => {
     return (
     <div className='bg-gray-900 text-white'> 
@@ -8,14 +8,14 @@ export const Footer = () => {
             <a
               href="/"
               aria-label="Go home"
-              title="CHOLO PROGRAMMIN SHIKHI"
+              title="PROGRAMMIN SHIKHO"
               className="inline-flex items-center"
             >
               <img src={logo} alt="logo" className='w-16'/>
             </a>
             <div className="mt-4 lg:max-w-sm">
               <p className="text-sm text-gray-100">
-              Choose Cholo Programming Shikhi as your go-to resource for learning programming. We are dedicated to providing you with the highest quality education possible and empowering you to reach your full potential as a programmer. Whether you're a beginner or an experienced coder, our interactive, flexible approach to learning will help you achieve your goals.
+              Choose Programming Shikho- PS as your go-to resource for learning programming. We are dedicated to providing you with the highest quality education possible and empowering you to reach your full potential as a programmer. Whether you're a beginner or an experienced coder, our interactive, flexible approach to learning will help you achieve your goals.
               </p>
               <p className="mt-4 text-sm text-gray-100">
                 Join us on our mission to create a world where anyone can build something meaningful with technology!
@@ -110,7 +110,7 @@ export const Footer = () => {
               </ul>
             </div>
             <div>
-              <p className="font-semibold tracking-wide text-gray-100">Know More About CPS</p>
+              <p className="font-semibold tracking-wide text-gray-100">More About PS</p>
               <ul className="mt-2 space-y-2">
                 <li>
                   <a
@@ -195,7 +195,7 @@ export const Footer = () => {
         </div>
         <div className="flex flex-col justify-between pt-5 pb-10 border-t sm:flex-row">
           <p className="text-sm text-gray-500">
-            © Copyright 2023 CHOLO PROGRAMMING SHIKHI. All rights reserved. | <span className='text-gray-300'>Developed by : Emdadul Islam & Sorowar Mahabub</span>
+            © Copyright 2023 PROGRAMMING SHIKHO- PS. All rights reserved. | <span className='text-gray-300'>Developed by : Emdadul Islam & Sorowar Mahabub</span>
           </p>
           <div className="flex items-center mt-4 space-x-4 sm:mt-0">
             <a

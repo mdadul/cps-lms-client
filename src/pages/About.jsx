@@ -25,10 +25,10 @@ export default function About() {
         <div className="flex flex-col md:flex-row">
           <div>
             <p className="mb-4 md:pr-10 md:text-xl md:leading-relaxed lg:pr-28 text-justify">
-              Are you interested in learning programming, but not sure where to start? Look no further than <b>Cholo Programming Shikhi</b>! Our different programs offer a comprehensive curriculum that teaches you the skills you need to become a basic to advanced lavel skilled programmer.
+              Are you interested in learning programming, but not sure where to start? Look no further than <b>Programming Shikho</b>! Our different programs offer a comprehensive curriculum that teaches you the skills you need to become a basic to advanced lavel skilled programmer.
             </p>
             <p className="md:pr-10 md:text-xl md:leading-relaxed lg:pr-28 text-justify">
-              If you're ready to take the next step in your career and become a basic to advanced lavel skilled programmer, enroll in <b>Cholo Programming Shikhi</b> courses today!
+              If you're ready to take the next step in your career and become a basic to advanced lavel skilled programmer, enroll in <b>Programming Shikho</b> courses today!
             </p>
           </div>
           <p className="hidden uppercase md:block md:text-7xl">
@@ -42,7 +42,7 @@ export default function About() {
       <section class="py-2 sm:py-6 lg:py-2">
         <div class="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-5">
           <div class="flex flex-col items-center">
-            <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">Inro of Our Platform, CPS</h2>
+            <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">Inro of Our Platform, PS</h2>
             <div class="relative mt-10 md:order-2 md:mt-24">
             <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7049786038881304576" height="500" width="1000" frameborder="0" allowfullscreen="" title="Embedded post"></iframe>
             </div>
@@ -84,7 +84,7 @@ export default function About() {
                         </h2>
                         <p class="text-justify text-black">
                           When we started{" "}
-                          <strong>Cholo Programming Shikhi,</strong> our goal was
+                          <strong>Programming Shikho,</strong> our goal was
                           to give anyone in the world the ability to learn the
                           skills they’d need to succeed in the 21st century, Obiously that is Programming/ Coding. We
                           set out to create a new, interactive way of learning Programming—
@@ -125,7 +125,7 @@ export default function About() {
                           the learning tools, resources, and opportunities to do
                           so. Code contains a world of possibilities — all
                           that’s required is the curiosity and drive to learn.
-                          At <b>Cholo Programming Shikhi</b>, we are committed to empowering all
+                          At <b>Programming Shikho</b>, we are committed to empowering all
                           people, regardless of where they are in their coding
                           journeys, to continue to learn, grow, and make an
                           impact on the world around them.
@@ -145,10 +145,10 @@ export default function About() {
           <div className="relative max-w-xl">
             <span className="absolute -top-4 h-2 w-14 bg-white"></span>
             <h2 className="text-xl font-medium leading-9 text-white sm:text-3xl sm:leading-tight">
-              CPS Excellent Team
+              PS Excellent Team
             </h2>
             <p className="text-white text-justify">
-              Cholo Programming Shikhi - where excellence is not just a goal, but a habit. Our team is a group of passionate individuals who strive for excellence in everything we do, from writing code to solving complex problems. We believe in collaboration, innovation, and pushing the boundaries of what is possible. Our commitment to excellence drives us forward, and we are proud to be part of such an outstanding team.
+              Programming Shikho - where excellence is not just a goal, but a habit. Our team is a group of passionate individuals who strive for excellence in everything we do, from writing code to solving complex problems. We believe in collaboration, innovation, and pushing the boundaries of what is possible. Our commitment to excellence drives us forward, and we are proud to be part of such an outstanding team.
             </p>
           </div>
 
@@ -157,7 +157,7 @@ export default function About() {
             <MemberCard
               img={Sorowar}
               title="Md. Sorowar Mahabub Rabby"
-              designation="CEO, Founder and Head Instructor, CPS"
+              designation="CEO, Founder and Head Instructor, PS"
               description="B.Sc in CSE (pursuing), IIUC & Teaching Assistant, Dept. of CSE, IIUC"
               description1="Membership Executive, IIUC Data Science and Research Group & Ass. Press and Publication Secratery, IIUC Computer Club"
             />
@@ -167,25 +167,25 @@ export default function About() {
             <MemberCard
               img={Goni}
               title="Sajjad Goni Shovon"
-              designation="Instructor, C Programming, CPS"
+              designation="Instructor, C Programming, PS"
               description="B.Sc in CSE (pursuing), IIUC & Ass. Event Secratery, IIUC Computer Club"
             />
             <MemberCard
               img={Jobaer}
               title="Jobaer Hosain"
-              designation="Instructor, CPP, CPS"
+              designation="Instructor, CPP, PS"
               description="B.Sc in CSE (pursuing), IIUC & Teaching Assistant, IIUC"
             />
             <MemberCard
               img={Jamil}
               title="Jamil Ahmed"
-              designation="Instructor, CPP, CPS"
+              designation="Instructor, CPP, PS"
               description="B.Sc in CSE (pursuing), IIUC"
             />
             <MemberCard
               img={Moinul}
               title="Moinul Hosain"
-              designation="Instructor, C Programming, CPS"
+              designation="Instructor, C Programming, PS"
               description="B.Sc in CSE (pursuing), IIUC"
             />
 
@@ -195,19 +195,19 @@ export default function About() {
             <MemberCard
               img={Avater}
               title="Nafisa Ayman Tanha"
-              designation="TA, C Programming Batch-2, CPS"
+              designation="TA, C Programming Batch-2, PS"
               description="B.Sc in CSE (pursuing), IIUC & Ass. Sports Secratery, IIUC Computer Club"
             />
             <MemberCard
               img={Avater}
               title="Tasfia Sultana Bhuiyan"
-              designation="TA, C Programming Batch-3, CPS"
+              designation="TA, C Programming Batch-3, PS"
               description="B.Sc in CSE (pursuing), IIUC & Ass. Press and Publication Secratery, IIUC Computer Club"
             />
             <MemberCard
               img={Avater}
               title="Sayeda Binte Sarnaly"
-              designation="TA, C Programming Batch-4, CPS"
+              designation="TA, C Programming Batch-4, PS"
               description="B.Sc in CSE (pursuing), IIUC"
             />
 
@@ -217,14 +217,14 @@ export default function About() {
             <MemberCard
               img={Emdadul}
               title="Emdadul Islam"
-              designation="Web Developer, CPS"
+              designation="Web Developer, PS"
               description="B.Sc in CSE (pursuing), IIUC"
             // description1= "Membership Executive, IIUC Data Science and Research Group & Ass. Press and Publication Secratery, IIUC Computer Club"
             />
             <MemberCard
               img={Sorowar}
               title="Sorowar Mahabub"
-              designation="CEO & Web Developer, CPS"
+              designation="CEO & Web Developer, PS"
               description="B.Sc in CSE (pursuing), IIUC"
             // description1= "Membership Executive, IIUC Data Science and Research Group & Ass. Press and Publication Secratery, IIUC Computer Club"
             />

@@ -3,7 +3,10 @@ import logo from "../../img/logo.png";
 import { Link } from "react-router-dom";
 import NavLink from "../Element/NavLink";
 import NavLinkM from "../Element/NavLinkM";
+import Auth from "../../Hocks/Auth";
+
 export const Nav = () => {
+  const auth= Auth();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const newLocal = "flex items-center hidden space-x-8 lg:flex";
@@ -20,24 +23,35 @@ export const Nav = () => {
           <NavLink destination="/about" text="About Us" />
           <NavLink destination="/contact" text="Contact Us" />
         </ul>
-        <ul className="items-center hidden space-x-8 lg:flex">
-          <li>
-            <Link
-              to="/signin"
-              className="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-blue-700 border border-cyan-700 transition duration-200 rounded shadow-md  hover:bg-blue-700 hover:text-white focus:shadow-outline focus:outline-none"
-            >
-              Sign in
-            </Link>
-          </li>
-          <li>
-            <Link
-              to="/signup"
-              className="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide border rounded shadow-md bg-blue-700 text-white focus:shadow-outline focus:outline-none"
-            >
-              Sign up
-            </Link>
-          </li>
-        </ul>
+
+
+      {
+      auth? (<Link
+            to="/signin"
+            className="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-blue-700 border border-cyan-700 transition duration-200 rounded shadow-md  hover:bg-blue-700 hover:text-white focus:shadow-outline focus:outline-none"
+          >
+            Sign Out
+          </Link>):
+      (<ul className="items-center hidden space-x-8 lg:flex">
+        <li>
+          <Link
+            to="/signin"
+            className="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-blue-700 border border-cyan-700 transition duration-200 rounded shadow-md  hover:bg-blue-700 hover:text-white focus:shadow-outline focus:outline-none"
+          >
+            Sign in
+          </Link>
+        </li>
+        <li>
+          <Link
+            to="/signup"
+            className="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide border rounded shadow-md bg-blue-700 text-white focus:shadow-outline focus:outline-none"
+          >
+            Sign up
+          </Link>
+        </li>
+      </ul>)}
+
+      
         <div className="lg:hidden">
           <button
             className="p-2 -mr-1 transition duration-200 rounded focus:outline-none focus:shadow-outline hover:bg-deep-purple-50 focus:bg-deep-purple-50"

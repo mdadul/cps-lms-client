@@ -1,6 +1,6 @@
 import React from "react";
 import sorowar from '../../img/member/Sorowar-t.png'
-import logo from '../../img/cps-tb.png'
+import logo from '../../img/ps-tb.png'
 
 export default function Sidebar() {
   return (
