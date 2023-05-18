@@ -7,6 +7,13 @@ import Auth from "../../Hocks/Auth";
 
 export const Nav = () => {
   const auth= Auth();
+
+  const handleSignOut = () => {
+    localStorage.removeItem("token");
+    localStorage.removeItem("user");
+    window.location.href = "/signin";
+  };
+
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const newLocal = "flex items-center hidden space-x-8 lg:flex";
@@ -26,8 +33,8 @@ export const Nav = () => {
 
 
       {
-      auth? (<Link
-            to="/signin"
+      auth? (<Link onClick={handleSignOut}
+            to="/"
             className="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-blue-700 border border-cyan-700 transition duration-200 rounded shadow-md  hover:bg-blue-700 hover:text-white focus:shadow-outline focus:outline-none"
           >
             Sign Out
