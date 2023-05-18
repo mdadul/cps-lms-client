@@ -34,13 +34,13 @@ export default function Faq() {
               <div className="relative ml-4 cursor-pointer select-none items-center py-4 pr-12">
                 <h3 className="text-sm text-gray-600 lg:text-base">
                   What programming languages are covered in{" "}
-                  <b>Cholo Programming Shikhi</b> Platform?
+                  <b>Programming Shikho</b> Platform?
                 </h3>
               </div>
               <div className="max-h-0 overflow-hidden transition-all duration-500 peer-checked:max-h-96">
                 <div className="p-5">
                   <p className="text-sm">
-                    <b>Cholo Programming Shikhi</b> offers courses in several
+                    <b>Programming Shikho</b> offers courses in several
                     programming languages, including{" "}
                     <b>C, C++, Problem Solving</b>, Python, Java and JavaScript.
                     We have <b>Web Design and Development Courses</b> as well to
@@ -73,7 +73,7 @@ export default function Faq() {
               </svg>
               <div className="relative ml-4 cursor-pointer select-none items-center py-4 pr-12">
                 <h3 className="text-sm text-gray-600 lg:text-base">
-                  How much does it cost to enroll in Cholo Programming Shikhi's
+                  How much does it cost to enroll in Programming Shikho's
                   courses?
                 </h3>
               </div>
@@ -81,7 +81,7 @@ export default function Faq() {
                 <div className="p-5">
                   <p className="text-sm">
                     The cost of each course varies, but{" "}
-                    <b>Cholo Programming Shikhi</b> offers both free and paid
+                    <b>Programming Shikho</b> offers both free and paid
                     courses. You can check the course page for pricing details.
                   </p>
                 </div>
@@ -112,13 +112,13 @@ export default function Faq() {
               <div className="relative ml-4 cursor-pointer select-none items-center py-4 pr-12">
                 <h3 className="text-sm text-gray-600 lg:text-base">
                   Do I need any prior programming experience to enroll in Cholo
-                  Programming Shikhi's courses?
+                  Programming Shikho's courses?
                 </h3>
               </div>
               <div className="max-h-0 overflow-hidden transition-all duration-500 peer-checked:max-h-96">
                 <div className="p-5">
                   <p className="text-sm">
-                    No, <b>Cholo Programming Shikhi</b>'s courses are designed
+                    No, <b>Programming Shikho</b>'s courses are designed
                     for both beginners and experienced programmers. The courses
                     cover the basics of programming as well as more advanced
                     topics.
@@ -156,7 +156,7 @@ export default function Faq() {
               <div className="max-h-0 overflow-hidden transition-all duration-500 peer-checked:max-h-96">
                 <div className="p-5">
                   <p className="text-sm">
-                    Yes, Cholo Programming Shikhi provides a certificate of
+                    Yes, Programming Shikho provides a certificate of
                     completion for each course. You can download and print your
                     certificate once you have successfully completed the course.
                   </p>
@@ -196,7 +196,7 @@ export default function Faq() {
               <div className="max-h-0 overflow-hidden transition-all duration-500 peer-checked:max-h-96">
                 <div className="p-5">
                   <p className="text-sm">
-                    Yes, Cholo Programming Shikhi provides opportunities for
+                    Yes, Programming Shikho provides opportunities for
                     students to interact with instructors and other students
                     through forums, live chat sessions, and other online
                     resources.
