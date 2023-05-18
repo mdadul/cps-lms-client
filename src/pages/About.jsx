@@ -6,7 +6,7 @@ import Goni from "../img/member/goni-t.png";
 import Jamil from "../img/member/jamil-t.png";
 import Jobaer from "../img/member/jobaer-t.png";
 import Moinul from "../img/member/moinul-t.png";
-import Avater from "../img/logo-white.png";
+import Avater from "../img/logo/PS-TWL.png";
 import Emdadul from "../img/member/emdadul.png";
 
 

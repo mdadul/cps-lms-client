@@ -1,4 +1,6 @@
+
 import logo from '../../img/ps-tb.png';
+
 export const Footer = () => {
     return (
     <div className='bg-gray-900 text-white'> 
