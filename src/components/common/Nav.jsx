@@ -110,6 +110,14 @@ export const Nav = () => {
                         Sign up
                       </Link>
                     </li>
+                    <li>
+                      <Link
+                        to="/signin"
+                        className="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-blue-700 border border-cyan-700 transition duration-200 rounded shadow-md  hover:bg-blue-700 hover:text-white focus:shadow-outline focus:outline-none"
+                      >
+                       Sign In
+                      </Link>
+                    </li>
                   </ul>
                 </nav>
               </div>

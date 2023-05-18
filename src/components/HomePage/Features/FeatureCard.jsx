@@ -7,7 +7,7 @@ export default function FeatureCard({img, title, description}) {
           className="w-10"
           width="512"
           height="512"
-          alt="burger illustration"
+          alt="icon"
         />
 
         <div className="space-y-2">

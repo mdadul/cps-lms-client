@@ -8,8 +8,8 @@ import contest from "../../../img/Contest.svg"
 
 export default function Features() {
   return (
-    <>
-      <section className="mx-auto max-w-screen-xl px-4 mb-24 md:h-screen">
+    <div className="bg-gradient-to-r from-blue-50 to-sky-50">
+      <section className="mx-auto max-w-screen-xl px-3 py-20">
         <div className="mx-auto flex w-full flex-col items-center justify-center sm:max-w-screen-sm md:max-w-screen-md lg:flex-row">
           <div className="text-center">
             <h2 className="bg-clip-text text-3xl font-extrabold text-gray-700 sm:text-5xl">
@@ -54,6 +54,6 @@ export default function Features() {
         </div>
       </section>
     
-    </>
+    </div>
   );
 }
