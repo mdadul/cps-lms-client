@@ -19,7 +19,7 @@ export default function Partners() {
             Partner
           </h2>
           <p className="text-base text-gray-700 md:text-lg">
-          We are thrilled to announce that <b>Cholo Programming Shikhi- CPS</b> has partnered with <b>Microsoft for Startups Founders Hub</b>! This exciting collaboration brings together two innovative organizations dedicated to promoting entrepreneurship and empowering the next generation of technology leaders.
+          We are thrilled to announce that <b>Programming Shikho- PS</b> has partnered with <b>Microsoft for Startups Founders Hub</b>! This exciting collaboration brings together two innovative organizations dedicated to promoting entrepreneurship and empowering the next generation of technology leaders.
           </p>
         </div>
         <div className="flex flex-wrap justify-center">
