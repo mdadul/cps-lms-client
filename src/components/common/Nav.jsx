@@ -3,7 +3,8 @@ import logo from "../../img/logo/PS-Logo.png";
 import { Link } from "react-router-dom";
 import NavLink from "../Element/NavLink";
 import NavLinkM from "../Element/NavLinkM";
-export const Nav = () => {
+
+export const Nav = ({ menuItem }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const newLocal = "flex items-center hidden space-x-8 lg:flex";
@@ -14,11 +15,9 @@ export const Nav = () => {
           <img src={logo} alt="logo" className="w-16" />
         </Link>
         <ul className={newLocal}>
-          <NavLink destination="/" text="Home" />
-          <NavLink destination="/courses" text="Courses" />
-          <NavLink destination="/blog" text="News and Blogs" />
-          <NavLink destination="/about" text="About Us" />
-          <NavLink destination="/contact" text="Contact Us" />
+          {menuItem.map((item) => (
+            <NavLink destination={item.destination} text={item.text} />
+          ))}
         </ul>
         <ul className="items-center hidden space-x-8 lg:flex">
           <li>
@@ -83,11 +82,12 @@ export const Nav = () => {
                 </div>
                 <nav>
                   <ul className="space-y-4">
-                    <NavLinkM destination="/" text="Home" />
-                    <NavLinkM destination="/courses" text="Courses" />
-                    <NavLinkM destination="/blog" text="News and Blogs" />
-                    <NavLinkM destination="/about" text="About Us" />
-                    <NavLinkM destination="/contact" text="Contact Us" />
+                    {menuItem.map((item) => (
+                      <NavLinkM
+                        destination={item.destination}
+                        text={item.text}
+                      />
+                    ))}
                     <li>
                       <Link
                         to="/signup"
@@ -101,7 +101,7 @@ export const Nav = () => {
                         to="/signin"
                         className="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-blue-700 border border-cyan-700 transition duration-200 rounded shadow-md  hover:bg-blue-700 hover:text-white focus:shadow-outline focus:outline-none"
                       >
-                       Sign In
+                        Sign In
                       </Link>
                     </li>
                   </ul>
