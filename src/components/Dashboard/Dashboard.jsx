@@ -5,7 +5,7 @@ export default function Dashboard() {
     <div className='bg-black'>
          <nav className="shadow-md">
         <div className="max-w-7xl px-5 lg:px-0 mx-auto flex justify-between py-3">
-            <img className="h-10" src="../assets/image/learningportal.svg" />
+            <img className="h-10" src="../assets/image/learningportal.svg" alt='avater' />
             <div className="flex items-center gap-3">
                 <h2 className="font-bold">Admin</h2>
                 <button
