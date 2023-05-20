@@ -12,6 +12,9 @@ import CourseDetails from "./components/CoursesPage/CourseDetails";
 import Dashboard from "./components/Dashboard/Dashboard";
 import StudentDashboard from "./components/StudentDashboard/StudentDashboard";
 import Leader from "./components/StudentDashboard/Leader";
+import AddCourse from "./components/AllCourses/AddCourse";
+import UpdateCourse from "./components/AllCourses/UpdateCourse";
+import CourseCardDashboard from "./components/AllCourses/CourseCardDashboard";
 import { ToastContainer } from "react-toastify";
 function App() {
   return (
@@ -29,6 +32,9 @@ function App() {
       <Route path="/studentdashboard/*" element={<StudentDashboard/>} />
       <Route path="/leaderboard" element={<Leader/>} />
       <Route path="*" element={<Error />} />
+      <Route path="/addcourse" element={<AddCourse/>} />
+      <Route path="/updatecourse" element={<UpdateCourse/>} />
+      <Route path="/coursedashboard" element={<CourseCardDashboard/>} />
     </Routes>
     <ToastContainer/>
     </>
