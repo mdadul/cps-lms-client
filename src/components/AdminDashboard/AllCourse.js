@@ -11,7 +11,7 @@ export default function AllCourse() {
           <h1 className="text-3xl font-bold">All Courses</h1>
           <div>
             <Link
-              to="/admin/course/add"
+              to="/addcourse"
               className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-14"
             >
               Add Course

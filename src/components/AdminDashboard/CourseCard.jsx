@@ -53,6 +53,7 @@ export default function CourseCardDashboard() {
               </div>
             </div>
             <Link
+              to='/updatecourse/2'
               className="my-5 rounded-md px-5 py-2 text-center transition hover:scale-105 bg-gray-200 text-white sm:ml-auto"
             >
              <img src={edit} alt="edit" className="w-5 h-5" />

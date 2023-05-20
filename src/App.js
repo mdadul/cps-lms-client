@@ -12,14 +12,14 @@ import Dashboard from "./components/Dashboard/Dashboard";
 import StudentDashboard from "./components/StudentDashboard/StudentDashboard";
 import Leader from "./components/StudentDashboard/Leader";
 import AddCourse from "./components/AdminDashboard/AddCourse";
-import UpdateCourse from "./components/AllCourses/UpdateCourse";
-import CourseCardDashboard from "./components/AdminDashboard/CourseCard";
+import UpdateCourse from "./components/AdminDashboard/UpdateCourse";
 import { ToastContainer } from "react-toastify";
 import AddAssignmnet from "./components/Assignment/AddAssignmnet";
 import Assignment from "./components/Assignment/Assignment";
-import StudentList from "./components/Student/StudentList";
+import StudentList from "./components/AdminDashboard/Students";
 import Course from "./components/AdminDashboard/AllCourse";
 import Error from "./components/common/Error";
+import Teachers from "./components/AdminDashboard/Teachers";
 function App() {
   return (
     <>
@@ -38,18 +38,15 @@ function App() {
 
         <Route path="/assignment" element={<AddAssignmnet />} />
         <Route path="/assignment/:id" element={<Assignment />} />
-        <Route path="/studentlist" element={<StudentList />} />
+        
 
-        <Route path="/updatecourse" element={<UpdateCourse />} />
-        <Route path="/coursedashboard" element={<CourseCardDashboard />} />
-
-        <Route path="/addcourse" element={<AddCourse />} />
-        <Route path="/updatecourse" element={<UpdateCourse />} />
-        <Route path="/coursedashboard" element={<CourseCardDashboard />} />
 
         {/* admin dashboard */}
-        <Route path="/admin/course" element={<Course />} />
-        <Route path="/admin/course/add" element={<AddCourse />} />
+        <Route path="/course" element={<Course />} />
+        <Route path="/addcourse" element={<AddCourse />} />
+        <Route path="/updatecourse/:id" element={<UpdateCourse />} />
+        <Route path="/studentlist" element={<StudentList />} />
+        <Route path="/teacherlist" element={<Teachers />} />
 
         <Route path="*" element={<Error />} />
       </Routes>
