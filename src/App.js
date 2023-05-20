@@ -14,6 +14,8 @@ import Leader from "./components/StudentDashboard/Leader";
 import { ToastContainer } from "react-toastify";
 import AddAssignmnet from "./components/Assignment/AddAssignmnet";
 import Assignment from "./components/Assignment/Assignment";
+import StudentList from "./components/Student/StudentList";
+import Course from "./components/AdminDashboard/Courses";
 function App() {
   return (
     <>
@@ -31,7 +33,8 @@ function App() {
       <Route path="/leaderboard" element={<Leader/>} />
       <Route path="/assignment" element={<AddAssignmnet/>} />
       <Route path="/assignment/:id" element={<Assignment/>} />
-      
+      <Route path="/studentlist" element={<StudentList/>} />
+      <Route path="/admin/course" element={<Course/>} />
     </Routes>
     <ToastContainer/>
     </>
