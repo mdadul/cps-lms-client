@@ -1,6 +1,5 @@
-import React from "react";
-import Layout from "../common/Layout";
-
+import React from 'react'
+import Layout from './Layout'
 export default function AddCourse() {
   return (
     <Layout>
