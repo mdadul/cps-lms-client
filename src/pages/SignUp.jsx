@@ -12,7 +12,7 @@ export default function SignUp() {
 
   const handleSingup = (e)=>{
     e.preventDefault();
-    fetch("http://localhost:5000/users/signup",{
+    fetch("https://ps-server.shikbo.xyz/users/signup",{
       method:"POST",
       headers:{
         "Content-Type":"application/json"
@@ -32,7 +32,7 @@ export default function SignUp() {
           draggable: true,
           progress: undefined,
           theme: "light",
-        });
+        });window.location.href = "/signin";
       }
       else{
         toast.error(data.msg, {

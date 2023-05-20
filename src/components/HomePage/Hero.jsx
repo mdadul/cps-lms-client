@@ -32,7 +32,7 @@ export default function Header() {
                 </svg>
                 <span className="relative">Learn</span>
               </span>{" "}
-              to code and change the world with our CPS Platform!
+              to code and change the world with our PS Platform!
 
             </h2>
             <p className="text-base text-gray-700 md:text-lg">

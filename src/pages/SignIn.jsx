@@ -12,7 +12,7 @@ export default function SignIn() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    fetch("http://localhost:5000/users/login", {
+    fetch("https://ps-server.shikbo.xyz/users/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
