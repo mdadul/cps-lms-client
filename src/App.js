@@ -39,12 +39,19 @@ function App() {
         <Route path="/assignment" element={<AddAssignmnet />} />
         <Route path="/assignment/:id" element={<Assignment />} />
         <Route path="/studentlist" element={<StudentList />} />
-        <Route path="/admin/course" element={<Course />} />
 
-        <Route path="*" element={<Error />} />
-        <Route path="/admin/course/add" element={<AddCourse />} />
         <Route path="/updatecourse" element={<UpdateCourse />} />
         <Route path="/coursedashboard" element={<CourseCardDashboard />} />
+
+        <Route path="/addcourse" element={<AddCourse />} />
+        <Route path="/updatecourse" element={<UpdateCourse />} />
+        <Route path="/coursedashboard" element={<CourseCardDashboard />} />
+
+        {/* admin dashboard */}
+        <Route path="/admin/course" element={<Course />} />
+        <Route path="/admin/course/add" element={<AddCourse />} />
+
+        <Route path="*" element={<Error />} />
       </Routes>
       <ToastContainer />
     </>
