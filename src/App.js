@@ -17,6 +17,7 @@ import CourseCardDashboard from "./components/AllCourses/CourseCardDashboard";
 import { ToastContainer } from "react-toastify";
 import AddAssignmnet from "./components/Assignment/AddAssignmnet";
 import Assignment from "./components/Assignment/Assignment";
+import Error from "./components/common/Error";
 function App() {
   return (
     <>
@@ -37,10 +38,14 @@ function App() {
       <Route path="/assignment/:id" element={<Assignment/>} />
       
 
-      <Route path="*" element={<Error />} />
+      
       <Route path="/addcourse" element={<AddCourse/>} />
       <Route path="/updatecourse" element={<UpdateCourse/>} />
       <Route path="/coursedashboard" element={<CourseCardDashboard/>} />
+
+     <Route path="*" element={<Error/>} />
+
+
 
     </Routes>
     <ToastContainer/>
