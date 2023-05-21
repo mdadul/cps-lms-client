@@ -4,8 +4,11 @@ import Auth from '../../Hooks/Auth'
 import Layout from "./Layout";
 
 export default function AddCourse() {
-
   const Authentication =  Auth();
+
+  if(!Authentication || Authentication.user?.role !== "admin"){
+    window.location.href="/signin"
+  }
   const token = Authentication.token
   console.log(token)
   console.log(Authentication.user)

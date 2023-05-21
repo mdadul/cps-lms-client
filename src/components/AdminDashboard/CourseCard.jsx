@@ -2,7 +2,16 @@ import React from "react";
 import { Link } from "react-router-dom";
 import edit from "../../img/edit.png"
 import del from "../../img/delete.png"
+import Auth from "../../Hooks/Auth";
 export default function CourseCard(props) {
+  const Authentication = Auth();
+  if(!Authentication){
+    window.location.href = "/signin";
+  }
+  if(Authentication.user?.role !== "admin"){
+    window.location.href = "/signin";
+  }
+
   const { course } = props;
   const {handleDelete} = props
   
