@@ -1,4 +1,7 @@
 import React from 'react'
+import Course from '../../pages/Courses'
+import AllCourse from '../AdminDashboard/AllCourse'
+import AllCourses from '../CoursesPage/AllCourses'
 
 export default function Dashboard() {
     return (
@@ -24,7 +27,7 @@ export default function Dashboard() {
                 <div className="mx-auto max-w-7xl px-5 lg:px-0">
                     <div className="px-3 md:lg:xl:px-40  py-20 bg-opacity-10">
                         <div className="grid grid-cols-1 md:grid-cols-2  gap-6 p-8">
-                            <a href="./Videos.html" className="dashboard-item-card">
+                            <a href="/Videos" className="dashboard-item-card">
                                 <svg fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
                                     className="w-8 h-8 text-yellow-500">
                                     <path stroke-linecap="round"
@@ -84,21 +87,8 @@ export default function Dashboard() {
                 </div>
 
 
-                {/* Design a Course Card */}
-                <div className="px-3 md:lg:xl:px-40  py-20 bg-opacity-10">
-                    <div className="grid grid-cols-1 md:grid-cols-2  gap-6 p-8">
-                        <div className="dashboard-item-card">
-                            <svg fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
-
-                                className="w-8 h-8 text-green-500">
-                                <path stroke-linecap="round" stroke-linejoin="round"
-
-                                    d="M12 6.75v10.5M8.25 12h7.5M3.75 12h.007v.008H3.75V12zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zM20.25 12h.007v.008H20.25V12zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zM12 6.75h.007v.008H12V6.75zm0 10.5h.007v.008H12v-.008zM12 6.75h.007v.008H12V6.75zm0 10.5h.007v.008H12v-.008z" />
-                            </svg>
-                            <a href="/addcourse"> <p className="text-slate-200 mt-3 ">Design a Course</p></a>
-                        </div> </div> </div>
-                      
-
+               <h2 className="text-2xl font-bold text-center text-slate-200">Browse Our All Courses :: Ready For You</h2>
+            <AllCourses />
             </section>
         </div>
     )

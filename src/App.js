@@ -22,6 +22,7 @@ import Error from "./components/common/Error";
 import Teachers from "./components/AdminDashboard/Teachers";
 import Setting from "./components/AdminDashboard/Setting";
 import UpdateUser from "./components/AdminDashboard/UpdateUser";
+import Videos from "./components/Dashboard/Videos";
 function App() {
   return (
     <>
@@ -51,6 +52,15 @@ function App() {
         <Route path="/teacherlist" element={<Teachers />} />
         <Route path="/setting" element={<Setting/>}/>
         <Route path="/users/edit/:id" element={<UpdateUser />} />
+
+
+        {/* Student Dashboard */}
+        <Route path="/studentdashboard" element={<StudentDashboard />} />
+        <Route path="/leaderboard" element={<Leader />} />
+        <Route path="/assignment" element={<AddAssignmnet />} />
+        <Route path="/assignment/:id" element={<Assignment />} />
+        <Route path="/videos" element={<Videos />} />
+
 
         <Route path="*" element={<Error />} />
       </Routes>
