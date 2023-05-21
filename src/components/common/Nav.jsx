@@ -30,6 +30,7 @@ export const Nav = ({ menuItem }) => {
           ))}
         </ul>
         {Authentication && role === "admin" && (
+          <ul>
           <li>
             <Link
               to="/course"
@@ -38,8 +39,10 @@ export const Nav = ({ menuItem }) => {
               Dashboard
             </Link>
           </li>
+          </ul>
         ) }
         {Authentication && role==='student' && (
+          <ul>
           <li>
             <Link
               to="/dashboard"
@@ -48,6 +51,7 @@ export const Nav = ({ menuItem }) => {
               Dashboard
             </Link>
           </li>
+          </ul>
         )}
 
         {Authentication ? (

@@ -8,10 +8,6 @@ import Auth from "../../Hooks/Auth";
 export default function AllCourse() {
   
   const Authentication =  Auth();
-  const role = Authentication?.role;
-  if(role !== "admin" || !Authentication.token){
-    window.location.href = "/";
-  }
 
   const [courses, setCourses] = useState([]);
   useEffect(() => {
