@@ -3,7 +3,7 @@ import logo from "../../img/logo/PS-Logo.png";
 import { Link } from "react-router-dom";
 import NavLink from "../Element/NavLink";
 import NavLinkM from "../Element/NavLinkM";
-import Auth from "../../Hocks/Auth";
+import Auth from "../../Hooks/Auth";
 
 
 export const Nav = ({ menuItem }) => {

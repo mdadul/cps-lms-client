@@ -1,9 +1,55 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Layout from "./Layout";
 import CourseCard from "./CourseCard";
 import { Link } from "react-router-dom";
+import { toast } from "react-toastify";
+import Auth from "../../Hooks/Auth";
 
 export default function AllCourse() {
+  
+  const Authentication =  Auth();
+
+  const [courses, setCourses] = useState([]);
+  useEffect(() => {
+    fetch("http://localhost:5000/courses") 
+      .then((res) => res.json())
+      .then((data) => {
+        setCourses(data.courses);
+      });
+  }, []);
+
+  
+
+
+  const handleDelete = (id) => {
+    const proceed = window.confirm(
+      "Are you sure you want to delete this book?"
+    );
+    if (!proceed) {
+      return;
+    }
+
+    fetch(`http://localhost:5000/courses/${id}`, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${Authentication.token}`,
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.error) {
+         toast.error(data.error);
+        } else {
+          toast.success("Book deleted successfully");
+          const newCourses = courses.filter((course) => course._id !== id);
+          setCourses(newCourses);
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
   return (
     <Layout>
       <>
@@ -19,14 +65,12 @@ export default function AllCourse() {
           </div>
         </div>
         <div>
-          <CourseCard />
-          <CourseCard />
-          <CourseCard />
-          <CourseCard />
-          <CourseCard />
-          <CourseCard />
-          <CourseCard />
-          <CourseCard />
+          {
+            courses.map((course) => (
+              <CourseCard key={course._id} course={course} 
+              handleDelete={handleDelete}/>
+            ))
+          }
         </div>
       </>
     </Layout>

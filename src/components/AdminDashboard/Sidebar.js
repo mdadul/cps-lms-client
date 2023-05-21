@@ -3,6 +3,7 @@ import course from "../../img/course.png";
 import student from "../../img/students.png";
 import teacher from "../../img/teacher.png";
 import revenue from "../../img/revenue.png";
+import setting from "../../img/setting.png";
 import { Link } from "react-router-dom";
 
 export default function Sidebar() {
@@ -50,6 +51,17 @@ export default function Sidebar() {
             Revenue
           </div>
         </div>
+
+        <Link to="/setting">
+        <div className="[&>.tooltip]:hover:opacity-100 h-14 w-16 cursor-pointer p-3">
+          <div className="border-gray pointer-events-auto absolute flex h-10 w-10 items-center justify-center rounded-full text-gray-200 shadow duration-100 hover:bg-gray-300">
+            <img src={setting} alt="revenue" className="h-10 w-10" />
+          </div>
+          <div className="tooltip absolute z-50 mt-3 ml-14 w-max rounded-md bg-gray-700 p-1 text-xs text-white opacity-0 shadow-md duration-200">
+            Revenue
+          </div>
+        </div>
+        </Link>
       </div>
     </div>
   );
