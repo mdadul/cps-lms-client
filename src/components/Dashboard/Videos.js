@@ -6,7 +6,7 @@ export default function Dashboard() {
   return (
     <Layout>
  <div className='bg-gradient-to-r from-teal-900 to-gray-600'>
-   <Nav/>
+ 
     <section className="py-6 bg-primary">
         <div className="mx-auto max-w-full px-5 lg:px-20">
             <div className="px-3 py-20 bg-opacity-10">
