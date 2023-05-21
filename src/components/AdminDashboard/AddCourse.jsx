@@ -6,16 +6,9 @@ import Layout from "./Layout";
 export default function AddCourse() {
   const Authentication =  Auth();
 
-  if(!Authentication || Authentication.user?.role !== "admin"){
-    window.location.href="/signin"
-  }
   const token = Authentication.token
   console.log(token)
   console.log(Authentication.user)
-  if(!Authentication){
-    window.location.href="/signin"
-    
-  }
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   const [fee, setFee] = useState("");
