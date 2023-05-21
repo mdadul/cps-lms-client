@@ -21,6 +21,7 @@ import Course from "./components/AdminDashboard/AllCourse";
 import Error from "./components/common/Error";
 import Teachers from "./components/AdminDashboard/Teachers";
 import Setting from "./components/AdminDashboard/Setting";
+import UpdateUser from "./components/AdminDashboard/UpdateUser";
 function App() {
   return (
     <>
@@ -49,6 +50,7 @@ function App() {
         <Route path="/studentlist" element={<StudentList />} />
         <Route path="/teacherlist" element={<Teachers />} />
         <Route path="/setting" element={<Setting/>}/>
+        <Route path="/users/edit/:id" element={<UpdateUser />} />
 
         <Route path="*" element={<Error />} />
       </Routes>

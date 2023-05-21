@@ -1,4 +1,4 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import singin from "../img/signin.gif";
 import Layout from "../components/common/Layout";
 import Input from "../components/Element/Input";
@@ -8,7 +8,7 @@ import {  toast } from "react-toastify";
 export default function SignIn() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const navigate = useNavigate();
+
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -35,14 +35,12 @@ export default function SignIn() {
           });
           localStorage.setItem("token", data.token);
           localStorage.setItem("user", JSON.stringify(data.user));
-          navigate("/dashboard");
-          // if(data.user.role === "admin"){
-          //   navigate("/admin/dashboard");
-          // }else if(data.user.role === "student"){
-          //   navigate("/student/dashboard");
-          // } else if(data.user.role === "teacher"){
-          //   navigate("/teacher/dashboard");
-          // }
+          
+          if(data.user.role === "admin"){
+            window.location.href = "/course";
+          } else if(data.user.role === "student"){
+            window.location.href = "/dashboard";
+          }
         } else {
           toast.error(data.msg, {
             position: "bottom-right",
