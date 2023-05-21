@@ -1,5 +1,4 @@
 import React from "react";
-
 export default function Profile() {
   return (
     <div className="my-4 max-w-screen-md border px-4 shadow-xl sm:mx-4 sm:rounded-xl sm:px-4 sm:py-4 md:mx-auto">
@@ -8,11 +7,9 @@ export default function Profile() {
           <p className="font-medium">Account Details</p>
           <p className="text-sm text-gray-600">Edit your account details</p>
         </div>
-        <button className="mr-2 hidden rounded-lg border-2 px-4 py-2 font-medium text-gray-500 sm:inline focus:outline-none focus:ring hover:bg-gray-200">
-          Cancel
-        </button>
-        <button className="hidden rounded-lg border-2 border-transparent bg-blue-600 px-4 py-2 font-medium text-white sm:inline focus:outline-none focus:ring hover:bg-blue-700">
-          Save
+       
+        <button className="rounded-lg border-2 border-transparent bg-blue-600 px-4 py-2 font-medium text-white sm:inline focus:outline-none focus:ring hover:bg-blue-700">
+          Update
         </button>
       </div>
       <div className="flex flex-col gap-4 border-b py-4 sm:flex-row">
@@ -52,14 +49,6 @@ export default function Profile() {
             className="max-w-full rounded-lg px-2 font-medium text-blue-600 outline-none ring-blue-600 focus:ring-1"
           />
         </div>
-      </div>
-      <div className="flex justify-end py-4 sm:hidden">
-        <button className="mr-2 rounded-lg border-2 px-4 py-2 font-medium text-gray-500 focus:outline-none focus:ring hover:bg-gray-200">
-          Cancel
-        </button>
-        <button className="rounded-lg border-2 border-transparent bg-blue-600 px-4 py-2 font-medium text-white focus:outline-none focus:ring hover:bg-blue-700">
-          Save
-        </button>
       </div>
     </div>
   );

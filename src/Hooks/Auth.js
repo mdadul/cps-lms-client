@@ -4,7 +4,10 @@ export default function Auth() {
     const token = localStorage.getItem("token");
 
     if (user && token) {
-        return true;
+        return {
+            user: JSON.parse(user),
+            token,
+        }
     } else {
         return false;
     }
