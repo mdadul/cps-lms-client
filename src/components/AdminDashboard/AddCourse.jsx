@@ -112,7 +112,8 @@ export default function AddCourse() {
             <input
               onChange={(e) => setImage(e.target.value)}
               class="w-full rounded-md border bg-white px-2 py-2 outline-none ring-blue-600 focus:ring-1"
-              type="file"
+              type="text"
+              placeholder="Enter course Image URL"
 
             />
           </label>

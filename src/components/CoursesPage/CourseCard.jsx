@@ -1,14 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-export default function CourseCard() {
+export default function CourseCard({course}) {
   return (
     <article className="rounded-xl bg-white p-3 shadow-lg hover:shadow-xl ">
       <Link to="/courses/details">
         <div className="relative flex items-end overflow-hidden rounded-xl ">
           <img
-            src="https://th.bing.com/th/id/R.c0b3220707a5308a969f090b94148f5c?rik=Rh5iru%2bUaUd94w&pid=ImgRaw&r=0"
-            alt="Course"
+            src={course.image}
+            alt={course.name}
           />
           <div className="absolute bottom-3 left-3 inline-flex items-center rounded-lg bg-white p-2 shadow-md">
             <svg
@@ -24,10 +24,10 @@ export default function CourseCard() {
         </div>
 
         <div className="mt-1 p-2">
-          <h2 className="text-slate-700">Basic C Programming</h2>
+          <h2 className="text-slate-700">{course.name}</h2>
           <div className="mt-3 flex items-end justify-between">
             <p>
-              <span className="text-lg font-bold text-blue-500">$850</span>
+              <span className="text-lg font-bold text-blue-500">{course.fee}</span>
             </p>
           </div>
         </div>

@@ -45,8 +45,9 @@ export default function Students() {
                   <th className="px-5 py-3">ID</th>
                   <th className="px-5 py-3">Full Name</th>
                   <th className="px-5 py-3">User Role</th>
-                  <th className="px-5 py-3">Created at</th>
+                  <th className="px-5 py-3">Email</th>
                   <th className="px-5 py-3">Status</th>
+                  <th className="px-5 py-3">Edit</th>
                 </tr>
               </thead>
               <tbody className="text-gray-500">
