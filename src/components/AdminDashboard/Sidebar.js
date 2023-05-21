@@ -70,7 +70,10 @@ export default function Sidebar() {
             </div>
           </div>
         </Link>
-        <button  onClick={handleLogout} className="[&>.tooltip]:hover:opacity-100 h-14 w-16 cursor-pointer p-3">
+        <button
+          onClick={handleLogout}
+          className="[&>.tooltip]:hover:opacity-100 h-14 w-16 cursor-pointer p-3"
+        >
           <div className="border-gray pointer-events-auto absolute flex h-10 w-10 items-center justify-center rounded-full text-gray-200 shadow duration-100 hover:bg-gray-300">
             <img src={logout} alt="revenue" className="h-10 w-10" />
           </div>
