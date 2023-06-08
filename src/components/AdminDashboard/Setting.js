@@ -1,13 +1,12 @@
 import React from 'react'
 import Layout from './Layout'
-import Profile from '../Profile/Profile'
+import Settings from '../Profile/Setting'
 
 export default function Setting() {
  
   return (
     <Layout>
-    
-        <Profile/>
+        <Settings/>
     </Layout>
   )
 }

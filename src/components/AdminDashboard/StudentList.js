@@ -14,7 +14,7 @@ export default function StudentList({ students }) {
           <div className="h-10 w-10 flex-shrink-0">
             <img
               className="h-full w-full rounded-full"
-              src={students.image}
+              src={students.avatar}
               alt=""
             />
           </div>
@@ -29,11 +29,7 @@ export default function StudentList({ students }) {
       <td className="border-b border-gray-200 bg-white px-5 py-5 text-sm">
         <p className="whitespace-no-wrap">{students.email}</p>
       </td>
-      <td className="border-b border-gray-200 bg-white px-5 py-5 text-sm">
-        <span className="rounded-full bg-green-200 px-3 py-1 text-xs font-semibold text-green-900">
-          Active
-        </span>
-      </td>
+     
       <td className="border-b border-gray-200 bg-white px-5 py-5 text-sm">
         <Link to={`/users/edit/${students._id}`}>
           <img src={edit} alt="edit" className="w-6 h-6" />

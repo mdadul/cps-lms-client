@@ -37,7 +37,7 @@ export default function SignIn() {
           localStorage.setItem("user", JSON.stringify(data.user));
           
           if(data.user.role === "admin"){
-            window.location.href = "/course";
+            window.location.href = "/admindashboard";
           } else if(data.user.role === "student"){
             window.location.href = "/dashboard";
           }
@@ -64,7 +64,7 @@ export default function SignIn() {
             <p class="text-center text-3xl font-bold md:leading-tight md:text-left md:text-5xl">
               Welcome back
               <br />
-              to <span class="text-blue-600">CPS</span>
+              to <span class="text-blue-600">PS</span>
             </p>
             <p class="mt-6 text-center font-medium md:text-left">
               Sign in to your account below.

@@ -5,7 +5,7 @@ import StudentList from "./StudentList";
 import { toast } from "react-toastify";
 import StatCard from "./StatCard";
 
-export default function Students() {
+export default function AdminList() {
   const Authentication = Auth();
 
   const [students, setStudents] = useState([]);
@@ -32,13 +32,16 @@ export default function Students() {
       <div className="mx-auto max-w-screen-lg px-4 py-8 sm:px-8">
         <div className="flex items-center justify-between pb-6">
           <div>
-            <h2 className="font-semibold text-gray-700">Studnet List</h2>
+            <h2 className="font-semibold text-gray-700">Admin List</h2>
             <span className="text-xs text-gray-500">
-              View accounts of registered students
+              View accounts of registered Admin
             </span>
           </div>
         </div>
-        <StatCard title="Total Students" value= {students.filter((student)=> student.role === "student").length} />
+        <StatCard
+          title="Total Admin"
+          value={students.filter((student) => student.role === "admin").length}
+        />
         <div className="overflow-y-hidden rounded-lg border">
           <div className="overflow-x-auto">
             <table className="w-full">
@@ -53,7 +56,7 @@ export default function Students() {
               </thead>
               <tbody className="text-gray-500">
                 {students
-                  .filter((student) => student.role === "student")
+                  .filter((student) => student.role === "admin")
                   .map((student) => (
                     <StudentList key={student._id} students={student} />
                   ))}

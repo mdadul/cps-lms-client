@@ -32,7 +32,15 @@ export default function SignUp() {
           draggable: true,
           progress: undefined,
           theme: "light",
-        });window.location.href = "/signin";
+        });
+        localStorage.setItem("token", data.token);
+        localStorage.setItem("user", JSON.stringify(data.user));
+        
+        if(data.user.role === "admin"){
+          window.location.href = "/admindashboard";
+        } else if(data.user.role === "student"){
+          window.location.href = "/studentdashboard";
+        }
       }
       else{
         toast.error(data.msg, {
@@ -67,7 +75,7 @@ export default function SignUp() {
               Create your free account
             </p>
             <p class="mt-6 text-center font-medium md:text-left">
-              Already using CPS?
+              Already using PS?
               <Link
                 to="/signin"
                 class="whitespace-nowrap font-semibold text-blue-700"

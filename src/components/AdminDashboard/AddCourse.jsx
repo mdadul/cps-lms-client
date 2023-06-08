@@ -26,12 +26,13 @@ export default function AddCourse() {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        "Authorization":  `Bearer ${token}`
+        "Authorization":  `Bearer ${token}`,
       },
       body: JSON.stringify(course),
     })
     .then((res) => res.json())
     .then((data) => {
+      console.log(data);
       if (data.error) {
        toast.error(data.error);
       } else {

@@ -1,10 +1,10 @@
 import React from "react";
-import edit from '../../img/edit.png'
-import del from '../../img/delete.png'
+import edit from "../../../img/edit.gif";
+import del from "../../../img/delete.gif";
 export default function Assignment() {
   return (
     <div className="m-5">
-      <div className="group mx-5 mt-10 grid px-7 max-w-screen-md grid-cols-12 space-x-8 overflow-hidden rounded-lg border py-8 text-gray-700 shadow transition hover:shadow-lg sm:mx-auto">
+      <div className="group mx-5 mt-10 grid px-7 max-w-screen-md grid-cols-12 space-x-8 overflow-hidden rounded-lg border py-8 text-gray-700 shadow transition hover:shadow-lg sm:mx-auto bg-white">
         <div className="col-span-11 flex flex-col  text-left sm:pl-4">
           <h3 className="text-sm text-gray-600">Due Date: 12 APR 2023</h3>
           <a
@@ -35,15 +35,14 @@ export default function Assignment() {
           </div>
         </div>
         <div>
-            <button >
-                <img src={edit} alt="edit" className="w-6 h-6"/>
-            </button>
-            <button >
-                <img src={del} alt="deleteIcon" className="w-6 h-7"/>
-            </button>
+          <button>
+            <img src={edit} alt="edit" className="w-6 h-6" />
+          </button>
+          <button>
+            <img src={del} alt="deleteIcon" className="w-6 h-7" />
+          </button>
         </div>
       </div>
-      
     </div>
   );
 }

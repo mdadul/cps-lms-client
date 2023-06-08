@@ -2,10 +2,11 @@ import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import Auth from "../../Hooks/Auth";
 import Layout from "./Layout";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 export default function UpdateCourse() {
   const { id } = useParams();
+  const navigate = useNavigate();
 
   const Authentication = Auth();
   const token = Authentication.token;
@@ -112,21 +113,23 @@ export default function UpdateCourse() {
 
   return (
     <Layout>
-      <div class="sm:w-[38rem] mx-auto my-10 overflow-hidden rounded-2xl bg-white shadow-lg sm:max-w-lg">
-        <div class="bg-blue-800 px-10 py-10 text-center text-white">
-          <p class="font-serif text-2xl font-semibold tracking-wider">
+      <button onClick={()=>navigate(-1)} className="mt-4 rounded-full bg-red-800 px-10 py-2 font-semibold text-white">Cancle</button>
+       
+      <div className="sm:w-[38rem] mx-auto my-10 overflow-hidden rounded-2xl bg-white shadow-lg sm:max-w-lg">
+         <div className="bg-blue-800 px-10 py-10 text-center text-white">
+          <p className="font-serif text-2xl font-semibold tracking-wider">
             Update Course
           </p>
-          <p class="text-center text-blue-100">
+          <p className="text-center text-blue-100">
             Please keep it short and succinct
           </p>
         </div>
 
-        <form class="space-y-4 px-8 py-10" onSubmit={handleAddCourse}>
-          <label class="block" for="name">
-            <p class="text-gray-600">Course Title</p>
+        <form className="space-y-4 px-8 py-10" onSubmit={handleAddCourse}>
+          <label className="block" for="name">
+            <p className="text-gray-600">Course Title</p>
             <input
-              class="w-full rounded-md border bg-white px-2 py-2 outline-none ring-blue-600 focus:ring-1"
+              className="w-full rounded-md border bg-white px-2 py-2 outline-none ring-blue-600 focus:ring-1"
               type="text"
               required
               onChange={handleCourseName}
@@ -136,10 +139,10 @@ export default function UpdateCourse() {
             />
           </label>
 
-          <label class="block" for="name">
-            <p class="text-gray-600">Description</p>
+          <label className="block" for="name">
+            <p className="text-gray-600">Description</p>
             <textarea
-              class="h-32 w-full rounded-md border bg-white px-2 py-2 outline-none ring-blue-600 focus:ring-1"
+              className="h-32 w-full rounded-md border bg-white px-2 py-2 outline-none ring-blue-600 focus:ring-1"
               type="text"
               required
               value={courses.description || ""}
@@ -147,10 +150,10 @@ export default function UpdateCourse() {
               placeholder="Lorem ipsum dolor sit amet consectetur adipisicing elit."
             ></textarea>
           </label>
-          <label class="block" for="name">
-            <p class="text-gray-600">Fee</p>
+          <label className="block" for="name">
+            <p className="text-gray-600">Fee</p>
             <input
-              class="w-full rounded-md border bg-white px-2 py-2 outline-none ring-blue-600 focus:ring-1"
+              className="w-full rounded-md border bg-white px-2 py-2 outline-none ring-blue-600 focus:ring-1"
               type="number"
               required
               value={courses.fee || ""}
@@ -158,10 +161,10 @@ export default function UpdateCourse() {
               placeholder="Enter course Fee"
             />
           </label>
-          <label class="block" for="name">
-            <p class="text-gray-600">Course Duration</p>
+          <label className="block" for="name">
+            <p className="text-gray-600">Course Duration</p>
             <input
-              class="w-full rounded-md border bg-white px-2 py-2 outline-none ring-blue-600 focus:ring-1"
+              className="w-full rounded-md border bg-white px-2 py-2 outline-none ring-blue-600 focus:ring-1"
               type="number"
               required
               value={courses.duration || ""}
@@ -169,12 +172,12 @@ export default function UpdateCourse() {
               placeholder="Enter course Duration"
             />
           </label>
-          <label class="block" for="name">
-            <p class="text-gray-600">Course Image</p>
+          <label className="block" for="name">
+            <p className="text-gray-600">Course Image</p>
             <input
               onChange={handleImage}
               value={courses.image || ""}
-              class="w-full rounded-md border bg-white px-2 py-2 outline-none ring-blue-600 focus:ring-1"
+              className="w-full rounded-md border bg-white px-2 py-2 outline-none ring-blue-600 focus:ring-1"
               type="text"
               placeholder="Enter course Image URL"
             />
@@ -183,7 +186,7 @@ export default function UpdateCourse() {
           <select
             onChange={handleCategory}
             value={courses.category || ""}
-            class="w-full rounded-md border bg-white px-2 py-2 outline-none ring-blue-600 focus:ring-1"
+            className="w-full rounded-md border bg-white px-2 py-2 outline-none ring-blue-600 focus:ring-1"
             required
           >
             <option value="uncategories">Select Category</option>
@@ -194,7 +197,7 @@ export default function UpdateCourse() {
             <option value="others">Others</option>
           </select>
 
-          <button class="mt-4 rounded-full bg-blue-800 px-10 py-2 font-semibold text-white">
+          <button className="mt-4 rounded-full bg-blue-800 px-10 py-2 font-semibold text-white">
             Update
           </button>
         </form>
