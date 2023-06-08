@@ -1,24 +1,28 @@
 import React, { useEffect, useState } from "react";
 import CourseDetails from "../AdminDashboard/CourseDetails";
-import Auth from "../../Hooks/Auth";
 import { toast } from "react-toastify";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import edit from '../../img/edit.png'
+import deletes from '../../img/delete.gif'
 import AddSyllabus from './Syllabus/AddSyllabus'
+import Auth from "../../Hooks/Auth";
 
 export default function Syllabus() {
-  const Authentication = Auth();
+  const {id} = useParams();
+  const auth = Auth();
+  const token = auth.token;
+
   const [showMyModel, setShowMyModel] = useState(false);
 
   const handleOnClose = () => setShowMyModel(false);
 
-  const [students, setStudents] = useState([]);
+  const [syllabus, setSyllabus] = useState([]);
+
   useEffect(() => {
-    fetch("http://localhost:5000/users", {
+    fetch(`http://localhost:5000/syllabus/${id}`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Bearer ${Authentication.token}`,
       },
     })
       .then((res) => res.json())
@@ -26,10 +30,28 @@ export default function Syllabus() {
         if (data.error) {
           toast.error(data.error);
         } else {
-          setStudents(data.users);
+          setSyllabus(data.syllabus);
         }
       });
-  }, [Authentication.token, Authentication.user]);
+  }, [id]);
+
+  const handleDelete = (id) => {
+    const confirm = window.confirm("Are you sure you want to delete this topic?");
+    if (!confirm) return;
+
+    fetch(`http://localhost:5000/syllabus/${id}`, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization":  `Bearer ${token}`,
+      },
+    })
+      .then((res) => res.json())
+      .then(({ msg }) => {
+        toast.success(msg);
+        setSyllabus(syllabus.filter((syllabus) => syllabus._id !== id));
+      });
+  };
 
   return (
     <CourseDetails>
@@ -53,30 +75,44 @@ export default function Syllabus() {
                   <th className="px-5 py-3">Week No.</th>
                   <th className="px-5 py-3">Topic</th>
                   <th className="px-5 py-3">Edit</th>
+                  <th className="px-5 py-3">Delete</th>
                 </tr>
               </thead>
               <tbody className="text-gray-500">
-                <tr>
-                  <td className="border-b border-gray-200 bg-white px-5 py-5 text-sm">
-                    <p className="whitespace-no-wrap">01</p>
-                  </td>
-  
-                  <td className="border-b border-gray-200 bg-white px-5 py-5 text-sm">
-                    <p className="whitespace-no-wrap">Introduction to C++</p>
-                  </td>
-                 
-                  <td className="border-b border-gray-200 bg-white px-5 py-5 text-sm">
-                    <Link to={`/users/edit/${students._id}`}>
-                      <img src={edit} alt="edit" className="w-6 h-6" />
-                    </Link>
-                  </td>
-                </tr>
+                {
+                  syllabus
+                  .sort((a, b) => a.weekNumber - b.weekNumber)
+                  .map((syllabus) => (
+                    <tr>
+                    <td className="border-b border-gray-200 bg-white px-5 py-5 text-sm">
+                      <p className="whitespace-no-wrap">{syllabus.weekNumber}</p>
+                    </td>
+    
+                    <td className="border-b border-gray-200 bg-white px-5 py-5 text-sm">
+                      <p className="whitespace-no-wrap">{syllabus.topic}</p>
+                    </td>
+                   
+                    <td className="border-b border-gray-200 bg-white px-5 py-5 text-sm">
+                      <Link to={`/users/edit/${syllabus._id}`}>
+                        <img src={edit} alt="edit" className="w-6 h-6" />
+                      </Link>
+                    </td>
+                    <td className="border-b border-gray-200 bg-white px-5 py-5 text-sm">
+                      <Link onClick={()=>handleDelete(syllabus._id)}>
+                        <img src={deletes} alt="edit" className="w-6 h-6" />
+                      </Link>
+                    </td>
+                  </tr>
+                  ))
+
+                }
+               
               </tbody>
             </table>
           </div>
         </div>
       </div>
-      <AddSyllabus onClose={handleOnClose} visible={showMyModel}/>
+      <AddSyllabus onClose={handleOnClose} visible={showMyModel} id={id}/>
     </CourseDetails>
   );
 }

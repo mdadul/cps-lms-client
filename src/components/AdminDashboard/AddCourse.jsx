@@ -7,8 +7,7 @@ export default function AddCourse() {
   const Authentication =  Auth();
 
   const token = Authentication.token
-  console.log(token)
-  console.log(Authentication.user)
+
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   const [fee, setFee] = useState("");
@@ -21,7 +20,7 @@ export default function AddCourse() {
   const handleAddCourse = (e) => {
     e.preventDefault();
     const course = { name, description, fee, duration, image, category };
-    console.log(course);
+
     fetch("http://localhost:5000/courses", {
       method: "POST",
       headers: {
@@ -35,7 +34,7 @@ export default function AddCourse() {
       console.log(data);
       if (data.error) {
        toast.error(data.error);
-      } else {
+      }else {
        toast.success("Course Added Successfully");
         e.target.reset();
       }
