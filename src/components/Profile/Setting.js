@@ -52,7 +52,9 @@ export default function Profile() {
           toast.error(data.error);
         } else {
           toast.success("User updated successfully");
-          setusers({user});
+          localStorage.setItem("token", data.token);
+          localStorage.setItem("user", JSON.stringify(data.user));
+          setusers({ user });
           e.target.reset();
         }
       })

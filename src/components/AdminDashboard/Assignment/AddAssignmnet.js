@@ -1,6 +1,54 @@
-import React from "react";
+import React, { useState } from "react";
+import Auth from "../../../Hooks/Auth";
+import { toast } from "react-toastify";
 
-export default function AddAssignment({ visible, onClose }) {
+export default function AddAssignment({ visible, onClose, id}) {
+  const auth = Auth();
+  const token = auth.token;
+  const [date, setDate] = useState("");
+  const [title, setTitle] = useState("");
+  const [description, setDescription] = useState("");
+  const [maxMarks, setMaxMarks] = useState("");
+  const [passingMarks, setPassingMarks] = useState("");
+
+  const handleAddAssignment = (e) => {
+    e.preventDefault();
+    if(date < new Date().toISOString().slice(0, 10)){
+      toast.error("Due date must be greater than today's date");
+      return;
+    } 
+    if (maxMarks < passingMarks) {
+      toast.error("Max marks must be greater than passing marks");
+      return;
+    }
+
+    fetch(`http://localhost:5000/assignments`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": `Bearer ${token}`,
+      },
+      body: JSON.stringify({
+        courseId: id,
+        title,
+        description,
+        dueDate: date,
+        maxMarks,
+        passingMarks,
+      }),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.error) {
+          toast.error(data.error);
+        } else {
+          toast.success(data.msg);
+          e.target.reset();
+        }
+      });
+  };
+
+
   if (!visible) return null;
   return (
     <div className="fixed top-16 md:top-[10%] md:left-[40%] w-full ">
@@ -23,10 +71,11 @@ export default function AddAssignment({ visible, onClose }) {
           </svg>
         </button>
 
-        <div className="flex flex-col items-center px-8 py-10">
+        <form onSubmit={handleAddAssignment} className="flex flex-col items-center px-8 py-10">
           <label className="block w-full" for="name">
             <p className="mb-1 text-sm text-gray-600">Assignment Title</p>
             <input
+              onChange={(e) => setTitle(e.target.value)}
               className="w-full rounded-md border bg-white py-2 px-2 outline-none ring-blue-600 focus:ring-1"
               type="text"
               placeholder="Enter Assignment Title"
@@ -35,6 +84,7 @@ export default function AddAssignment({ visible, onClose }) {
           <label className="mt-4 block w-full" for="name">
             <p className="mb-1 text-sm text-gray-600">Due Date</p>
             <input
+              onChange={(e) => setDate(e.target.value)}
               className="w-full rounded-md border bg-white py-2 px-2 outline-none ring-blue-600 focus:ring-1"
               type="date"
               placeholder="Enter Due Date"
@@ -43,6 +93,7 @@ export default function AddAssignment({ visible, onClose }) {
           <label className="mt-4 block w-full" for="name">
             <p className="mb-1 text-sm text-gray-600">Description</p>
             <textarea 
+              onChange={(e) => setDescription(e.target.value)}
               rows="4"
               className="w-full rounded-md border bg-white py-2 px-2 outline-none ring-blue-600 focus:ring-1"
               type="text"
@@ -52,6 +103,7 @@ export default function AddAssignment({ visible, onClose }) {
           <label className="mt-4 block w-full" for="name">
             <p className="mb-1 text-sm text-gray-600">Pass Mark</p>
             <input
+              onChange={(e) => setPassingMarks(e.target.value)}
               className="w-full rounded-md border bg-white py-2 px-2 outline-none ring-blue-600 focus:ring-1"
               type="number"
               placeholder="Enter pass mark"
@@ -60,6 +112,7 @@ export default function AddAssignment({ visible, onClose }) {
           <label className="mt-4 block w-full" for="name">
             <p className="mb-1 text-sm text-gray-600">Marks</p>
             <input
+              onChange={(e) => setMaxMarks(e.target.value)}
               className="w-full rounded-md border bg-white py-2 px-2 outline-none ring-blue-600 focus:ring-1"
               type="number"
               placeholder="Enter marks"
@@ -68,7 +121,7 @@ export default function AddAssignment({ visible, onClose }) {
           
 
           <div className="mt-8 flex flex-col justify-center space-y-3 sm:flex-row sm:space-x-3 sm:space-y-0">
-            <button className="whitespace-nowrap rounded-md bg-blue-500 px-4 py-3 font-medium text-white">
+            <button type="submit" className="whitespace-nowrap rounded-md bg-blue-500 px-4 py-3 font-medium text-white">
               Add Assignment
             </button>
             <button
@@ -79,7 +132,7 @@ export default function AddAssignment({ visible, onClose }) {
             </button>
           </div>
         
-        </div>
+        </form>
       </div>
     </div>
   );

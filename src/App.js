@@ -8,19 +8,16 @@ import SignUp from "./pages/SignUp";
 import "react-toastify/dist/ReactToastify.css";
 import { Route, Routes } from "react-router-dom";
 import CourseDetails from "./components/CoursesPage/CourseDetails";
-import StudentDashboard from "./components/StudentDashboard/StudentDashboard";
-import Leader from "./components/StudentDashboard/Leader";
+import StudentDashboard from "./components/StudentDashboard/Dashboard";
 import AddCourse from "./components/AdminDashboard/AddCourse";
 import UpdateCourse from "./components/AdminDashboard/UpdateCourse";
 import { ToastContainer } from "react-toastify";
-import AddAssignmnet from "./components/AdminDashboard/Assignment/AddAssignmnet";
 import Assignment from "./components/AdminDashboard/Assignment";
 import StudentList from "./components/AdminDashboard/Students";
 import Course from "./components/AdminDashboard/AllCourse";
 import Error from "./components/common/Error";
 import Setting from "./components/AdminDashboard/Setting";
 import UpdateUser from "./components/AdminDashboard/UpdateUser";
-import Videos from "./components/StudentDashboard/Content/Video";
 import Stat from "./components/AdminDashboard/Stat";
 import AdminOutlet from "./components/AdminOutlet";
 import PrivateOutlet from "./components/PrivateOutlet";
@@ -79,19 +76,11 @@ function App() {
             <Route path="course/notice/:id" element={<Notice />} />
             <Route path="course/assignment/:id" element={<Assignment />} />
             <Route path="course/content/add" element={<AddContent />} />
-            <Route
-              path="course/assignment/add/:id"
-              element={<AddAssignmnet />}
-            />
             <Route path="users/edit/:id" element={<UpdateUser />} />
           </Route>
 
           <Route path="/*" element={<StudentOutlet />}>
             <Route path="studentdashboard" element={<StudentDashboard />} />
-            <Route path="leaderboard" element={<Leader />} />
-
-            <Route path="videos" element={<Videos />} />
-            <Route path="stat" element={<Stat />} />
           </Route>
 
           <Route path="*" element={<Error />} />

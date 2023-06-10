@@ -39,7 +39,7 @@ export default function SignIn() {
           if(data.user.role === "admin"){
             window.location.href = "/admindashboard";
           } else if(data.user.role === "student"){
-            window.location.href = "/dashboard";
+            window.location.href = "/studentdashboard";
           }
         } else {
           toast.error(data.msg, {

@@ -1,21 +1,43 @@
 import React from "react";
 import edit from "../../../img/edit.gif";
 import del from "../../../img/delete.gif";
-export default function Assignment() {
+import Auth from "../../../Hooks/Auth";
+import { toast } from "react-toastify";
+export default function Assignment({assignment}) {
+  const auth = Auth();
+  const token = auth.token;
+
+  const handleDeleteAssignment = (id) => {
+    fetch(`http://localhost:5000/assignments/${id}`, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": `Bearer ${token}`,
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.error) {
+          toast.error(data.error);
+        } else {
+          toast.success(data.msg);
+        }
+      });
+  };
+
+
   return (
     <div className="m-5">
       <div className="group mx-5 mt-10 grid px-7 max-w-screen-md grid-cols-12 space-x-8 overflow-hidden rounded-lg border py-8 text-gray-700 shadow transition hover:shadow-lg sm:mx-auto bg-white">
         <div className="col-span-11 flex flex-col  text-left sm:pl-4">
-          <h3 className="text-sm text-gray-600">Due Date: 12 APR 2023</h3>
+          <h3 className="text-sm text-gray-600">Due Date: {assignment?.date}</h3>
           <a
             href="/"
             className="mb-3 overflow-hidden pr-7 text-lg font-semibold sm:text-xl"
           >
-            Assignment Title
+           {assignment?.title}
           </a>
-          <p className="overflow-hidden pr-7 text-sm">
-            Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
-            nonummy nibh euismod tincidunt ut laoreet dolore magna .
+          <p className="overflow-hidden pr-7 text-sm">{assignment?.description}
           </p>
 
           <div className="mt-5 flex flex-col space-y-3 text-sm font-medium text-gray-500 sm:flex-row sm:items-center sm:space-y-0 sm:space-x-2">
@@ -23,13 +45,13 @@ export default function Assignment() {
               Marks:
               <span className="ml-2 mr-3 rounded-full bg-green-100 px-2 py-0.5 text-green-900">
                 {" "}
-                20
+                {assignment?.maxMarks}
               </span>
             </div>
             <div className="">
               Pass Marks:
               <span className="ml-2 mr-3 rounded-full bg-blue-100 px-2 py-0.5 text-blue-900">
-                12
+               {assignment?.passingMarks}
               </span>
             </div>
           </div>
@@ -38,7 +60,7 @@ export default function Assignment() {
           <button>
             <img src={edit} alt="edit" className="w-6 h-6" />
           </button>
-          <button>
+          <button onClick={()=>handleDeleteAssignment(assignment._id)}>
             <img src={del} alt="deleteIcon" className="w-6 h-7" />
           </button>
         </div>

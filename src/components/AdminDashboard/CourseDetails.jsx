@@ -2,12 +2,15 @@ import React from "react";
 import Layout from "./Layout";
 import { Link, useParams } from "react-router-dom";
 
-export default function Content({ children }) {
+
+export default function CourseDetails({ children }) {
   const { id } = useParams();
+
   return (
     <Layout>
       <div className="max-w-screen-md mx-auto">
         <div className="rounded-lg border border-gray-300 bg-white py-2 px-3">
+          
           <nav className="flex flex-wrap gap-4 justify-center">
             <Link
               to={`/course/syllabus/${id}`}

@@ -45,6 +45,7 @@ export const Nav = () => {
     ];
   } else if (role === "student") {
     menuItem = [
+      { destination: "/", text: "Home"},
       { destination: "/studentdashboard", text: "Dashboard" },
       { destination: "/leaderboard", text: "Leaderboard" },
       { destination: "/assignment", text: "Assignment" },

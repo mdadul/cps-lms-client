@@ -31,7 +31,6 @@ export default function AddSyllabus({ visible, onClose, id }) {
         } else {
           toast.success(data.msg);
           e.target.reset();
-          window.location.reload();
         }
       });
   };

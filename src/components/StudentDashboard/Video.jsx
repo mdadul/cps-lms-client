@@ -2,6 +2,7 @@ import React from "react";
 import { Nav } from "../common/Nav";
 
 export default function StudentDashboard() {
+  
   return (
     <div>
       <Nav />
@@ -75,15 +76,6 @@ export default function StudentDashboard() {
                         Saha - BASIS SoftExpo 2023
                       </p>
                     </a>
-                    <div>
-                      <span className="text-gray-600 text-xs mt-1">
-                        34.5 Mins
-                      </span>
-                      <span className="text-gray-400 text-xs mt-1"> | </span>
-                      <span className="text-gray-600 text-xs mt-1">
-                        241K views
-                      </span>
-                    </div>
                   </div>
                 </div>
                 <div className="w-full flex flex-row gap-2 cursor-pointer hover:bg-gradient-to-r from-slate-50 to-gray-100 p-2 py-3">
@@ -124,7 +116,6 @@ export default function StudentDashboard() {
                     </div>
                   </div>
                 </div>
-               
               </div>
             </div>
           </div>

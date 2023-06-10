@@ -1,24 +1,28 @@
 import React, { useEffect, useState } from "react";
-import Auth from "../../Hooks/Auth";
+
 import { toast } from "react-toastify";
 import CourseDetails from "./CourseDetails";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import edit from "../../img/edit.png";
+import del from "../../img/delete.gif";
 import AddContent from "./Content/AddContent";
+import Auth from "../../Hooks/Auth";
 export default function Content() {
-  const Authentication = Auth();
+  const { id } = useParams();
+  const auth = Auth();
+  const token = auth.token;
 
   const [showMyModel, setShowMyModel] = useState(false);
-
   const handleOnClose = () => setShowMyModel(false);
 
-  const [students, setStudents] = useState([]);
+  const [content, setContent] = useState([]);
+
   useEffect(() => {
-    fetch("http://localhost:5000/users", {
+    fetch(`http://localhost:5000/contents/${id}`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Bearer ${Authentication.token}`,
+        "Authorization": `Bearer ${token}`,
       },
     })
       .then((res) => res.json())
@@ -26,11 +30,30 @@ export default function Content() {
         if (data.error) {
           toast.error(data.error);
         } else {
-          setStudents(data.users);
+          setContent(data.content);
         }
       });
-  }, [Authentication.token, Authentication.user]);
+  }, [id,content,token]);
 
+  const handleDeleteContent = (id) => {
+    const confirm = window.confirm(
+      "Are you sure you want to delete this topic?"
+    );
+    if (!confirm) return;
+
+    fetch(`http://localhost:5000/contents/${id}`, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+    })
+      .then((res) => res.json())
+      .then(({ msg }) => {
+        toast.success(msg);
+        setContent(content.filter((content) => content._id !== id));
+      });
+  };
   return (
     <CourseDetails>
       <div className="mx-auto max-w-screen-lg px-4 py-8 sm:px-8">
@@ -58,34 +81,41 @@ export default function Content() {
                 <tr className="bg-blue-900 text-left text-xs font-semibold uppercase tracking-widest text-white">
                   <th className="px-5 py-3">Title</th>
                   <th className="px-5 py-3">Video URL</th>
-                  <th className="px-5 py-3">Duration</th>
                   <th className="px-5 py-3">Edit</th>
+                  <th className="px-5 py-3">Delete</th>
+
                 </tr>
               </thead>
               <tbody className="text-gray-500">
-                <tr>
-                  {" "}
-                  <td className="border-b border-gray-200 bg-white px-5 py-5 text-sm">
-                    <p className="whitespace-no-wrap">Introduction To C++</p>
-                  </td>
-                  <td className="border-b border-gray-200 bg-white px-5 py-5 text-sm">
-                    <p className="whitespace-no-wrap">Video URL</p>
-                  </td>
-                  <td className="border-b border-gray-200 bg-white px-5 py-5 text-sm">
-                    <p className="whitespace-no-wrap">2h 30min</p>
-                  </td>
-                  <td className="border-b border-gray-200 bg-white px-5 py-5 text-sm">
-                    <Link to={`/users/edit/${students._id}`}>
-                      <img src={edit} alt="edit" className="w-6 h-6" />
-                    </Link>
-                  </td>
-                </tr>
+                {content.map((item) => (
+                  <tr>
+                    <td className="border-b border-gray-200 bg-white px-5 py-5 text-sm">
+                      <p className="whitespace-no-wrap">{item.title}</p>
+                    </td>
+                    <td className="border-b border-gray-200 bg-white px-5 py-5 text-sm">
+                      <Link to={item.videoUrl}>
+                        <p className="whitespace-no-wrap">{item.videoUrl}</p>
+                      </Link>
+                    </td>
+                    
+                    <td className="border-b border-gray-200 bg-white px-5 py-5 text-sm">
+                      <Link to={`/users/edit/${item._id}`}>
+                        <img src={edit} alt="edit" className="w-6 h-6" />
+                      </Link>
+                    </td>
+                    <td className="border-b border-gray-200 bg-white px-5 py-5 text-sm">
+                      <Link onClick={()=>handleDeleteContent(item._id)}>
+                        <img src={del} alt="edit" className="w-6 h-6" />
+                      </Link>
+                    </td>
+                  </tr>
+                ))}
               </tbody>
             </table>
           </div>
         </div>
       </div>
-      <AddContent onClose={handleOnClose} visible={showMyModel}/>
+      <AddContent onClose={handleOnClose} visible={showMyModel} id={id} />
     </CourseDetails>
   );
 }

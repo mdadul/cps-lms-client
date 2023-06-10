@@ -38,7 +38,7 @@ export default function UpdateCourse() {
       });
   }, [Authentication.token, id]);
 
-  console.log(courses);
+
 
   const handleCourseName = (e) => {
     const name = e.target.value;
@@ -86,7 +86,7 @@ export default function UpdateCourse() {
       image: courses.image,
       category: courses.category,
     };
-    console.log(course);
+    
     fetch(`http://localhost:5000/courses/${id}`, {
       method: "PUT",
       headers: {
