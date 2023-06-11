@@ -4,13 +4,14 @@ import Auth from "../../Hooks/Auth";
 import StudentList from "./StudentList";
 import { toast } from "react-toastify";
 import StatCard from "./StatCard";
+import { api } from "../../config";
 
 export default function TeacherList() {
   const Authentication = Auth();
 
   const [students, setStudents] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/users", {
+    fetch(`${api}/users`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { toast } from "react-toastify";
 import Auth from "../../../Hooks/Auth";
+import { api } from "../../../config";
 
 export default function AddContent({ visible, onClose, id }) {
   const auth = Auth();
@@ -11,7 +12,8 @@ export default function AddContent({ visible, onClose, id }) {
 
   const handleAddContent = (e) => {
     e.preventDefault();
-    fetch(`http://localhost:5000/contents`, {
+    
+    fetch(`${api}/contents`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

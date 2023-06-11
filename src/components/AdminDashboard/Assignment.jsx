@@ -5,6 +5,7 @@ import { Link, useParams } from "react-router-dom";
 import AddAssignment from "./Assignment/AddAssignmnet";
 import { toast } from "react-toastify";
 import Auth from "../../Hooks/Auth";
+import { api } from "../../config";
 export default function Assignment() {
   const {id} = useParams();
   const auth = Auth();
@@ -17,7 +18,7 @@ export default function Assignment() {
   const [assignment, setAssignment] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/assignments/course/${id}`, {
+    fetch(`${api}/assignments/course/${id}`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",

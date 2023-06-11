@@ -4,12 +4,13 @@ import Layout from "./Layout";
 import Auth from "../../Hooks/Auth";
 import { toast } from "react-toastify";
 import { Link } from "react-router-dom";
+import { api } from "../../config";
 
 export default function Stat() {
   const auth = Auth();
   const [stat, setStat] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/users", {
+    fetch(`${api}/users`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",

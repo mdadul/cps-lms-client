@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Auth from "../../Hooks/Auth";
 import { toast } from "react-toastify";
+import { api } from "../../config";
 export default function Profile() {
   const Authentication = Auth();
   const token = Authentication.token;
@@ -10,7 +11,7 @@ export default function Profile() {
   console.log(id);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/users/${id}`, {
+    fetch(`${api}/users/${id}`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -37,7 +38,7 @@ export default function Profile() {
       name: users.name,
       avatar: users.avatar,
     };
-    fetch(`http://localhost:5000/users/update/${id}`, {
+    fetch(`${api}/users/update/${id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",

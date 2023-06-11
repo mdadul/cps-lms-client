@@ -3,12 +3,13 @@ import edit from "../../../img/edit.gif";
 import del from "../../../img/delete.gif";
 import Auth from "../../../Hooks/Auth";
 import { toast } from "react-toastify";
+import { api } from "../../../config";
 export default function Assignment({assignment}) {
   const auth = Auth();
   const token = auth.token;
 
   const handleDeleteAssignment = (id) => {
-    fetch(`http://localhost:5000/assignments/${id}`, {
+    fetch(`${api}/assignments/${id}`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",

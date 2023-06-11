@@ -3,6 +3,7 @@ import { toast } from "react-toastify";
 import Auth from "../../Hooks/Auth";
 import Layout from "./Layout";
 import { useNavigate, useParams } from "react-router-dom";
+import { api } from "../../config";
 
 export default function UpdateCourse() {
   const { id } = useParams();
@@ -37,8 +38,6 @@ export default function UpdateCourse() {
         console.log(err.error);
       });
   }, [Authentication.token, id]);
-
-
 
   const handleCourseName = (e) => {
     const name = e.target.value;
@@ -86,8 +85,8 @@ export default function UpdateCourse() {
       image: courses.image,
       category: courses.category,
     };
-    
-    fetch(`http://localhost:5000/courses/${id}`, {
+
+    fetch(`${api}/courses/${id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -101,7 +100,7 @@ export default function UpdateCourse() {
           toast.error(data.error);
         } else {
           toast.success("Course Added Successfully");
-          setCourses({})
+          setCourses({});
           window.location.href = "/course";
           e.target.reset();
         }
@@ -113,10 +112,15 @@ export default function UpdateCourse() {
 
   return (
     <Layout>
-      <button onClick={()=>navigate(-1)} className="mt-4 rounded-full bg-red-800 px-10 py-2 font-semibold text-white">Cancle</button>
-       
+      <button
+        onClick={() => navigate(-1)}
+        className="mt-4 rounded-full bg-red-800 px-10 py-2 font-semibold text-white"
+      >
+        Cancle
+      </button>
+
       <div className="sm:w-[38rem] mx-auto my-10 overflow-hidden rounded-2xl bg-white shadow-lg sm:max-w-lg">
-         <div className="bg-blue-800 px-10 py-10 text-center text-white">
+        <div className="bg-blue-800 px-10 py-10 text-center text-white">
           <p className="font-serif text-2xl font-semibold tracking-wider">
             Update Course
           </p>
@@ -135,7 +139,6 @@ export default function UpdateCourse() {
               onChange={handleCourseName}
               value={courses.name || ""}
               placeholder="Enter your course Title"
-              
             />
           </label>
 

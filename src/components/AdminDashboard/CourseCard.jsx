@@ -28,7 +28,7 @@ export default function CourseCard(props) {
           >
             {course.name}
           </Link>
-          <p className="overflow-hidden text-sm">{course.description}</p>
+          <p className="overflow-hidden text-sm">{course.description.slice(0,250)}</p>
           <a
             href="/"
             className="text-sm font-semibold text-gray-500 hover:text-gray-700"

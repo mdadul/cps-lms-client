@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import Auth from "../../../Hooks/Auth";
 import { toast } from "react-toastify";
+import { api } from "../../../config";
 
-export default function AddAssignment({ visible, onClose, id}) {
+export default function AddAssignment({ visible, onClose, id }) {
   const auth = Auth();
   const token = auth.token;
   const [date, setDate] = useState("");
@@ -13,20 +14,20 @@ export default function AddAssignment({ visible, onClose, id}) {
 
   const handleAddAssignment = (e) => {
     e.preventDefault();
-    if(date < new Date().toISOString().slice(0, 10)){
+    if (date < new Date().toISOString().slice(0, 10)) {
       toast.error("Due date must be greater than today's date");
       return;
-    } 
+    }
     if (maxMarks < passingMarks) {
       toast.error("Max marks must be greater than passing marks");
       return;
     }
 
-    fetch(`http://localhost:5000/assignments`, {
+    fetch(`${api}/assignments`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        "Authorization": `Bearer ${token}`,
+        Authorization: `Bearer ${token}`,
       },
       body: JSON.stringify({
         courseId: id,
@@ -47,7 +48,6 @@ export default function AddAssignment({ visible, onClose, id}) {
         }
       });
   };
-
 
   if (!visible) return null;
   return (
@@ -71,7 +71,10 @@ export default function AddAssignment({ visible, onClose, id}) {
           </svg>
         </button>
 
-        <form onSubmit={handleAddAssignment} className="flex flex-col items-center px-8 py-10">
+        <form
+          onSubmit={handleAddAssignment}
+          className="flex flex-col items-center px-8 py-10"
+        >
           <label className="block w-full" for="name">
             <p className="mb-1 text-sm text-gray-600">Assignment Title</p>
             <input
@@ -92,7 +95,7 @@ export default function AddAssignment({ visible, onClose, id}) {
           </label>
           <label className="mt-4 block w-full" for="name">
             <p className="mb-1 text-sm text-gray-600">Description</p>
-            <textarea 
+            <textarea
               onChange={(e) => setDescription(e.target.value)}
               rows="4"
               className="w-full rounded-md border bg-white py-2 px-2 outline-none ring-blue-600 focus:ring-1"
@@ -118,10 +121,12 @@ export default function AddAssignment({ visible, onClose, id}) {
               placeholder="Enter marks"
             />
           </label>
-          
 
           <div className="mt-8 flex flex-col justify-center space-y-3 sm:flex-row sm:space-x-3 sm:space-y-0">
-            <button type="submit" className="whitespace-nowrap rounded-md bg-blue-500 px-4 py-3 font-medium text-white">
+            <button
+              type="submit"
+              className="whitespace-nowrap rounded-md bg-blue-500 px-4 py-3 font-medium text-white"
+            >
               Add Assignment
             </button>
             <button
@@ -131,7 +136,6 @@ export default function AddAssignment({ visible, onClose, id}) {
               Cancel Operation
             </button>
           </div>
-        
         </form>
       </div>
     </div>

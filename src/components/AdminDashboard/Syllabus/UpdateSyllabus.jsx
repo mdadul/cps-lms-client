@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { toast } from "react-toastify";
 import Auth from "../../../Hooks/Auth";
+import { api } from "../../../config";
 
 export default function UpdateSyllabus({ visible, onClose, data }) {
   const auth = Auth();
@@ -15,7 +16,7 @@ export default function UpdateSyllabus({ visible, onClose, data }) {
 
   const handleUpdateSyllabus = (e) => {
     e.preventDefault();
-    fetch(`http://localhost:5000/syllabus/${data._id}`, {
+    fetch(`${api}/syllabus/${data._id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",

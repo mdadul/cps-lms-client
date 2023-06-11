@@ -5,6 +5,7 @@ import Input from "../components/Element/Input";
 import Button from "../components/Element/Button";
 import { useState } from "react";
 import { toast } from "react-toastify";
+import { api } from "../config";
 export default function SignUp() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -12,7 +13,7 @@ export default function SignUp() {
 
   const handleSingup = (e)=>{
     e.preventDefault();
-    fetch("https://ps-server.shikbo.xyz/users/signup",{
+    fetch(`${api}/users/signup`,{
       method:"POST",
       headers:{
         "Content-Type":"application/json"

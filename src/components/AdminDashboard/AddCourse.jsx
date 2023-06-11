@@ -2,6 +2,7 @@ import { useState } from "react";
 import { toast } from "react-toastify";
 import Auth from '../../Hooks/Auth'
 import Layout from "./Layout";
+import { api } from "../../config";
 
 export default function AddCourse() {
   const Authentication =  Auth();
@@ -21,7 +22,7 @@ export default function AddCourse() {
     e.preventDefault();
     const course = { name, description, fee, duration, image, category };
 
-    fetch("http://localhost:5000/courses", {
+    fetch(`${api}/courses`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

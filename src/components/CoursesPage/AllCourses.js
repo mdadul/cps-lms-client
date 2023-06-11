@@ -1,11 +1,13 @@
 import React from "react";
 import CourseCard from "./CourseCard";
 import { useEffect, useState } from "react";
+import { api } from "../../config";
 
 export default function AllCourses() {
   const [courses, setCourses] = useState([]);
+  console.log(api)
   useEffect(() => {
-    fetch("http://localhost:5000/courses") 
+    fetch(`${api}/courses`) 
       .then((res) => res.json())
       .then((data) => {
         setCourses(data.courses);

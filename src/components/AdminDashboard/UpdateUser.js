@@ -3,6 +3,7 @@ import { toast } from "react-toastify";
 import Auth from "../../Hooks/Auth";
 import Layout from "./Layout";
 import { useNavigate, useParams } from "react-router-dom";
+import { api } from "../../config";
 
 export default function UpdateUser() {
   const { id } = useParams();
@@ -14,7 +15,7 @@ export default function UpdateUser() {
   const [users, setusers] = useState({});
 
   useEffect(() => {
-    fetch(`http://localhost:5000/users/${id}`, {
+    fetch(`${api}/users/${id}`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -49,7 +50,7 @@ export default function UpdateUser() {
       role: users.role,
     };
     console.log(course);
-    fetch(`http://localhost:5000/users/role/${id}`, {
+    fetch(`${api}/users/role/${id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",

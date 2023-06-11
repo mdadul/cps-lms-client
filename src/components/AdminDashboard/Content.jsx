@@ -7,6 +7,7 @@ import edit from "../../img/edit.png";
 import del from "../../img/delete.gif";
 import AddContent from "./Content/AddContent";
 import Auth from "../../Hooks/Auth";
+import { api } from "../../config";
 export default function Content() {
   const { id } = useParams();
   const auth = Auth();
@@ -18,7 +19,7 @@ export default function Content() {
   const [content, setContent] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/contents/${id}`, {
+    fetch(`${api}/contents/${id}`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -41,7 +42,7 @@ export default function Content() {
     );
     if (!confirm) return;
 
-    fetch(`http://localhost:5000/contents/${id}`, {
+    fetch(`${api}/contents/${id}`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",

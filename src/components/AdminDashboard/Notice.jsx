@@ -6,6 +6,7 @@ import { Link, useParams } from "react-router-dom";
 import edit from '../../img/edit.png'
 import del from '../../img/delete.gif'
 import AddNotice from './Notice/AddNotice'
+import { api } from "../../config";
 export default function Notice() {
   const {id} = useParams();
   const Authentication = Auth();
@@ -37,7 +38,7 @@ export default function Notice() {
     );
     if (!confirm) return;
 
-    fetch(`http://localhost:5000/notices/${id}`, {
+    fetch(`${api}/notices/${id}`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
@@ -49,7 +50,7 @@ export default function Notice() {
         if (data.error) {
           toast.error(data.error);
         } else {
-          toast.success(data.message);
+          toast.success(data.msg);
           setnotice(notice.filter((notice) => notice._id !== id));
         }
       });

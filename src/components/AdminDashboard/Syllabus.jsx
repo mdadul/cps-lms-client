@@ -7,6 +7,7 @@ import deletes from "../../img/delete.gif";
 import AddSyllabus from "./Syllabus/AddSyllabus";
 import UpdateSyllabus from "./Syllabus/UpdateSyllabus";
 import Auth from "../../Hooks/Auth";
+import { api } from "../../config";
 
 export default function Syllabus() {
   const { id } = useParams();
@@ -28,7 +29,7 @@ export default function Syllabus() {
   };
 
   useEffect(() => {
-    fetch(`http://localhost:5000/syllabus/${id}`, {
+    fetch(`${api}/syllabus/${id}`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -50,7 +51,7 @@ export default function Syllabus() {
     );
     if (!confirm) return;
 
-    fetch(`http://localhost:5000/syllabus/${id}`, {
+    fetch(`${api}/syllabus/${id}`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",

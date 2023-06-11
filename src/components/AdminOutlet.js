@@ -3,10 +3,9 @@ import Auth from "../Hooks/Auth";
 import { Navigate, Outlet } from "react-router-dom";
 export default function AdminOutlet() {
   const auth = Auth();
-  const role = auth.user.role;
-  if (auth &&  role === "admin") {
+  const role = auth?.user?.role;
+  if (!auth) return <Navigate to="/signin" />;
+  if (role === "admin") {
     return <Outlet />;
-  } else {
-    return <Navigate to="/signin" />;
   }
 }

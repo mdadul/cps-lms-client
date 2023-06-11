@@ -1,6 +1,7 @@
 import React, {useState } from "react";
 import Auth from "../../../Hooks/Auth";
 import { toast } from "react-toastify";
+import { api } from "../../../config";
 
 export default function AddSyllabus({ visible, onClose, id }) {
   const Authentication = Auth();
@@ -11,7 +12,8 @@ export default function AddSyllabus({ visible, onClose, id }) {
 
    const handleAddSyllabus = (e) => {
     e.preventDefault();
-    fetch("http://localhost:5000/syllabus", {
+    
+    fetch(`${api}/syllabus`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

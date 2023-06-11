@@ -5,13 +5,14 @@ import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 import Auth from "../../Hooks/Auth";
 import StatCard from "./StatCard";
+import { api } from "../../config";
 
 export default function AllCourse() {
   const Authentication = Auth();
 
   const [courses, setCourses] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/courses")
+    fetch(`${api}/courses`)
       .then((res) => res.json())
       .then((data) => {
         setCourses(data.courses);
@@ -26,7 +27,7 @@ export default function AllCourse() {
       return;
     }
 
-    fetch(`http://localhost:5000/courses/${id}`, {
+    fetch(`${api}/courses/${id}`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
@@ -69,13 +70,15 @@ export default function AllCourse() {
 
         <StatCard title="Total Courses" value={courses.length} />
         <div>
-          {courses.map((course) => (
-            <CourseCard
-              key={course._id}
-              course={course}
-              handleDelete={handleDelete}
-            />
-          ))}
+          {courses
+            .sort((a, b) => new Date(a.createdAt) - new Date(b.createdAt))
+            .map((course) => (
+              <CourseCard
+                key={course._id}
+                course={course}
+                handleDelete={handleDelete}
+              />
+            ))}
         </div>
       </div>
     </Layout>

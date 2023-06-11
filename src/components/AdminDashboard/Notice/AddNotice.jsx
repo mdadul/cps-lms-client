@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Auth from "../../../Hooks/Auth";
 import { toast } from "react-toastify";
+import { api } from "../../../config";
 
 export default function AddNotice({ visible, onClose, id }) {
   const auth = Auth();
@@ -11,12 +12,13 @@ export default function AddNotice({ visible, onClose, id }) {
 
   const handleAddNotice = (e) => {
     e.preventDefault();
+  
     if(date < new Date().toISOString().slice(0, 10)){
       toast.error("Notice publish date must be greater than or equal to today's date");
       return;
     }
 
-    fetch(`http://localhost:5000/notices`, {
+    fetch(`${api}/notices`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
