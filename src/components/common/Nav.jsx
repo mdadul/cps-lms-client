@@ -5,17 +5,84 @@ import NavLink from "../Element/NavLink";
 import NavLinkM from "../Element/NavLinkM";
 import Auth from "../../Hooks/Auth";
 
-export const Nav = ({ menuItem }) => {
-  const Authentication = Auth();
-  const role = Authentication.user?.role;
+export const Nav = () => {
+  let menuItem = [];
 
-  const handleSignOut = () => {
+  const auth = Auth();
+  const name = auth.user?.name;
+  const avater = auth.user?.avatar;
+
+  const handleLogout = () => {
     localStorage.removeItem("token");
     localStorage.removeItem("user");
-    window.location.href = "/signin";
+    window.location.href = "/";
   };
 
+  const role = auth.user?.role;
+  if (auth === false) {
+    menuItem = [
+      {
+        destination: "/",
+        text: "Home",
+      },
+
+      {
+        destination: "/courses",
+        text: "Courses",
+      },
+      {
+        destination: "/blog",
+        text: "News and Blogs",
+      },
+      {
+        destination: "/about",
+        text: "About Us",
+      },
+      {
+        destination: "/contact",
+        text: "Contact Us",
+      },
+    ];
+  } else if (role === "student") {
+    menuItem = [
+      { destination: "/", text: "Home"},
+      { destination: "/studentdashboard", text: "Dashboard" },
+      { destination: "/leaderboard", text: "Leaderboard" },
+      { destination: "/assignment", text: "Assignment" },
+      { destination: "/notice", text: "Notice" },
+    ];
+  } else if (role === "teacher") {
+    menuItem = [
+      { destination: "/teacher/dashboard", text: "Dashboard" },
+      { destination: "/teacher/leaderboard", text: "Leaderboard" },
+      { destination: "/teacher/quiz", text: "Quiz" },
+      { destination: "/teacher/assignment", text: "Assignment" },
+      { destination: "/teacher/notice", text: "Notice" },
+    ];
+  } else if (role === "admin") {
+    menuItem = [
+      {
+        destination: "/",
+        text: "Home",
+      },
+      {
+        destination: "/admindashboard",
+        text: "Dashboard",
+      },
+      {
+        destination: "/course",
+        text: "Courses",
+      }
+    ];
+  }
+
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
+  const toggleDropdown = () => {
+    setIsDropdownOpen(!isDropdownOpen);
+  };
 
   const newLocal = "flex items-center hidden space-x-8 lg:flex";
   return (
@@ -29,39 +96,43 @@ export const Nav = ({ menuItem }) => {
             <NavLink destination={item.destination} text={item.text} />
           ))}
         </ul>
-        {Authentication && role === "admin" && (
-          <ul>
-          <li>
-            <Link
-              to="/course"
-              className="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-blue-700 border border-cyan-700 transition duration-200 rounded shadow-md  hover:bg-blue-700 hover:text-white focus:shadow-outline focus:outline-none"
-            >
-              Dashboard
-            </Link>
-          </li>
-          </ul>
-        ) }
-        {Authentication && role==='student' && (
-          <ul>
-          <li>
-            <Link
-              to="/dashboard"
-              className="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-blue-700 border border-cyan-700 transition duration-200 rounded shadow-md  hover:bg-blue-700 hover:text-white focus:shadow-outline focus:outline-none"
-            >
-              Dashboard
-            </Link>
-          </li>
-          </ul>
-        )}
+        {auth ? (
+          <ul className="items-center hidden space-x-8 lg:flex">
+            <li className="flex gap-2 items-center">
+              <p className="font-medium">{name}</p>
+              <button onClick={toggleDropdown}>
+                <img
+                  src={avater}
+                  alt="avatar"
+                  className="rounded-full ring-1 w-8 h-8 ring-gray-700"
+                />
+              </button>
+            </li>
 
-        {Authentication ? (
-          <Link
-            onClick={handleSignOut}
-            to="/"
-            className="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-blue-700 border border-cyan-700 transition duration-200 rounded shadow-md  hover:bg-blue-700 hover:text-white focus:shadow-outline focus:outline-none"
-          >
-            Sign Out
-          </Link>
+            {isDropdownOpen && (
+              <div className="absolute right-0 mt-44 bg-gray-50 w-[150px] z-50">
+                <ul className="py-1">
+                  <Link to="/profile">
+                    <li className="px-4 py-2 hover:bg-gray-200 cursor-pointer">
+                      Profile
+                    </li>
+                  </Link>
+                  <Link to="/setting">
+                    <li className="px-4 py-2 hover:bg-gray-200 cursor-pointer">
+                      Setting
+                    </li>
+                  </Link>
+                  <li
+                    className="px-4 py-2 hover:bg-gray-200 cursor-pointer"
+                    onClick={handleLogout}
+                  >
+                    Logout
+                  </li>
+                </ul>
+              </div>
+            )}
+           
+          </ul>
         ) : (
           <ul className="items-center hidden space-x-8 lg:flex">
             <li>
@@ -127,51 +198,49 @@ export const Nav = ({ menuItem }) => {
                   </div>
                 </div>
                 <nav>
-                  <ul className="space-y-4">
-                    {role === "admin" &&  (
+                  {auth ? (
+                    <ul className="space-y-4">
+                      {menuItem.map((item) => (
+                        <NavLinkM
+                          destination={item.destination}
+                          text={item.text}
+                        />
+                      ))}
                       <li>
-                        <Link
-                          to="/course"
+                        <button
+                          onClick={handleLogout}
                           className="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-blue-700 border border-cyan-700 transition duration-200 rounded shadow-md  hover:bg-blue-700 hover:text-white focus:shadow-outline focus:outline-none"
                         >
-                          Dashboard
-                        </Link>
+                          Log Out
+                        </button>
                       </li>
-                    ) }
-                    
-                    {Authentication &&  role=== 'student' && (
+                    </ul>
+                  ) : (
+                    <ul className="space-y-4">
+                      {menuItem.map((item) => (
+                        <NavLinkM
+                          destination={item.destination}
+                          text={item.text}
+                        />
+                      ))}
                       <li>
                         <Link
-                          to="/dashboard"
+                          to="/signup"
                           className="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-blue-700 border border-cyan-700 transition duration-200 rounded shadow-md  hover:bg-blue-700 hover:text-white focus:shadow-outline focus:outline-none"
                         >
-                          Dashboard
+                          Sign up
                         </Link>
                       </li>
-                    )}
-                    {menuItem.map((item) => (
-                      <NavLinkM
-                        destination={item.destination}
-                        text={item.text}
-                      />
-                    ))}
-                    <li>
-                      <Link
-                        to="/signup"
-                        className="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-blue-700 border border-cyan-700 transition duration-200 rounded shadow-md  hover:bg-blue-700 hover:text-white focus:shadow-outline focus:outline-none"
-                      >
-                        Sign up
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        to="/signin"
-                        className="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-blue-700 border border-cyan-700 transition duration-200 rounded shadow-md  hover:bg-blue-700 hover:text-white focus:shadow-outline focus:outline-none"
-                      >
-                        Sign In
-                      </Link>
-                    </li>
-                  </ul>
+                      <li>
+                        <Link
+                          to="/signin"
+                          className="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-blue-700 border border-cyan-700 transition duration-200 rounded shadow-md  hover:bg-blue-700 hover:text-white focus:shadow-outline focus:outline-none"
+                        >
+                          Sign In
+                        </Link>
+                      </li>
+                    </ul>
+                  )}
                 </nav>
               </div>
             </div>

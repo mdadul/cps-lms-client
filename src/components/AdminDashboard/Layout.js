@@ -1,30 +1,14 @@
 import React from "react";
-import Sidebar from "./Sidebar";
-import { Nav } from "../common/Nav";
+import {Nav} from "../common/Nav";
 
-const menuItem = [
-  {
-    destination: "/",
-    text: "Home",
-  },
-  {
-    destination: "/courses",
-    text: "Courses",
-  },
-  {
-    destination: "/about",
-    text: "About Us",
-  },
-];
 export default function Layout({ children }) {
 
   return (
     <>
-    <Nav menuItem={menuItem}/>
-     <div className="flex gap-40 ">
-      <Sidebar />
-      <main>{children}</main>
-    </div>
+    <Nav/>
+    <main className="flex-1 overflow-x-hidden overflow-y-auto bg-gray-50 min-h-[89vh]">
+      <div className="container mx-auto px-6 py-8">{children}</div>
+    </main>
     </>
    
   );

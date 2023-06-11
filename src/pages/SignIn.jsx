@@ -1,18 +1,19 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import singin from "../img/signin.gif";
 import Layout from "../components/common/Layout";
 import Input from "../components/Element/Input";
 import Button from "../components/Element/Button";
 import { useState } from "react";
 import {  toast } from "react-toastify";
+import { api } from "../config";
 export default function SignIn() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-
+  const navigate = useNavigate();
   const handleSubmit = (e) => {
     e.preventDefault();
-    fetch("https://ps-server.shikbo.xyz/users/login", {
+    fetch(`${api}/users/login`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -23,35 +24,19 @@ export default function SignIn() {
       .then((data) => {
         console.log(data);
         if (data.user) {
-          toast.success("Successfully log in ", {
-            position: "bottom-right",
-            autoClose: 5000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-            theme: "light",
-          });
+          toast.success("Successfully log in ");
           localStorage.setItem("token", data.token);
           localStorage.setItem("user", JSON.stringify(data.user));
           
           if(data.user.role === "admin"){
-            window.location.href = "/course";
+            
+            window.location.href = "/admindashboard";
           } else if(data.user.role === "student"){
-            window.location.href = "/dashboard";
+            navigate(-1)
+            // window.location.href = "/studentdashboard";
           }
         } else {
-          toast.error(data.msg, {
-            position: "bottom-right",
-            autoClose: 5000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-            theme: "light",
-          });
+          toast.error(data.msg);
         }
       });
   };
@@ -64,7 +49,7 @@ export default function SignIn() {
             <p class="text-center text-3xl font-bold md:leading-tight md:text-left md:text-5xl">
               Welcome back
               <br />
-              to <span class="text-blue-600">CPS</span>
+              to <span class="text-blue-600">PS</span>
             </p>
             <p class="mt-6 text-center font-medium md:text-left">
               Sign in to your account below.

@@ -2,13 +2,13 @@ import { useState } from "react";
 import { toast } from "react-toastify";
 import Auth from '../../Hooks/Auth'
 import Layout from "./Layout";
+import { api } from "../../config";
 
 export default function AddCourse() {
   const Authentication =  Auth();
 
   const token = Authentication.token
-  console.log(token)
-  console.log(Authentication.user)
+
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   const [fee, setFee] = useState("");
@@ -21,20 +21,21 @@ export default function AddCourse() {
   const handleAddCourse = (e) => {
     e.preventDefault();
     const course = { name, description, fee, duration, image, category };
-    console.log(course);
-    fetch("http://localhost:5000/courses", {
+
+    fetch(`${api}/courses`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        "Authorization":  `Bearer ${token}`
+        "Authorization":  `Bearer ${token}`,
       },
       body: JSON.stringify(course),
     })
     .then((res) => res.json())
     .then((data) => {
+      console.log(data);
       if (data.error) {
        toast.error(data.error);
-      } else {
+      }else {
        toast.success("Course Added Successfully");
         e.target.reset();
       }

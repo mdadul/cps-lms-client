@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 export default function CourseCard({course}) {
   return (
     <article className="rounded-xl bg-white p-3 shadow-lg hover:shadow-xl ">
-      <Link to="/courses/details">
+      <Link to={`courses/description/${course._id}`}>
         <div className="relative flex items-end overflow-hidden rounded-xl ">
           <img
             src={course.image}

@@ -3,13 +3,15 @@ import Layout from "./Layout";
 import Auth from "../../Hooks/Auth";
 import StudentList from "./StudentList";
 import { toast } from "react-toastify";
+import StatCard from "./StatCard";
+import { api } from "../../config";
 
 export default function Students() {
   const Authentication = Auth();
 
   const [students, setStudents] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/users", {
+    fetch(`${api}/users`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -18,13 +20,13 @@ export default function Students() {
     })
       .then((res) => res.json())
       .then((data) => {
-        if(data.error) {
+        if (data.error) {
           toast.error(data.error);
-        } else{
-        setStudents(data.users);
+        } else {
+          setStudents(data.users);
         }
       });
-  }, [Authentication.token]);
+  }, [Authentication.token, Authentication.user]);
 
   return (
     <Layout>
@@ -37,6 +39,7 @@ export default function Students() {
             </span>
           </div>
         </div>
+        <StatCard title="Total Students" value= {students.filter((student)=> student.role === "student").length} />
         <div className="overflow-y-hidden rounded-lg border">
           <div className="overflow-x-auto">
             <table className="w-full">
@@ -46,16 +49,15 @@ export default function Students() {
                   <th className="px-5 py-3">Full Name</th>
                   <th className="px-5 py-3">User Role</th>
                   <th className="px-5 py-3">Email</th>
-                  <th className="px-5 py-3">Status</th>
                   <th className="px-5 py-3">Edit</th>
                 </tr>
               </thead>
               <tbody className="text-gray-500">
-                
-                  {students.map((student) => (
-                    <StudentList students={student} key={student._id} />
+                {students
+                  .filter((student) => student.role === "student")
+                  .map((student) => (
+                    <StudentList key={student._id} students={student} />
                   ))}
-                
               </tbody>
             </table>
           </div>

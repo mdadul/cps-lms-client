@@ -2,22 +2,20 @@ import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import Auth from "../../Hooks/Auth";
 import Layout from "./Layout";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
+import { api } from "../../config";
 
 export default function UpdateUser() {
   const { id } = useParams();
+  const navigate = useNavigate();
 
   const Authentication = Auth();
   const token = Authentication.token;
 
-  if (!Authentication) {
-    window.location.href = "/signin";
-  }
-
   const [users, setusers] = useState({});
 
   useEffect(() => {
-    fetch(`http://localhost:5000/users/${id}`, {
+    fetch(`${api}/users/${id}`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -52,7 +50,7 @@ export default function UpdateUser() {
       role: users.role,
     };
     console.log(course);
-    fetch(`http://localhost:5000/users/${id}`, {
+    fetch(`${api}/users/role/${id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -67,7 +65,7 @@ export default function UpdateUser() {
         } else {
           toast.success("User update Successfully");
           setusers({})
-          window.location.href = "/studentlist";
+          navigate(-1)
           e.target.reset();
         }
       })
