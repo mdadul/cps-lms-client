@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import singin from "../img/signin.gif";
 import Layout from "../components/common/Layout";
 import Input from "../components/Element/Input";
@@ -10,7 +10,7 @@ export default function SignIn() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-
+  const navigate = useNavigate();
   const handleSubmit = (e) => {
     e.preventDefault();
     fetch(`${api}/users/login`, {
@@ -24,35 +24,19 @@ export default function SignIn() {
       .then((data) => {
         console.log(data);
         if (data.user) {
-          toast.success("Successfully log in ", {
-            position: "bottom-right",
-            autoClose: 5000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-            theme: "light",
-          });
+          toast.success("Successfully log in ");
           localStorage.setItem("token", data.token);
           localStorage.setItem("user", JSON.stringify(data.user));
           
           if(data.user.role === "admin"){
+            
             window.location.href = "/admindashboard";
           } else if(data.user.role === "student"){
-            window.location.href = "/studentdashboard";
+            navigate(-1)
+            // window.location.href = "/studentdashboard";
           }
         } else {
-          toast.error(data.msg, {
-            position: "bottom-right",
-            autoClose: 5000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-            theme: "light",
-          });
+          toast.error(data.msg);
         }
       });
   };

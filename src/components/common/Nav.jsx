@@ -110,7 +110,7 @@ export const Nav = () => {
             </li>
 
             {isDropdownOpen && (
-              <div className="absolute right-0 mt-44 bg-gray-50 w-[150px]">
+              <div className="absolute right-0 mt-44 bg-gray-50 w-[150px] z-50">
                 <ul className="py-1">
                   <Link to="/profile">
                     <li className="px-4 py-2 hover:bg-gray-200 cursor-pointer">
@@ -131,14 +131,7 @@ export const Nav = () => {
                 </ul>
               </div>
             )}
-            {/* <li>
-              <button
-                onClick={handleLogout}
-                className="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-blue-700 border border-cyan-700 transition duration-200 rounded shadow-md  hover:bg-blue-700 hover:text-white focus:shadow-outline focus:outline-none"
-              >
-                Log Out
-              </button>
-            </li> */}
+           
           </ul>
         ) : (
           <ul className="items-center hidden space-x-8 lg:flex">

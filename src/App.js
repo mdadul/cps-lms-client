@@ -6,9 +6,7 @@ import Contact from "./pages/Contact";
 import SignIn from "./pages/SignIn";
 import SignUp from "./pages/SignUp";
 import "react-toastify/dist/ReactToastify.css";
-import { Route, Routes } from "react-router-dom";
-import CourseDetails from "./components/CoursesPage/CourseDetails";
-import StudentDashboard from "./components/StudentDashboard/Dashboard";
+import { Route, Routes } from "react-router-dom";import StudentDashboard from "./components/StudentDashboard/Dashboard";
 import AddCourse from "./components/AdminDashboard/AddCourse";
 import UpdateCourse from "./components/AdminDashboard/UpdateCourse";
 import { ToastContainer } from "react-toastify";
@@ -32,6 +30,10 @@ import TeacherList from "./components/AdminDashboard/Teachers";
 import { useEffect, useState } from "react";
 import Loader from "./components/Loader/Loader";
 import AddContent from "./components/AdminDashboard/Content/AddContent";
+import Details from "./components/CoursesPage/Details";
+import Curriculum from "./components/CoursesPage/Curriculum";
+import Enroll from "./components/Enroll/Enroll";
+import EnrolledStudents from "./components/AdminDashboard/Enrolled/EnrolledList";
 function App() {
   const [isLoading, setLoading] = useState(true);
 
@@ -53,13 +55,15 @@ function App() {
           <Route path="/blog" element={<Blog />} />
           <Route path="/courses" element={<Courses />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/courses/details" element={<CourseDetails />} />
+          <Route path="/courses/description/:id" element={<Details />} />
+          <Route path="/courses/curriculum/:id" element={<Curriculum />} />
           <Route path="/signin" element={<SignIn />} />
           <Route path="/signup" element={<SignUp />} />
 
           <Route path="/*" element={<PrivateOutlet />}>
             <Route path="profile" element={<Profile />} />
             <Route path="setting" element={<Setting />} />
+            <Route path="enroll/:id" element={<Enroll />} />
           </Route>
 
           <Route path="/*" element={<AdminOutlet />}>
@@ -77,6 +81,7 @@ function App() {
             <Route path="course/assignment/:id" element={<Assignment />} />
             <Route path="course/content/add" element={<AddContent />} />
             <Route path="users/edit/:id" element={<UpdateUser />} />
+            <Route path="course/enroll/:id" element={<EnrolledStudents />} />
           </Route>
 
           <Route path="/*" element={<StudentOutlet />}>
