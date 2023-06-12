@@ -24,7 +24,6 @@ export default function EnrolledStudents() {
         if (data.error) {
           toast.error(data.error);
         } else {
-            console.log(data.enrollments);
           setStudents(data.enrollments);
         }
       });
@@ -48,11 +47,11 @@ export default function EnrolledStudents() {
           <div className="overflow-x-auto">
             <table className="w-full">
               <thead>
-                <tr className="bg-blue-600 text-left text-xs font-semibold uppercase tracking-widest text-white">
+                <tr className="bg-blue-600 text-xs font-semibold uppercase tracking-widest text-white text-center">
                   <th className="px-5 py-3">Full Name</th>
                   <th className="px-5 py-3">Email</th>
-                  <th className="px-5 py-3">CourseID</th>
-                  <th className="px-5 py-3">Transaction Id</th>
+                  <th className="px-5 py-3">Course</th>
+                  <th className="px-5 py-3">TNXId</th>
                   <th className="px-5 py-3">Enrollment Status</th>
                   <th className="px-5 py-3">Edit</th>
                 </tr>
@@ -62,27 +61,27 @@ export default function EnrolledStudents() {
                   <tr key={students._id}>
                     <td className="border-b border-gray-200 bg-white px-5 py-5 text-sm">
                       <p className="whitespace-no-wrap">
-                        {students.phoneNumber}
+                        {students.userId.name}
                       </p>
                     </td>
                     <td className="border-b border-gray-200 bg-white px-5 py-5 text-sm">
                       <div className="flex items-center">
-                        {/* <div className="h-10 w-10 flex-shrink-0">
+                        <div className="h-10 w-10 flex-shrink-0">
                           <img
                             className="h-full w-full rounded-full"
-                            src={students.avatar}
+                            src={students.userId.avatar}
                             alt=""
                           />
-                        </div> */}
+                        </div>
                         <div className="ml-3">
                           <p className="whitespace-no-wrap">
-                            {students.userID}
+                            {students.userId.email}
                           </p>
                         </div>
                       </div>
                     </td>
                     <td className="border-b border-gray-200 bg-white px-5 py-5 text-sm">
-                      <p className="whitespace-no-wrap">{students.courseId}</p>
+                      <p className="whitespace-no-wrap">{students.courseId.name}</p>
                     </td>
                     <td className="border-b border-gray-200 bg-white px-5 py-5 text-sm">
                       <p className="whitespace-no-wrap">
@@ -90,13 +89,16 @@ export default function EnrolledStudents() {
                       </p>
                     </td>
                     <td className="border-b border-gray-200 bg-white px-5 py-5 text-sm">
-                      <p className="whitespace-no-wrap">
-                        {students.enrollmentStatus}
+                      <p className={"whitespace-no-wrap  " +
+                        students.enrollmentStatus === "pending" ? "text-black bg-yellow-500 font-bold rounded-md text-center" : students.enrollmentStatus === "approved" ? "bg-green-500 font-bold text-white  rounded-md text-center" : "bg-red-500 text-white font-bold rounded-md text-center"
+
+                      }>
+                        {students.enrollmentStatus.toUpperCase()}
                       </p>
                     </td>
 
                     <td className="border-b border-gray-200 bg-white px-5 py-5 text-sm">
-                      <Link to={`/users/edit/${students._id}`}>
+                      <Link to={`/course/enroll/edit/${students._id}`}>
                         <img src={edit} alt="edit" className="w-6 h-6" />
                       </Link>
                     </td>

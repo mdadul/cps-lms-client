@@ -34,6 +34,8 @@ import Details from "./components/CoursesPage/Details";
 import Curriculum from "./components/CoursesPage/Curriculum";
 import Enroll from "./components/Enroll/Enroll";
 import EnrolledStudents from "./components/AdminDashboard/Enrolled/EnrolledList";
+import UpdateEnrollStatus from "./components/AdminDashboard/Enrolled/UpdateEnrollStatus";
+import Teacher from "./components/AdminDashboard/Teacher/Teacher";
 function App() {
   const [isLoading, setLoading] = useState(true);
 
@@ -82,6 +84,8 @@ function App() {
             <Route path="course/content/add" element={<AddContent />} />
             <Route path="users/edit/:id" element={<UpdateUser />} />
             <Route path="course/enroll/:id" element={<EnrolledStudents />} />
+            <Route path="course/enroll/edit/:id" element={<UpdateEnrollStatus />} />
+            <Route path="course/teacher/:id" element={<Teacher />} />
           </Route>
 
           <Route path="/*" element={<StudentOutlet />}>

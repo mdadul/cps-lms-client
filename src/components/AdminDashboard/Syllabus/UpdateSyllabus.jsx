@@ -9,11 +9,6 @@ export default function UpdateSyllabus({ visible, onClose, data }) {
 
   const [syllabus, setSyllabus] = useState(data);
 
-  console.log(syllabus.weekNumber )
-  console.log(syllabus.topic )
-  console.log(syllabus._id )
-  console.log(data.weekNumber)
-
   const handleUpdateSyllabus = (e) => {
     e.preventDefault();
     fetch(`${api}/syllabus/${data._id}`, {

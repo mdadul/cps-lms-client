@@ -83,7 +83,7 @@ export default function Notice() {
                 </tr>
               </thead>
               <tbody className="text-gray-500">
-                {
+                { notice.length === 0 ? <tr><td colSpan="5" className="text-center">No Notice Found</td></tr> :
                   notice.map((notice) => (
                     <tr key={notice._id}>
                     <td className="border-b border-gray-200 bg-white px-5 py-5 text-sm">
