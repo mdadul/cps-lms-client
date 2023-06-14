@@ -3,8 +3,8 @@ import Layout from "../common/Layout";
 import Instructor from "./Instructor";
 import { Link, useParams } from "react-router-dom";
 import { api } from "../../config";
-export default function CourseDetails({children}) {
-  const {id} = useParams();
+export default function CourseDetails({ children }) {
+  const { id } = useParams();
   const [show, setShow] = useState(false);
 
   const handleScroll = () => {
@@ -15,11 +15,16 @@ export default function CourseDetails({children}) {
     }
   };
   const [course, setCourse] = useState({});
+  const [instructor, setInstructor] = useState({});
 
   useEffect(() => {
     fetch(`${api}/courses/${id}`)
       .then((res) => res.json())
       .then((data) => setCourse(data.course));
+
+    fetch(`${api}/teachers/course/${id}`)
+      .then((res) => res.json())
+      .then((data) => setInstructor(data.teachers));
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
@@ -33,16 +38,20 @@ export default function CourseDetails({children}) {
             <div className="bg-white px-10 py-5 border-2 md:fixed top-48 right-20">
               <p className="text-xl mb-2">
                 Course Fee:{" "}
-                <span className="font-bold text-blue-700">{course.fee} BDT</span>{" "}
+                <span className="font-bold text-blue-700">
+                  {course.fee} BDT
+                </span>{" "}
               </p>
               <p className="text-xl">
                 Duration :{" "}
-                <span className="font-bold text-blue-700">{course.duration} Months</span>
+                <span className="font-bold text-blue-700">
+                  {course.duration} Months
+                </span>
               </p>
-              <Link to = {`/enroll/${id}`}>
-              <button  className="bg-gradient-to-r from-teal-500 to-indigo-600 px-20 py-2 text-white rounded-md mt-5 md:text-center ">
-                Enroll Now
-              </button>
+              <Link to={`/enroll/${id}`}>
+                <button className="bg-gradient-to-r from-teal-500 to-indigo-600 px-20 py-2 text-white rounded-md mt-5 md:text-center ">
+                  Enroll Now
+                </button>
               </Link>
             </div>
           )}
@@ -52,9 +61,7 @@ export default function CourseDetails({children}) {
               <h5 className="text-sm font-medium uppercase text-gray-400">
                 {course.category}
               </h5>
-              <h1 className="text-3xl font-semibold">
-               {course.name}
-              </h1>
+              <h1 className="text-3xl font-semibold">{course.name}</h1>
 
               <div>
                 <img
@@ -67,10 +74,9 @@ export default function CourseDetails({children}) {
 
             <div className="mt-10 bg-white py-2">
               <nav className="flex flex-wrap gap-4">
-                <Link 
+                <Link
                   to={`/courses/description/${id}`}
                   className="inline-flex whitespace-nowrap border-b-2 border-transparent py-2 px-3 text-sm font-medium text-gray-600 transition-all duration-200 ease-in-out  hover:border-b-purple-600 hover:text-purple-600 "
-                  
                 >
                   Details
                 </Link>
@@ -98,11 +104,7 @@ export default function CourseDetails({children}) {
             </div>
           </div>
           <div>
-            <div className="mx-auto max-w-screen-lg px-3 py-5">
-             
-              {children}
-             
-            </div>
+            <div className="mx-auto max-w-screen-lg px-3 py-5">{children}</div>
           </div>
 
           <section class="bg-white dark:bg-gray-900">
@@ -112,14 +114,14 @@ export default function CourseDetails({children}) {
               </h2>
 
               <div class="grid gap-8 mt-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-                <Instructor />
-                <Instructor />
-                <Instructor />
-                <Instructor />
-                <Instructor />
-                <Instructor />
-                <Instructor />
-                <Instructor />
+                {instructor?.length > 0 &&
+                  instructor.map((teacher) => (
+                    <Instructor
+                      key={teacher._id}
+                      image={teacher.teacherId?.avatar}
+                      name={teacher.teacherId?.name}
+                    />
+                  ))}
               </div>
             </div>
           </section>

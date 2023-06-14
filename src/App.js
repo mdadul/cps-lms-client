@@ -36,6 +36,9 @@ import Enroll from "./components/Enroll/Enroll";
 import EnrolledStudents from "./components/AdminDashboard/Enrolled/EnrolledList";
 import UpdateEnrollStatus from "./components/AdminDashboard/Enrolled/UpdateEnrollStatus";
 import Teacher from "./components/AdminDashboard/Teacher/Teacher";
+import CourseContent from "./components/StudentDashboard/CourseContent";
+import Video from "./components/StudentDashboard/Video";
+import ViewAssignment from "./components/StudentDashboard/ViewAssignment";
 function App() {
   const [isLoading, setLoading] = useState(true);
 
@@ -89,7 +92,10 @@ function App() {
           </Route>
 
           <Route path="/*" element={<StudentOutlet />}>
-            <Route path="studentdashboard" element={<StudentDashboard />} />
+            <Route path="studentdashboard" element={<StudentDashboard />}/>
+            <Route path="student/course/:id" element={<CourseContent/>} />
+            <Route path="student/course/content/:id" element={<Video/>}/>
+            <Route path="student/course/assignemnt/:id" element={<ViewAssignment/>}/>
           </Route>
 
           <Route path="*" element={<Error />} />
