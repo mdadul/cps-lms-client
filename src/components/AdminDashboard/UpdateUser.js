@@ -35,8 +35,6 @@ export default function UpdateUser() {
       });
   }, [Authentication.token, id]);
 
-  console.log(users);
-
 
   const handleRole = (e) => {
     const role = e.target.value;

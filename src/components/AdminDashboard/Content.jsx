@@ -23,7 +23,7 @@ export default function Content() {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
-        "Authorization": `Bearer ${token}`,
+        Authorization: `Bearer ${token}`,
       },
     })
       .then((res) => res.json())
@@ -34,7 +34,7 @@ export default function Content() {
           setContent(data.content);
         }
       });
-  }, [id,content,token]);
+  }, [id, content, token]);
 
   const handleDeleteContent = (id) => {
     const confirm = window.confirm(
@@ -84,7 +84,6 @@ export default function Content() {
                   <th className="px-5 py-3">Video URL</th>
                   <th className="px-5 py-3">Edit</th>
                   <th className="px-5 py-3">Delete</th>
-
                 </tr>
               </thead>
               <tbody className="text-gray-500">
@@ -98,14 +97,14 @@ export default function Content() {
                         <p className="whitespace-no-wrap">{item.videoUrl}</p>
                       </Link>
                     </td>
-                    
+
                     <td className="border-b border-gray-200 bg-white px-5 py-5 text-sm">
                       <Link to={`/users/edit/${item._id}`}>
                         <img src={edit} alt="edit" className="w-6 h-6" />
                       </Link>
                     </td>
                     <td className="border-b border-gray-200 bg-white px-5 py-5 text-sm">
-                      <Link onClick={()=>handleDeleteContent(item._id)}>
+                      <Link onClick={() => handleDeleteContent(item._id)}>
                         <img src={del} alt="edit" className="w-6 h-6" />
                       </Link>
                     </td>
