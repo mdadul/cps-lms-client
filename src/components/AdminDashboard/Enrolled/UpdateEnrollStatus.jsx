@@ -26,7 +26,7 @@ export default function UpdateEnrollStatus() {
         if (data.error) {
           toast.error(data.error);
         } else {
-          setEnroll(data.enrollment);
+          setEnroll(data?.enrollment);
         }
       })
       .catch((err) => {
@@ -42,7 +42,7 @@ export default function UpdateEnrollStatus() {
   const handleUpdateStatus = (e) => {
     e.preventDefault();
     const enrolls = {
-      enrollmentStatus: enroll.enrollmentStatus,
+      enrollmentStatus: enroll?.enrollmentStatus,
     };
     fetch(`${api}/enroll/${id}`, {
       method: "PUT",
@@ -57,7 +57,6 @@ export default function UpdateEnrollStatus() {
         if (data.error) {
           toast.error(data.error);
         } else {
-          console.log(enroll.enrollmentStatus);
           toast.success(data.msg);
           navigate(-1);
         }
@@ -93,7 +92,7 @@ export default function UpdateEnrollStatus() {
                 className="w-full border border-gray-400 px-3 py-2 outline-none"
                 name="status"
                 onChange={handleStatus}
-                value={enroll.enrollmentStatus || ""}
+                value={enroll?.enrollmentStatus || ""}
               >
                 <option value="pending">Pending</option>
                 <option value="approved">Approved</option>
