@@ -45,7 +45,8 @@ import ALLNotice from "./components/StudentDashboard/AllNotice";
 import NoticeDetails from "./components/StudentDashboard/NoticeDetails";
 import TeacherOutlet from "./components/TeacherOutlet";
 import TeacherDashboard from "./components/TeacherDashboard/Dashboard";
-
+import AdminTeacherOutlet from "./components/AdminTeacher";
+import Submission from "./components/TeacherDashboard/Submission";
 function App() {
   const [isLoading, setLoading] = useState(true);
 
@@ -86,6 +87,10 @@ function App() {
             <Route path="studentlist" element={<StudentList />} />
             <Route path="teacherlist" element={<TeacherList />} />
             <Route path="userlist" element={<UserList />} />
+
+            <Route path="course/teacher/:id" element={<Teacher />} />
+          </Route>
+          <Route path="/*" element={<AdminTeacherOutlet />}>
             <Route path="course/:id" element={<CourseDetail />} />
             <Route path="course/content/:id" element={<Content />} />
             <Route path="course/syllabus/:id" element={<Syllabus />} />
@@ -98,7 +103,6 @@ function App() {
               path="course/enroll/edit/:id"
               element={<UpdateEnrollStatus />}
             />
-            <Route path="course/teacher/:id" element={<Teacher />} />
           </Route>
 
           <Route path="/*" element={<StudentOutlet />}>
@@ -119,6 +123,7 @@ function App() {
 
           <Route path="/*" element={<TeacherOutlet />}>
             <Route path="teacher/dashboard" element={<TeacherDashboard />} />
+            <Route path="assignment/submission/:id" element={<Submission/>}/>
           </Route>
 
           <Route path="*" element={<Error />} />

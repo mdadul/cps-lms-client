@@ -1,8 +1,10 @@
-import React from 'react'
+import React from "react";
+import Mycourse from "./MyCourse";
+import Layout from "../AdminDashboard/Layout";
 export default function Dashboard() {
   return (
-   
-    <div className="flex flex-col md:flex-row">
-      hello</div>
-  )
+    <Layout>
+      <Mycourse />
+    </Layout>
+  );
 }

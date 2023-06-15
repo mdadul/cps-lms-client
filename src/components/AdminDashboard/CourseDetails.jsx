@@ -1,9 +1,12 @@
 import React from "react";
 import Layout from "./Layout";
 import { Link, useParams } from "react-router-dom";
+import Auth from "../../Hooks/Auth";
 
 export default function CourseDetails({ children }) {
   const { id } = useParams();
+  const auth = Auth();
+  const role = auth?.user?.role;
 
   return (
     <Layout>
@@ -40,12 +43,14 @@ export default function CourseDetails({ children }) {
             >
               Enrolled Students
             </Link>
-            <Link
-              to={`/course/teacher/${id}`}
-              className="whitespace-nowrap inline-flex rounded-lg py-2 px-3 text-sm font-medium text-gray-600 transition-all duration-200 ease-in-out hover:bg-gray-200 hover:text-gray-900 active:bg-gray-200 active:text-gray-900"
-            >
-              Instructor
-            </Link>
+            {role === "admin" && (
+              <Link
+                to={`/course/teacher/${id}`}
+                className="whitespace-nowrap inline-flex rounded-lg py-2 px-3 text-sm font-medium text-gray-600 transition-all duration-200 ease-in-out hover:bg-gray-200 hover:text-gray-900 active:bg-gray-200 active:text-gray-900"
+              >
+                Instructor
+              </Link>
+            )}
           </nav>
         </div>
       </div>
