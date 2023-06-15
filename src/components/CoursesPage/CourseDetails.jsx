@@ -39,13 +39,13 @@ export default function CourseDetails({ children }) {
               <p className="text-xl mb-2">
                 Course Fee:{" "}
                 <span className="font-bold text-blue-700">
-                  {course.fee} BDT
+                  {course?.fee} BDT
                 </span>{" "}
               </p>
               <p className="text-xl">
                 Duration :{" "}
                 <span className="font-bold text-blue-700">
-                  {course.duration} Months
+                  {course?.duration} Months
                 </span>
               </p>
               <Link to={`/enroll/${id}`}>
@@ -59,14 +59,14 @@ export default function CourseDetails({ children }) {
           <div className="mx-auto max-w-screen-lg px-3 py-10">
             <div className="space-y-3">
               <h5 className="text-sm font-medium uppercase text-gray-400">
-                {course.category}
+                {course?.category}
               </h5>
-              <h1 className="text-3xl font-semibold">{course.name}</h1>
+              <h1 className="text-3xl font-semibold">{course?.name}</h1>
 
               <div>
                 <img
-                  src={course.image}
-                  alt={course.name}
+                  src={course?.image}
+                  alt={course?.name}
                   className="rounded-lg w-[70%] h-auto border-4 border-gray-300"
                 />
               </div>

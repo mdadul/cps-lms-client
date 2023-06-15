@@ -16,8 +16,8 @@ export default function Curriculum() {
 <CourseDetails>{
     course.map((item) => (
       <div className="flex px-2 py-2 gap-2">
-        <h3 className="bg-green-800 text-white font-bold rounded-md px-5 py-2">Week{item.weekNumber}</h3>
-        <p className="px-2 bg-gray-200 rounded-md">{item.topic}</p>
+        <h3 className="bg-green-800 text-white font-bold rounded-md px-5 py-2">Week{item?.weekNumber}</h3>
+        <p className="px-2 bg-gray-200 rounded-md">{item?.topic}</p>
       </div>
     ))}
   </CourseDetails>

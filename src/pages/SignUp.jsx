@@ -34,14 +34,7 @@ export default function SignUp() {
           progress: undefined,
           theme: "light",
         });
-        localStorage.setItem("token", data.token);
-        localStorage.setItem("user", JSON.stringify(data.user));
-        
-        if(data.user.role === "admin"){
-          window.location.href = "/admindashboard";
-        } else if(data.user.role === "student"){
-          window.location.href = "/studentdashboard";
-        }
+        window.location.href = "/signin";
       }
       else{
         toast.error(data.msg, {

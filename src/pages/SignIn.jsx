@@ -1,4 +1,4 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import singin from "../img/signin.gif";
 import Layout from "../components/common/Layout";
 import Input from "../components/Element/Input";
@@ -9,8 +9,6 @@ import { api } from "../config";
 export default function SignIn() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
-  const navigate = useNavigate();
   const handleSubmit = (e) => {
     e.preventDefault();
     fetch(`${api}/users/login`, {
@@ -32,8 +30,8 @@ export default function SignIn() {
             
             window.location.href = "/admindashboard";
           } else if(data.user.role === "student"){
-            navigate(-1)
-            // window.location.href = "/studentdashboard";
+        
+            window.location.href = "/studentdashboard";
           }
         } else {
           toast.error(data.msg);

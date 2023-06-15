@@ -39,6 +39,9 @@ import Teacher from "./components/AdminDashboard/Teacher/Teacher";
 import CourseContent from "./components/StudentDashboard/CourseContent";
 import Video from "./components/StudentDashboard/Video";
 import ViewAssignment from "./components/StudentDashboard/ViewAssignment";
+import AssignmentDetails from "./components/StudentDashboard/AssignmentDetails";
+import ALLNotice from "./components/StudentDashboard/AllNotice";
+import NoticeDetails from './components/StudentDashboard/NoticeDetails'
 function App() {
   const [isLoading, setLoading] = useState(true);
 
@@ -96,6 +99,9 @@ function App() {
             <Route path="student/course/:id" element={<CourseContent/>} />
             <Route path="student/course/content/:id" element={<Video/>}/>
             <Route path="student/course/assignemnt/:id" element={<ViewAssignment/>}/>
+            <Route path="assignment/details/:id" element={<AssignmentDetails/>}/>
+            <Route path="student/course/notice/:id" element={<ALLNotice/>}/>
+            <Route path="notice/details/:id" element={<NoticeDetails/>}/>
           </Route>
 
           <Route path="*" element={<Error />} />

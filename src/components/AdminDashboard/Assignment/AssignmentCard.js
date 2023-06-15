@@ -31,7 +31,7 @@ export default function Assignment({assignment}) {
     <div className="m-5">
       <div className="group mx-5 mt-10 grid px-7 max-w-screen-md grid-cols-12 space-x-8 overflow-hidden rounded-lg border py-8 text-gray-700 shadow transition hover:shadow-lg sm:mx-auto bg-white">
         <div className="col-span-11 flex flex-col  text-left sm:pl-4">
-          <h3 className="text-sm text-gray-600">Due Date: {assignment?.date}</h3>
+          <h3 className="text-sm text-gray-600">Due Date: {assignment?.date.toString().slice(0,10)}</h3>
           <a
             href="/"
             className="mb-3 overflow-hidden pr-7 text-lg font-semibold sm:text-xl"
@@ -61,7 +61,7 @@ export default function Assignment({assignment}) {
           <button>
             <img src={edit} alt="edit" className="w-6 h-6" />
           </button>
-          <button onClick={()=>handleDeleteAssignment(assignment._id)}>
+          <button onClick={()=>handleDeleteAssignment(assignment?._id)}>
             <img src={del} alt="deleteIcon" className="w-6 h-7" />
           </button>
         </div>

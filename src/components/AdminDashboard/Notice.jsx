@@ -85,25 +85,25 @@ export default function Notice() {
               <tbody className="text-gray-500">
                 { notice.length === 0 ? <tr><td colSpan="5" className="text-center">No Notice Found</td></tr> :
                   notice.map((notice) => (
-                    <tr key={notice._id}>
+                    <tr key={notice?._id}>
                     <td className="border-b border-gray-200 bg-white px-5 py-5 text-sm">
-                      <p className="whitespace-no-wrap">{notice.date}</p>
+                      <p className="whitespace-no-wrap">{notice?.date}</p>
                     </td>
     
                     <td className="border-b border-gray-200 bg-white px-5 py-5 text-sm">
-                      <p className="whitespace-no-wrap">{notice.title}</p>
+                      <p className="whitespace-no-wrap">{notice?.title}</p>
                     </td>
                     <td className="border-b border-gray-200 bg-white px-5 py-5 text-sm">
-                      <p className="whitespace-no-wrap">{notice.description}</p>
+                      <p className="whitespace-no-wrap">{notice?.description}</p>
                     </td>
                    
                     <td className="border-b border-gray-200 bg-white px-5 py-5 text-sm">
-                      <Link to={`/users/edit/${notice._id}`}>
+                      <Link to={`/users/edit/${notice?._id}`}>
                         <img src={edit} alt="edit" className="w-6 h-6" />
                       </Link>
                     </td>
                     <td className="border-b border-gray-200 bg-white px-5 py-5 text-sm">
-                      <Link onClick={()=>handleDeleteNotice(notice._id)}>
+                      <Link onClick={()=>handleDeleteNotice(notice?._id)}>
                         <img src={del} alt="edit" className="w-6 h-6" />
                       </Link>
                     </td>

@@ -15,7 +15,7 @@ export default function AllCourse() {
     fetch(`${api}/courses`)
       .then((res) => res.json())
       .then((data) => {
-        setCourses(data.courses);
+        setCourses(data?.courses);
       });
   }, []);
 
@@ -40,7 +40,7 @@ export default function AllCourse() {
           toast.error(data.error);
         } else {
           toast.success("Book deleted successfully");
-          const newCourses = courses.filter((course) => course._id !== id);
+          const newCourses = courses.filter((course) => course?._id !== id);
           setCourses(newCourses);
         }
       })
@@ -68,7 +68,7 @@ export default function AllCourse() {
           </div>
         </div>
 
-        <StatCard title="Total Courses" value={courses.length} />
+        <StatCard title="Total Courses" value={courses?.length} />
         <div>
           {courses
             .sort((a, b) => new Date(a.createdAt) - new Date(b.createdAt))

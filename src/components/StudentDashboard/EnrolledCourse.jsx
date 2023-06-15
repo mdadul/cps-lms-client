@@ -22,10 +22,8 @@ export default function EnrolledCourse() {
     })
       .then((res) => res.json())
       .then((data) => setEnrolledCourse(data.enrollments));
-      localStorage.setItem("enrolledCourse", JSON.stringify(enrolledCourse));
+    sessionStorage.setItem("enrolledCourse", JSON.stringify(enrolledCourse));
   }, [id, token, enrolledCourse]);
-
-
 
   const handlePath = (id, status) => {
     if (status === "approved") {
@@ -40,7 +38,7 @@ export default function EnrolledCourse() {
         <div className="mb-6 text-3xl sm:text-5xl">Enrolled Course</div>
       </div>
       <div className="grid gap-x-8 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
-        {enrolledCourse.length === 0 ? (
+        {enrolledCourse?.length === 0 ? (
           <>
             <h1 className="text-center">No Course Enrolled</h1>
             <Link
@@ -52,11 +50,11 @@ export default function EnrolledCourse() {
           </>
         ) : (
           enrolledCourse.map((course) => (
-            
             <Link
-              onClick={() => handlePath(course.courseId._id, course.enrollmentStatus)}
+              onClick={() =>
+                handlePath(course.courseId._id, course.enrollmentStatus)
+              }
             >
-              
               <EnrolledCourseCard course={course} />
             </Link>
           ))
