@@ -27,11 +27,11 @@ export default function SignIn() {
           localStorage.setItem("user", JSON.stringify(data.user));
           
           if(data.user.role === "admin"){
-            
             window.location.href = "/admindashboard";
           } else if(data.user.role === "student"){
-        
             window.location.href = "/studentdashboard";
+          } else if(data.user.role === "teacher"){
+            window.location.href = "/teacher/dashboard";
           }
         } else {
           toast.error(data.msg);

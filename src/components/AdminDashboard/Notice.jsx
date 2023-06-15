@@ -94,7 +94,7 @@ export default function Notice() {
                       <p className="whitespace-no-wrap">{notice?.title}</p>
                     </td>
                     <td className="border-b border-gray-200 bg-white px-5 py-5 text-sm">
-                      <p className="whitespace-no-wrap">{notice?.description}</p>
+                      <p className="whitespace-no-wrap">{notice?.description.slice(0,200)}</p>
                     </td>
                    
                     <td className="border-b border-gray-200 bg-white px-5 py-5 text-sm">

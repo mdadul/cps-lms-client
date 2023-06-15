@@ -2,7 +2,11 @@ import React from "react";
 import { Link } from "react-router-dom";
 import edit from "../../img/edit.png";
 import del from "../../img/delete.gif";
+import Auth from "../../Hooks/Auth";
 export default function CourseCard(props) {
+  const auth = Auth();
+  const role = auth.user?.role;
+
   const { course } = props;
   const { handleDelete } = props;
 
@@ -15,7 +19,7 @@ export default function CourseCard(props) {
         >
           <div className="group relative h-full w-full overflow-hidden">
             <img
-              src={course.image}
+              src={course?.image}
               alt=""
               className="h-full w-full border-none object-cover text-gray-700 transition group-hover:scale-125"
             />
@@ -28,7 +32,9 @@ export default function CourseCard(props) {
           >
             {course?.name}
           </Link>
-          <p className="overflow-hidden text-sm">{course?.description.slice(0,250)}</p>
+          <p className="overflow-hidden text-sm">
+            {course?.description.slice(0, 250)}
+          </p>
           <a
             href="/"
             className="text-sm font-semibold text-gray-500 hover:text-gray-700"
@@ -46,20 +52,24 @@ export default function CourseCard(props) {
                 {course?.category}
               </div>
             </div>
-            <Link
-              to={`/updatecourse/${course?._id}`}
-              className="my-1 rounded-md px-5 py-2 text-center transition hover:scale-105 bg-gray-50 text-white sm:ml-auto"
-            >
-              <img src={edit} alt="edit" className="w-5 h-5" />
-            </Link>
-            <button
-              onClick={() => {
-                handleDelete(course?._id);
-              }}
-              className="my-1 rounded-md px-5 py-2 text-center transition hover:scale-105 sm:ml-auto"
-            >
-              <img src={del} alt="edit" className="w-5 h-5" />
-            </button>
+            {role === "admin" && (
+              <>
+                <Link
+                  to={`/updatecourse/${course?._id}`}
+                  className="my-1 rounded-md px-5 py-2 text-center transition hover:scale-105 bg-gray-50 text-white sm:ml-auto"
+                >
+                  <img src={edit} alt="edit" className="w-5 h-5" />
+                </Link>
+                <button
+                  onClick={() => {
+                    handleDelete(course?._id);
+                  }}
+                  className="my-1 rounded-md px-5 py-2 text-center transition hover:scale-105 sm:ml-auto"
+                >
+                  <img src={del} alt="edit" className="w-5 h-5" />
+                </button>
+              </>
+            )}
           </div>
         </div>
       </div>
