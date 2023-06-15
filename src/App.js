@@ -6,7 +6,8 @@ import Contact from "./pages/Contact";
 import SignIn from "./pages/SignIn";
 import SignUp from "./pages/SignUp";
 import "react-toastify/dist/ReactToastify.css";
-import { Route, Routes } from "react-router-dom";import StudentDashboard from "./components/StudentDashboard/Dashboard";
+import { Route, Routes } from "react-router-dom";
+import StudentDashboard from "./components/StudentDashboard/Dashboard";
 import AddCourse from "./components/AdminDashboard/AddCourse";
 import UpdateCourse from "./components/AdminDashboard/UpdateCourse";
 import { ToastContainer } from "react-toastify";
@@ -39,6 +40,12 @@ import Teacher from "./components/AdminDashboard/Teacher/Teacher";
 import CourseContent from "./components/StudentDashboard/CourseContent";
 import Video from "./components/StudentDashboard/Video";
 import ViewAssignment from "./components/StudentDashboard/ViewAssignment";
+import AssignmentDetails from "./components/StudentDashboard/AssignmentDetails";
+import ALLNotice from "./components/StudentDashboard/AllNotice";
+import NoticeDetails from "./components/StudentDashboard/NoticeDetails";
+import TeacherOutlet from "./components/TeacherOutlet";
+import TeacherDashboard from "./components/TeacherDashboard/Dashboard";
+
 function App() {
   const [isLoading, setLoading] = useState(true);
 
@@ -87,15 +94,31 @@ function App() {
             <Route path="course/content/add" element={<AddContent />} />
             <Route path="users/edit/:id" element={<UpdateUser />} />
             <Route path="course/enroll/:id" element={<EnrolledStudents />} />
-            <Route path="course/enroll/edit/:id" element={<UpdateEnrollStatus />} />
+            <Route
+              path="course/enroll/edit/:id"
+              element={<UpdateEnrollStatus />}
+            />
             <Route path="course/teacher/:id" element={<Teacher />} />
           </Route>
 
           <Route path="/*" element={<StudentOutlet />}>
-            <Route path="studentdashboard" element={<StudentDashboard />}/>
-            <Route path="student/course/:id" element={<CourseContent/>} />
-            <Route path="student/course/content/:id" element={<Video/>}/>
-            <Route path="student/course/assignemnt/:id" element={<ViewAssignment/>}/>
+            <Route path="studentdashboard" element={<StudentDashboard />} />
+            <Route path="student/course/:id" element={<CourseContent />} />
+            <Route path="student/course/content/:id" element={<Video />} />
+            <Route
+              path="student/course/assignemnt/:id"
+              element={<ViewAssignment />}
+            />
+            <Route
+              path="assignment/details/:id"
+              element={<AssignmentDetails />}
+            />
+            <Route path="student/course/notice/:id" element={<ALLNotice />} />
+            <Route path="notice/details/:id" element={<NoticeDetails />} />
+          </Route>
+
+          <Route path="/*" element={<TeacherOutlet />}>
+            <Route path="teacher/dashboard" element={<TeacherDashboard />} />
           </Route>
 
           <Route path="*" element={<Error />} />

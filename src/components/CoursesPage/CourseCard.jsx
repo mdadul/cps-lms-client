@@ -4,11 +4,11 @@ import { Link } from "react-router-dom";
 export default function CourseCard({course}) {
   return (
     <article className="rounded-xl bg-white p-3 shadow-lg hover:shadow-xl ">
-      <Link to={`courses/description/${course._id}`}>
+      <Link to={`/courses/description/${course?._id}`}>
         <div className="relative flex items-end overflow-hidden rounded-xl ">
           <img
-            src={course.image}
-            alt={course.name}
+            src={course?.image}
+            alt={course?.name}
           />
           <div className="absolute bottom-3 left-3 inline-flex items-center rounded-lg bg-white p-2 shadow-md">
             <svg
@@ -24,10 +24,10 @@ export default function CourseCard({course}) {
         </div>
 
         <div className="mt-1 p-2">
-          <h2 className="text-slate-700">{course.name}</h2>
+          <h2 className="text-slate-700">{course?.name}</h2>
           <div className="mt-3 flex items-end justify-between">
             <p>
-              <span className="text-lg font-bold text-blue-500">{course.fee}</span>
+              <span className="text-lg font-bold text-blue-500">{course?.fee}</span>
             </p>
           </div>
         </div>

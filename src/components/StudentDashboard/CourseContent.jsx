@@ -10,7 +10,7 @@ export default function CourseContent() {
   const { id } = useParams();
 
   const loadTheCourse = () => {
-    const enrolledCourse = JSON.parse(localStorage.getItem("enrolledCourse"));
+    const enrolledCourse = JSON.parse(sessionStorage.getItem("enrolledCourse"));
     const course = enrolledCourse.find((course) => course.courseId._id === id);
     return course;
   };
@@ -49,7 +49,7 @@ export default function CourseContent() {
             description="View your leaderboard here"
           />
         </Link>
-        <Link to={`/student/course/leaderboard/${id}`}>
+        <Link to={`/student/course/notice/${id}`}>
           <FeatureCard
             img={ask}
             title="Notice Board"

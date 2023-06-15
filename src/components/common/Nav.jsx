@@ -45,19 +45,13 @@ export const Nav = () => {
     ];
   } else if (role === "student") {
     menuItem = [
-      { destination: "/", text: "Home"},
+      { destination: "/", text: "Home" },
       { destination: "/studentdashboard", text: "Dashboard" },
-      { destination: "/leaderboard", text: "Leaderboard" },
-      { destination: "/assignment", text: "Assignment" },
-      { destination: "/notice", text: "Notice" },
     ];
   } else if (role === "teacher") {
     menuItem = [
+      { destination: "/", text: "Home" },
       { destination: "/teacher/dashboard", text: "Dashboard" },
-      { destination: "/teacher/leaderboard", text: "Leaderboard" },
-      { destination: "/teacher/quiz", text: "Quiz" },
-      { destination: "/teacher/assignment", text: "Assignment" },
-      { destination: "/teacher/notice", text: "Notice" },
     ];
   } else if (role === "admin") {
     menuItem = [
@@ -72,7 +66,7 @@ export const Nav = () => {
       {
         destination: "/course",
         text: "Courses",
-      }
+      },
     ];
   }
 
@@ -131,7 +125,6 @@ export const Nav = () => {
                 </ul>
               </div>
             )}
-           
           </ul>
         ) : (
           <ul className="items-center hidden space-x-8 lg:flex">

@@ -14,7 +14,7 @@ export default function Details() {
   }, [id]);
   return (
     <CourseDetails>
-      {course.description?.split("\n").map((item, index) => {
+      {course?.description?.split("\n").map((item, index) => {
         return <p key={index}>{item}</p>;
       })}
     </CourseDetails>
