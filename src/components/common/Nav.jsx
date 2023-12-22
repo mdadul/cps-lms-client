@@ -31,6 +31,10 @@ export const Nav = () => {
         text: "Courses",
       },
       {
+        destination: "/project-solution",
+        text: "Project Solution",
+      },
+      {
         destination: "/blog",
         text: "News and Blogs",
       },

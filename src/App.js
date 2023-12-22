@@ -47,6 +47,7 @@ import TeacherOutlet from "./components/TeacherOutlet";
 import TeacherDashboard from "./components/TeacherDashboard/Dashboard";
 import AdminTeacherOutlet from "./components/AdminTeacher";
 import Submission from "./components/TeacherDashboard/Submission";
+import ProjectSolution from "./pages/ProjectSolution";
 function App() {
   const [isLoading, setLoading] = useState(true);
 
@@ -72,6 +73,7 @@ function App() {
           <Route path="/courses/curriculum/:id" element={<Curriculum />} />
           <Route path="/signin" element={<SignIn />} />
           <Route path="/signup" element={<SignUp />} />
+          <Route path="/project-solution" element={<ProjectSolution/>}/>
 
           <Route path="/*" element={<PrivateOutlet />}>
             <Route path="profile" element={<Profile />} />
