@@ -2,8 +2,8 @@
 import logo from '../../img/ps-tb.png';
 
 export const Footer = () => {
-    return (
-    <div className='bg-gray-900 text-white'> 
+  return (
+    <div className='bg-gray-900 text-white'>
       <div className="px-4 pt-16  mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
         <div className="grid gap-16 row-gap-10 mb-8 lg:grid-cols-6">
           <div className="md:max-w-md lg:col-span-2">
@@ -13,11 +13,11 @@ export const Footer = () => {
               title="PROGRAMMIN SHIKHO"
               className="inline-flex items-center"
             >
-              <img src={logo} alt="logo" className='w-16'/>
+              <img src={logo} alt="logo" className='w-16' />
             </a>
             <div className="mt-4 lg:max-w-sm">
               <p className="text-sm text-gray-100">
-              Choose Programming Shikho- PS as your go-to resource for learning programming. We are dedicated to providing you with the highest quality education possible and empowering you to reach your full potential as a programmer. Whether you're a beginner or an experienced coder, our interactive, flexible approach to learning will help you achieve your goals.
+                Choose Programming Shikho- PS as your go-to resource for learning programming. We are dedicated to providing you with the highest quality education possible and empowering you to reach your full potential as a programmer. Whether you're a beginner or an experienced coder, our interactive, flexible approach to learning will help you achieve your goals.
               </p>
               <p className="mt-4 text-sm text-gray-100">
                 Join us on our mission to create a world where anyone can build something meaningful with technology!
@@ -200,17 +200,14 @@ export const Footer = () => {
             © Copyright 2023 PROGRAMMING SHIKHO- PS. All rights reserved. | <span className='text-gray-300'>Developed by : Emdadul Islam & Sorowar Mahabub</span>
           </p>
           <div className="flex items-center mt-4 space-x-4 sm:mt-0">
-            
+
             <a
               href="https://www.linkedin.com/company/ps-official"
               className="text-gray-300 transition-colors duration-300 hover:text-white"
             >
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 16">
-              <path
-                fill="#0A66C2"
-                d="M12.225 12.225h-1.778V9.44c0-.664-.012-1.519-.925-1.519-.926 0-1.068.724-1.068 1.47v2.834H6.676V6.498h1.707v.783h.024c.348-.594.996-.95 1.684-.925 1.802 0 2.135 1.185 2.135 2.728l-.001 3.14zM4.67 5.715a1.037 1.037 0 01-1.032-1.031c0-.566.466-1.032 1.032-1.032.566 0 1.031.466 1.032 1.032 0 .566-.466 1.032-1.032 1.032zm.889 6.51h-1.78V6.498h1.78v5.727zM13.11 2H2.885A.88.88 0 002 2.866v10.268a.88.88 0 00.885.866h10.226a.882.882 0 00.889-.866V2.865a.88.88 0 00-.889-.864z"
-              ></path>
-            </svg>
+              <svg className="h-6" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0 0 48 48">
+                <path fill="#0288D1" d="M42,37c0,2.762-2.238,5-5,5H11c-2.761,0-5-2.238-5-5V11c0-2.762,2.239-5,5-5h26c2.762,0,5,2.238,5,5V37z"></path><path fill="#FFF" d="M12 19H17V36H12zM14.485 17h-.028C12.965 17 12 15.888 12 14.499 12 13.08 12.995 12 14.514 12c1.521 0 2.458 1.08 2.486 2.499C17 15.887 16.035 17 14.485 17zM36 36h-5v-9.099c0-2.198-1.225-3.698-3.192-3.698-1.501 0-2.313 1.012-2.707 1.99C24.957 25.543 25 26.511 25 27v9h-5V19h5v2.616C25.721 20.5 26.85 19 29.738 19c3.578 0 6.261 2.25 6.261 7.274L36 36 36 36z"></path>
+              </svg>
             </a>
             <a
               href="https://www.facebook.com/programming.shikho/"
@@ -223,6 +220,6 @@ export const Footer = () => {
           </div>
         </div>
       </div>
-      </div>
-    );
-  };
+    </div>
+  );
+};
